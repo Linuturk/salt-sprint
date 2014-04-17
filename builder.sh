@@ -1,27 +1,20 @@
 #!/bin/bash
 # Build script that should simplify Jenkins configuration.
 
+echo "******** Setting up Revelator ********"
 rm -rf revelator
 git clone https://github.com/mpdehaan/revelator.git
 ln -fs revelator/reveal_js_261
 
-folders=( fundamentals lunchlearn )
-for i in "${array[@]}"
+echo "******** Looping over folders ********"
+for i in fundamentals lunchlearn
 do
+    echo "******** Syntax Check on $i ********"
     python syntax_check.py $i/*.yml
+    echo "******** Creating output folder for $i ********"
     mkdir -p output/$i
+    echo "******** Build Single on $i ********"
     python build_single.py $i > $i_comp.yml
+    echo "******** Generating Slides on $i ********"
     python revelator/write_it $i_comp.yml output/$i
 done
-
-#python syntax_check.py fundamentals/*.yml
-#python syntax_check.py lunchlearn/*.yml
-#
-#mkdir -p output/fundamentals
-#mkdir -p output/lunchlearn
-#
-#python build_single.py fundamentals > fund_compilation.yml
-#python build_single.py lunchlearn > lunchlearn_compilation.yml
-#
-#python revelator/write_it fund_compilation.yml output/fundamentals
-#python revelator/write_it lunchlearn_compilation.yml output/lunchlearn
