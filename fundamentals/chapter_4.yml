@@ -52,6 +52,8 @@ slides:
                    True
            - p: There is no matching state module for test.ping.
          -
+           - h2: test.ping Demo
+         -
            - h2: Running Commands
            - p: Running arbitrary commands can come in handy for one time operations. This is done with the cmd.run module.
            - p: Execution Example
@@ -62,6 +64,8 @@ slides:
                touch /tmp/foo:
                  cmd.run:
                    - creates: /tmp/foo
+         -
+           - h2: Date Command Demo
          -
            - h2: Installing a Package
            - p: Package installations are abstracted by Salt. You don't have to invoke a specific yum or apt module, but a pkg module.
@@ -74,6 +78,8 @@ slides:
                  pkg.installed
            - p: Package names can still be different between distributions. (ie. apache2 and httpd)
          -
+           - h2: Installing Vim Demo
+         -
            - h2: Starting a Service
            - p: Starting services is done with the service module.
            - p: Execution Example
@@ -85,3 +91,9 @@ slides:
                  service:
                    - running
            - p: Service names can still be different between distributions. (ie. apache2 and httpd)
+         -
+           - h2: Restart SSH Demo
+         -
+           - h2: Lab
+           - p: Find an execution or state module in SaltStack's Documentation and share it with the class.
+           - p: http://docs.saltstack.org
