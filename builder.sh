@@ -1,6 +1,9 @@
 #!/bin/bash
 # Build script that should simplify Jenkins configuration.
 
+# Exit if any command returns non-zero
+set -e
+
 echo "******** Setting up Revelator ********"
 rm -rf revelator
 git clone https://github.com/mpdehaan/revelator.git
