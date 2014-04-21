@@ -51,3 +51,14 @@ slides:
                minion2:
                    True
            - p: There is no matching state module for test.ping.
+         -
+           - h2: Running Commands
+           - p: Running arbitrary commands can come in handy for one time operations. This is done with the cmd.run module.
+           - p: Execution:
+           - code: |
+               salt webservers cmd.run "service apache2 restart"
+           - p: State:
+           - code: |
+               touch /tmp/foo:
+                 cmd.run:
+                   - creates: /tmp/foo
