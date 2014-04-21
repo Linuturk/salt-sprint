@@ -57,7 +57,7 @@ slides:
            - p: Execution Example
            - code: |
                salt webservers cmd.run "service apache2 restart"
-           - p: State Example :::
+           - p: State Example
            - code: |
                touch /tmp/foo:
                  cmd.run:
