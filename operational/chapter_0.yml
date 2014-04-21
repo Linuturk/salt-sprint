@@ -1,0 +1,11 @@
+---
+header:
+  author: Rackspace University
+  title: Operational Salt
+  description: Salt Operational Course
+
+slides:
+   -
+     - nested:
+         -
+           - h1: Salt Operational
