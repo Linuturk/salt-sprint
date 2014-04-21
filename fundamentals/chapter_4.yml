@@ -62,3 +62,13 @@ slides:
                touch /tmp/foo:
                  cmd.run:
                    - creates: /tmp/foo
+         -
+           - h2: Installing a Package
+           - p: Package installations are abstracted by Salt. You don't have to invoke a specific yum or apt module, but a pkg module.
+           - p: Execution Example
+           - code: |
+               salt '*' pkg.install vim
+           - p: State Example
+           - code: |
+               vim:
+                 pkg.installed
