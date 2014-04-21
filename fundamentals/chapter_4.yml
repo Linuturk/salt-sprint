@@ -72,3 +72,16 @@ slides:
            - code: |
                vim:
                  pkg.installed
+           - p: Package names can still be different between distributions. (ie. apache2 and httpd)
+         -
+           - h2: Starting a Service
+           - p: Starting services is done with the service module.
+           - p: Execution Example
+           - code: |
+               salt '*' service.start apache2
+           - p: State Example
+           - code: |
+               apache2:
+                 service:
+                   - running
+           - p: Service names can still be different between distributions. (ie. apache2 and httpd)
