@@ -52,6 +52,8 @@ slides:
            - p: There is no matching state module for test.ping.
          -
            - h2: test.ping Demo
+           - class_notes: |
+               SSH to your salt master, and run the command "salt '*' test.ping" and show the output to the class.
          -
            - h2: Running Commands
            - p: Running arbitrary commands can come in handy for one time operations. This is done with the cmd.run module.
@@ -65,6 +67,8 @@ slides:
                    - creates: /tmp/foo
          -
            - h2: Date Command Demo
+           - class_notes: |
+               SSH to your salt master, and run the command "salt '*' cmd.run date" and show the output to the class. This should output the result of the date command as run on each minion.
          -
            - h2: Installing a Package
            - p: Package installations are abstracted by Salt. You don't have to invoke a specific yum or apt module, but a pkg module.
@@ -77,7 +81,9 @@ slides:
                  pkg.installed
            - p: Package names can still be different between distributions. (ie. apache2 and httpd)
          -
-           - h2: Installing Vim Demo
+           - h2: Installing sysstat Demo
+           - class_notes: |
+               SSH to your salt master, and run the command "salt '*' pkg.install sysstat" and show the output to the class. This should install the vim package on the targeted minions, and show the old/new package versions.
          -
            - h2: Starting a Service
            - p: Starting services is done with the service module.
@@ -92,6 +98,8 @@ slides:
            - p: Service names can still be different between distributions. (ie. apache2 and httpd)
          -
            - h2: Restart SSH Demo
+           - class_notes: |
+               SSH to your salt master, and run the command "salt '*' service.restart ssh" and show the output to the class. This should restart the ssh service and show True if successful.
          -
            - h2: Lab
            - p: Find an execution or state module in SaltStack's Documentation and share it with the class.
