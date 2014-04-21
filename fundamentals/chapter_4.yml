@@ -16,19 +16,31 @@ slides:
          -
            - h1: Example Commands and State Files
            - ul: 
+             - State and Execution Modules
              - test.ping
              - command
              - pkg and service
-             - State and Execution Modules
-             - Find a module
+             - Lab: Find a module in the documentation.
          -
-           - h2: test.ping
-           - p: 'A simple automation language allows Ansible to be used by anyone:'
-           - ul:
-             - sysadmins
-             - developers
-             - IT managers
-           - p: It's easy to write, read, maintain, and evolve - without writing scripts or custom code.
+           - h2: State and Execution Modules
+           - p: 'State modules are used when calling state.sls or highstate against a minion.'
+           - code: |
+               fred:
+                 user.present:
+                   - fullname: Fred Jones
+                   - shell: /bin/zsh
+                   - home: /home/fred
+                   - uid: 4000
+                   - gid: 4000
+                   - groups:
+                     - wheel
+                     - storage
+                     - games
+         -
+           - h2: State and Execution Modules
+           - p: 'Execution modules are used when calling modules directly from the command line.'
+           - code: |
+               salt '*' user.add fred <uid> <gid> <groups> <home> <shell>
          -
            - h2: Fast
            - p: Ansible is easy to learn.
