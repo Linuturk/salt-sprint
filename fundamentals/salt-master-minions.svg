@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.0//EN" "http://www.w3.org/TR/2001/PR-SVG-20010719/DTD/svg10.dtd">
+<svg width="30cm" height="16cm" viewBox="-1 -1 582 303" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+  <g>
+    <ellipse style="fill: #ffffff" cx="300" cy="50" rx="100" ry="50"/>
+    <ellipse style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" cx="300" cy="50" rx="100" ry="50"/>
+    <text font-size="12.7998" style="fill: #000000;text-anchor:middle;font-family:sans-serif;font-style:normal;font-weight:normal" x="300" y="53.9">
+      <tspan x="300" y="53.9">Salt Master</tspan>
+    </text>
+  </g>
+  <g>
+    <ellipse style="fill: #ffffff" cx="50" cy="250" rx="50" ry="50"/>
+    <ellipse style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" cx="50" cy="250" rx="50" ry="50"/>
+    <text font-size="12.7998" style="fill: #000000;text-anchor:middle;font-family:sans-serif;font-style:normal;font-weight:normal" x="50" y="253.9">
+      <tspan x="50" y="253.9">Salt Minion</tspan>
+    </text>
+  </g>
+  <g>
+    <ellipse style="fill: #ffffff" cx="170" cy="250" rx="50" ry="50"/>
+    <ellipse style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" cx="170" cy="250" rx="50" ry="50"/>
+    <text font-size="12.7998" style="fill: #000000;text-anchor:middle;font-family:sans-serif;font-style:normal;font-weight:normal" x="170" y="253.9">
+      <tspan x="170" y="253.9">Salt Minion</tspan>
+    </text>
+  </g>
+  <g>
+    <ellipse style="fill: #ffffff" cx="290" cy="250" rx="50" ry="50"/>
+    <ellipse style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" cx="290" cy="250" rx="50" ry="50"/>
+    <text font-size="12.7998" style="fill: #000000;text-anchor:middle;font-family:sans-serif;font-style:normal;font-weight:normal" x="290" y="253.9">
+      <tspan x="290" y="253.9">Salt Minion</tspan>
+    </text>
+  </g>
+  <g>
+    <ellipse style="fill: #ffffff" cx="410" cy="250" rx="50" ry="50"/>
+    <ellipse style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" cx="410" cy="250" rx="50" ry="50"/>
+    <text font-size="12.7998" style="fill: #000000;text-anchor:middle;font-family:sans-serif;font-style:normal;font-weight:normal" x="410" y="253.9">
+      <tspan x="410" y="253.9">Salt Minion</tspan>
+    </text>
+  </g>
+  <g>
+    <ellipse style="fill: #ffffff" cx="530" cy="250" rx="50" ry="50"/>
+    <ellipse style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" cx="530" cy="250" rx="50" ry="50"/>
+    <text font-size="12.7998" style="fill: #000000;text-anchor:middle;font-family:sans-serif;font-style:normal;font-weight:normal" x="530" y="253.9">
+      <tspan x="530" y="253.9">Salt Minion</tspan>
+    </text>
+  </g>
+  <g>
+    <line style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" x1="97.4128" y1="212.07" x2="238.618" y2="99.1058"/>
+    <polygon style="fill: #000000" points="91.5563,216.755 96.2415,206.604 97.4128,212.07 102.488,214.412 "/>
+    <polygon style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" points="91.5563,216.755 96.2415,206.604 97.4128,212.07 102.488,214.412 "/>
+    <polygon style="fill: #000000" points="244.474,94.4205 239.789,104.572 238.618,99.1058 233.542,96.7631 "/>
+    <polygon style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" points="244.474,94.4205 239.789,104.572 238.618,99.1058 233.542,96.7631 "/>
+  </g>
+  <g>
+    <line style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" x1="203.045" y1="199.161" x2="263.237" y2="106.558"/>
+    <polygon style="fill: #000000" points="198.958,205.449 200.216,194.34 203.045,199.161 208.6,199.79 "/>
+    <polygon style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" points="198.958,205.449 200.216,194.34 203.045,199.161 208.6,199.79 "/>
+    <polygon style="fill: #000000" points="267.325,100.27 266.067,111.379 263.237,106.558 257.683,105.929 "/>
+    <polygon style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" points="267.325,100.27 266.067,111.379 263.237,106.558 257.683,105.929 "/>
+  </g>
+  <g>
+    <line style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" x1="293.033" y1="189.336" x2="296.964" y2="110.713"/>
+    <polygon style="fill: #000000" points="292.659,196.827 288.164,186.59 293.033,189.336 298.152,187.089 "/>
+    <polygon style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" points="292.659,196.827 288.164,186.59 293.033,189.336 298.152,187.089 "/>
+    <polygon style="fill: #000000" points="297.339,103.222 301.833,113.459 296.964,110.713 291.846,112.96 "/>
+    <polygon style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" points="297.339,103.222 301.833,113.459 296.964,110.713 291.846,112.96 "/>
+  </g>
+  <g>
+    <line style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" x1="380.729" y1="196.779" x2="331.688" y2="107.615"/>
+    <polygon style="fill: #000000" points="384.343,203.351 375.143,196.998 380.729,196.779 383.905,192.179 "/>
+    <polygon style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" points="384.343,203.351 375.143,196.998 380.729,196.779 383.905,192.179 "/>
+    <polygon style="fill: #000000" points="328.074,101.044 337.274,107.396 331.688,107.615 328.512,112.216 "/>
+    <polygon style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" points="328.074,101.044 337.274,107.396 331.688,107.615 328.512,112.216 "/>
+  </g>
+  <g>
+    <line style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" x1="484.175" y1="210.152" x2="357.947" y2="100.389"/>
+    <polygon style="fill: #000000" points="489.834,215.073 479.007,212.285 484.175,210.152 485.569,204.738 "/>
+    <polygon style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" points="489.834,215.073 479.007,212.285 484.175,210.152 485.569,204.738 "/>
+    <polygon style="fill: #000000" points="352.288,95.4675 363.115,98.2563 357.947,100.389 356.553,105.802 "/>
+    <polygon style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" points="352.288,95.4675 363.115,98.2563 357.947,100.389 356.553,105.802 "/>
+  </g>
+</svg>
