@@ -20,7 +20,7 @@ slides:
              - test.ping
              - command
              - pkg and service
-             - Lab: Find a module in the documentation.
+             - Lab
          -
            - h2: State and Execution Modules
            - p: 'State modules are used when calling state.sls or highstate against a minion.'
@@ -40,4 +40,4 @@ slides:
            - h2: State and Execution Modules
            - p: 'Execution modules are used when calling modules directly from the command line.'
            - code: |
-               salt '*' user.add fred <uid> <gid> <groups> <home> <shell>
+               salt '*' user.add fred uid gid groups home shell
