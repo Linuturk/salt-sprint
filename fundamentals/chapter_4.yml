@@ -8,8 +8,7 @@ slides:
 
    - set_global:
        transition: rotate
-       background: '#007777'
-       #background: 'black'
+       background: 'black'
 
    -
      - nested:
@@ -96,4 +95,4 @@ slides:
          -
            - h2: Lab
            - p: Find an execution or state module in SaltStack's Documentation and share it with the class.
-           - p: http://docs.saltstack.org
+           - link: [ 'http://docs.saltstack.org', 'http://docs.saltstack.org' ]
