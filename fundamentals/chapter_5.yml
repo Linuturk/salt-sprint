@@ -110,6 +110,7 @@ slides:
            - p: You can target minions using data in grains. This example will target all your CentOS servers with a test.ping.
            - code: |
                salt -G 'os:CentOS' test.ping
+         -
            - h2: Grains Demo
            - class_notes: |
                SSH to your salt master, and run the command "salt '*' grains.items" and show the class all the various data collected in grains.
