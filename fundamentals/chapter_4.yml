@@ -41,3 +41,13 @@ slides:
            - p: 'Execution modules are used when calling modules directly from the command line.'
            - code: |
                salt '*' user.add fred uid gid groups home shell
+         -
+           - h2: test.ping
+           - p: This is the most basic module you can run. It simply connects to the targeted minion(s) and returns True if that minion responds.
+           - code: |
+               salt '*' test.ping
+               minion1:
+                   True
+               minion2:
+                   True
+           - p: There is no matching state module for test.ping.
