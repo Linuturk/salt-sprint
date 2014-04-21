@@ -7,7 +7,7 @@ git clone https://github.com/mpdehaan/revelator.git
 ln -fs revelator/reveal_js_261
 
 echo "******** Looping over folders ********"
-for i in fundamentals lunchlearn
+for i in fundamentals lunchlearn operational
 do
     echo "******** Syntax Check on $i ********"
     python syntax_check.py $i/*.yml
