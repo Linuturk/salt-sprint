@@ -3,10 +3,12 @@ salt-sprint
 
 [![Build Status](http://jenkins.onitato.com:8080/job/Salt%20Sprint%20Slides/badge/icon)](http://jenkins.onitato.com:8080/job/Salt%20Sprint%20Slides/)
 
-**Current Slide Builds**
+## Current Slide Builds
 * [Fundamental Slides](http://jenkins.onitato.com:8080/job/Salt%20Sprint%20Slides/ws/output/fundamentals/index.html#/)
 * [Operational Slides](http://jenkins.onitato.com:8080/job/Salt%20Sprint%20Slides/ws/output/operational/index.html#/)
 * [Lunch and Learn Slides](http://jenkins.onitato.com:8080/job/Salt%20Sprint%20Slides/ws/output/lunchlearn/index.html#/)
+
+## Infrastructure
 
 There are a few components of this repository.
 
