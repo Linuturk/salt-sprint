@@ -8,6 +8,7 @@ slides:
    -
      - nested:
          -
+           - image: 'http://vbyron.com/blog/wp-content/uploads/2014/03/saltstack_logo.jpg'
            - h1: Questions?
            - p: salt@lists.rackspace.com
            - p: '#salt on irc.rackspace.com'
