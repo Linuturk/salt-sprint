@@ -13,21 +13,17 @@ slides:
    -
      - nested:
          -
-           - h1: What is Ansible?
-           - ul: 
-             - Clear
-             - Fast
-             - Complete
-             - Efficient
-             - Secure
+           - h1: What are the differences between Salt, Chef and Ansible?
          -
-           - h2: Languages
-           - p: Project written in
+           - h2: Project Languages
            - ul:
-             - Chef - Ruby
+             - Chef
+             - ul:
+               - Ruby
              - Ansible - Python
              - Salt - Python
-           - p: Users write in
+         -
+           - h2: Users write in
            - ul:
              - Chef - Ruby DSL
              - Ansible - YAML
@@ -45,6 +41,12 @@ slides:
              - Ansible - Imperative
              - Salt - Declarative
          -
+           - h2: Idempotency
+           - ul:
+             - Chef - Non Idempotent
+             - Ansible - Idempotent
+             - Sale - Idempotent
+         -
            - h2: Communication Style
            - ul:
              - Chef - SSH
@@ -52,7 +54,8 @@ slides:
              - Salt - ØMQ, SSH
          -
            - h2: Advantages
-           - p: Agents add for more flexability
-           - p: Has HA options availible
-           - p: Highly modular
-           - p: Friendly community driven development
+           - ul:
+             - Agents add for more flexability
+             - Has HA options availible
+             - Highly modular
+             - Friendly community driven development
