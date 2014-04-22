@@ -64,3 +64,5 @@ slides:
                - build
                - execute and retrieve
                - monitor
+           - class_notes: |
+               1. Talk to configuration management in general.
