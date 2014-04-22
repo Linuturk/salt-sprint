@@ -57,11 +57,11 @@ slides:
                2. while the faster AES encryption secures the data payload.
          -
            - h1: What can Salt do?
-             - ul:
-               - configure
-               - deploy
-               - build
-               - execute and retrieve
-               - monitor
+           - ul:
+             - configure
+             - deploy
+             - build
+             - execute and retrieve
+             - monitor
            - class_notes: |
                1. Talk to configuration management in general.
