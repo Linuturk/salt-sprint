@@ -52,7 +52,8 @@ slides:
            - p: Non Idempotent
            - image: 'https://raw.githubusercontent.com/Linuturk/salt-sprint/master/lunchlearn/ansible_logo.png'
            - p: Idempotent
-           - p: Sale - Idempotent
+           - image: 'https://raw.githubusercontent.com/Linuturk/salt-sprint/master/lunchlearn/saltstack_logo.png'
+           - p: Idempotent
          -
            - h2: Communication Style
            - image: 'https://raw.githubusercontent.com/Linuturk/salt-sprint/master/lunchlearn/chef_logo.png'
