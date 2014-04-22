@@ -1,0 +1,58 @@
+---
+header:
+  author: Bruce Stringer
+  title: How Does Salt Compare?
+  description: How does salt stack up against other configuration management competitors?
+
+slides:
+
+   - set_global:
+       transition: rotate
+       background: '#007777'
+
+   -
+     - nested:
+         -
+           - h1: What is Ansible?
+           - ul: 
+             - Clear
+             - Fast
+             - Complete
+             - Efficient
+             - Secure
+         -
+           - h2: Languages
+           - p: Project written in
+           - ul:
+             - Chef - Ruby
+             - Ansible - Python
+             - Salt - Python
+           - p: Users write in
+           - ul:
+             - Chef - Ruby DSL
+             - Ansible - YAML
+             - Salt - YAML
+         -
+           - h2: Architecture
+           - ul:
+             - Chef - Server + Client, Solo
+             - Ansible - Agentless with inventory
+             - Salt, Master + Minion, Standalone
+         -
+           - h2: Style
+           - ul:
+	         - Chef - Imperative
+	         - Ansible - Imperative
+	         - Salt - Declarative
+         -
+           - h2: Communication Style
+           - ul:
+             - Chef - SSH
+             - Ansible - SSH, ØMQ
+             - Salt - ØMQ, SSH
+         -
+           - h2: Advantages
+           - p: Agents add for more flexability
+           - p: Has HA options availible
+           - p: Highly modular
+           - p: Friendly community driven development
