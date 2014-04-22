@@ -8,7 +8,7 @@ slides:
 
    - set_global:
        transition: rotate
-       background: 'white'
+       background: '#565656'
 
    -
      - nested:
@@ -24,41 +24,41 @@ slides:
            - p: Python
          -
            - h2: Users write in
-           - ul:
-             - Chef - Ruby DSL
-             - image: http://cdn2.hubspot.net/hub/330046/file-449187601-png/ansible_badge.png
-             - YAML
-             - Salt - YAML
+           - image: 'https://raw.githubusercontent.com/Linuturk/salt-sprint/master/lunchlearn/chef_logo.png'
+           - p: Ruby DSL
+           - image: http://cdn2.hubspot.net/hub/330046/file-449187601-png/ansible_badge.png
+           - p: YAML
+           - p: Salt - YAML
          -
            - h2: Architecture
-           - ul:
-             - Chef - Server + Client, Solo
-             - image: http://cdn2.hubspot.net/hub/330046/file-449187601-png/ansible_badge.png
-             - Agentless with inventory
-             - Salt, Master + Minion, Standalone
+           - image: 'https://raw.githubusercontent.com/Linuturk/salt-sprint/master/lunchlearn/chef_logo.png'
+           - p: Server + Client, Solo
+           - image: http://cdn2.hubspot.net/hub/330046/file-449187601-png/ansible_badge.png
+           - p: Agentless with inventory
+           - p: Salt, Master + Minion, Standalone
          -
            - h2: Style
-           - ul:
-             - Chef - Imperative
-             - image: http://cdn2.hubspot.net/hub/330046/file-449187601-png/ansible_badge.png
-             - Imperative
-             - Salt - Declarative
+           - image: 'https://raw.githubusercontent.com/Linuturk/salt-sprint/master/lunchlearn/chef_logo.png'
+           - p: Imperative
+           - image: http://cdn2.hubspot.net/hub/330046/file-449187601-png/ansible_badge.png
+           - p: Imperative
+           - p: Salt - Declarative
          -
            - h2: Idempotency
-           - ul:
-             - Chef - Non Idempotent
-             - image: http://cdn2.hubspot.net/hub/330046/file-449187601-png/ansible_badge.png
-             - Idempotent
-             - Sale - Idempotent
+           - image: 'https://raw.githubusercontent.com/Linuturk/salt-sprint/master/lunchlearn/chef_logo.png'
+           - p: Non Idempotent
+           - image: http://cdn2.hubspot.net/hub/330046/file-449187601-png/ansible_badge.png
+           - p: Idempotent
+           - p: Sale - Idempotent
          -
            - h2: Communication Style
-           - ul:
-             - Chef - SSH
-             - image: http://cdn2.hubspot.net/hub/330046/file-449187601-png/ansible_badge.png
-             - SSH, ØMQ
-             - Salt - ØMQ, SSH
+           - image: 'https://raw.githubusercontent.com/Linuturk/salt-sprint/master/lunchlearn/chef_logo.png'
+           - p: SSH
+           - image: http://cdn2.hubspot.net/hub/330046/file-449187601-png/ansible_badge.png
+           - p: SSH, ØMQ
+           - p: Salt - ØMQ, SSH
          -
-           - h2: Advantages
+           - h2: Advantages of Salt
            - ul:
              - Agents add for more flexability
              - Has HA options availible
