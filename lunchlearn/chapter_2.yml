@@ -13,7 +13,7 @@ slides:
    -
      - nested:
          -
-           - h1: What are the differences between Salt, Chef and Ansible?
+           - h1: Salt, Chef, and Ansible Compared
          -
            - h2: Project Languages
            - image: 'https://raw.githubusercontent.com/Linuturk/salt-sprint/master/lunchlearn/chef_logo.png'
