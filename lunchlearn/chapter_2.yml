@@ -16,11 +16,11 @@ slides:
            - h1: What are the differences between Salt, Chef and Ansible?
          -
            - h2: Project Languages
-           - image: https://raw.githubusercontent.com/Linuturk/salt-sprint/master/lunchlearn/chef_logo.png
+           - image: 'https://raw.githubusercontent.com/Linuturk/salt-sprint/master/lunchlearn/chef_logo.png' Ruby
            - p: Ruby
-           - image: https://raw.githubusercontent.com/Linuturk/salt-sprint/master/lunchlearn/ansible_logo.png
+           - image: 'https://raw.githubusercontent.com/Linuturk/salt-sprint/master/lunchlearn/ansible_logo.png' Python
            - p: Python
-           - image: https://raw.githubusercontent.com/Linuturk/salt-sprint/master/lunchlearn/saltstack_logo.png
+           - image: 'https://raw.githubusercontent.com/Linuturk/salt-sprint/master/lunchlearn/saltstack_logo.png' Python
            - p: Python
          -
            - h2: Users write in
