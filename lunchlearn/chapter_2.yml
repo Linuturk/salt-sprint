@@ -58,9 +58,9 @@ slides:
            - p: SSH, ØMQ
            - p: Salt - ØMQ, SSH
          -
-           - h2: Advantages
+           - h2: Advantages of Salt
            - ul:
-           - Agents add for more flexability
-           - Has HA options availible
-           - Highly modular
-           - Friendly community driven development
+             - Agents add for more flexability
+             - Has HA options availible
+             - Highly modular
+             - Friendly community driven development
