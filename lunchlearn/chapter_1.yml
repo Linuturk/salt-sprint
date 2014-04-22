@@ -26,6 +26,7 @@ slides:
              - sysadmins
              - developers
              - IT managers
+           - p: ""
            - p: YAML, It's easy to write, read, maintain, and evolve - without writing scripts or custom code.
          -
            - h2: Fast
@@ -45,13 +46,13 @@ slides:
              - orchestration
              - provisioning
              - SSH or Agent based
+           - p: ""
            - p: Can configure any device that runs python.
          -
            - h2: Secure
            - ul:
              - Keys secure the master minion connections.
              - AES secures data payload.
-             - msgpack
            - class_notes: |
                1. Keys secure the relationship between the master and the minion nodes.
                2. while the faster AES encryption secures the data payload.
