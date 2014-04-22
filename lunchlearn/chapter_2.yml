@@ -65,7 +65,7 @@ slides:
          -
            - h2: Advantages of Salt
            - ul:
-             - Agents add for more flexability
+             - Agents add for more flexibility
              - Has HA options availible
              - Highly modular
              - Friendly community driven development
