@@ -17,14 +17,11 @@ slides:
          -
            - h2: Project Languages
            - image: https://raw.githubusercontent.com/Linuturk/salt-sprint/master/lunchlearn/chef_logo.png
-           - ul:
-             - Ruby
+           - p: Ruby
            - image: https://raw.githubusercontent.com/Linuturk/salt-sprint/master/lunchlearn/ansible_logo.png
-           - ul:
-             - Python
+           - p: Python
            - image: https://raw.githubusercontent.com/Linuturk/salt-sprint/master/lunchlearn/saltstack_logo.png
-           - ul:
-             - Python
+           - p: Python
          -
            - h2: Users write in
            - ul:
