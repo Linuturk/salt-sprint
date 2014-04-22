@@ -29,9 +29,10 @@ slides:
            - p: YAML, It's easy to write, read, maintain, and evolve - without writing scripts or custom code.
          -
            - h2: Fast
-           - p: Salt is easy to learn.
-           - p: Setup is fast.
-           - p: ZeroMQ and msgpack.
+           - ul:
+             - Salt is easy to learn.
+             - Setup is fast.
+             - ZeroMQ and msgpack.
            - class_notes: |
                1. You can automate in under 30 minutes. Forget about how it works, just do it.
                2. ZeroMQ and msgpack allow for lightning fast communication.
@@ -47,9 +48,20 @@ slides:
            - p: Can configure any device that runs python.
          -
            - h2: Secure
-           - p: Keys secure the master minion connections.
-           - p: AES secures data payload.
-           - p: msgpack
+           - ul:
+             - Keys secure the master minion connections.
+             - AES secures data payload.
+             - msgpack
            - class_notes: |
                1. Keys secure the relationship between the master and the minion nodes.
                2. while the faster AES encryption secures the data payload.
+         -
+           - h1: What can Salt do?
+             - ul:
+               - configure
+               - deploy
+               - build
+               - execute and retrieve
+               - monitor
+           - class_notes: |
+               1. Talk to configuration management in general.
