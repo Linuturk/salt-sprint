@@ -17,40 +17,44 @@ slides:
          -
            - h2: Project Languages
            - ul:
-             - Chef
-             - ul:
-               - Ruby
-             - Ansible - Python
+             - Chef - Ruby
+             - image: http://cdn2.hubspot.net/hub/330046/file-449187601-png/ansible_badge.png
+             - Python
              - Salt - Python
          -
            - h2: Users write in
            - ul:
              - Chef - Ruby DSL
-             - Ansible - YAML
+             - image: http://cdn2.hubspot.net/hub/330046/file-449187601-png/ansible_badge.png
+             - YAML
              - Salt - YAML
          -
            - h2: Architecture
            - ul:
              - Chef - Server + Client, Solo
-             - Ansible - Agentless with inventory
+             - image: http://cdn2.hubspot.net/hub/330046/file-449187601-png/ansible_badge.png
+             - Agentless with inventory
              - Salt, Master + Minion, Standalone
          -
            - h2: Style
            - ul:
              - Chef - Imperative
-             - Ansible - Imperative
+             - image: http://cdn2.hubspot.net/hub/330046/file-449187601-png/ansible_badge.png
+             - Imperative
              - Salt - Declarative
          -
            - h2: Idempotency
            - ul:
              - Chef - Non Idempotent
-             - Ansible - Idempotent
+             - image: http://cdn2.hubspot.net/hub/330046/file-449187601-png/ansible_badge.png
+             - Idempotent
              - Sale - Idempotent
          -
            - h2: Communication Style
            - ul:
              - Chef - SSH
-             - Ansible - SSH, ØMQ
+             - image: http://cdn2.hubspot.net/hub/330046/file-449187601-png/ansible_badge.png
+             - SSH, ØMQ
              - Salt - ØMQ, SSH
          -
            - h2: Advantages
