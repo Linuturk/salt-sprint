@@ -9,3 +9,4 @@ slides:
      - nested:
          -
            - h1: SaltStack Lunch and Learn
+           - image: 'http://vbyron.com/blog/wp-content/uploads/2014/03/saltstack_logo.jpg'
