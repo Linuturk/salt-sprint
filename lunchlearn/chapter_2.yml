@@ -34,8 +34,8 @@ slides:
            - image: 'https://raw.githubusercontent.com/Linuturk/salt-sprint/master/lunchlearn/chef_logo.png'
            - p: Server + Client, Solo
            - image: http://cdn2.hubspot.net/hub/330046/file-449187601-png/ansible_badge.png
-           - Agentless with inventory
-           - Salt, Master + Minion, Standalone
+           - p: Agentless with inventory
+           - p: Salt, Master + Minion, Standalone
          -
            - h2: Style
            - image: 'https://raw.githubusercontent.com/Linuturk/salt-sprint/master/lunchlearn/chef_logo.png'
