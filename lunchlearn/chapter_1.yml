@@ -1,8 +1,8 @@
 ---
 header:
   author: CC, PI
-  title: Chapter 1, Ansible Fundamentals
-  description: Ansible Fundamentals Course
+  title: Chapter 1, Salt Lunch and Learn
+  description: Salt Lunch and Learn
 
 slides:
 
@@ -14,59 +14,43 @@ slides:
    -
      - nested:
          -
-           - h1: What is Ansible?
+           - h1: What is Salt?
            - ul: 
-             - Clear
+             - Simple
              - Fast
-             - Complete
-             - Efficient
+             - Flexible
              - Secure
-
          -
-           - h2: Clear
-           - p: 'A simple automation language allows Ansible to be used by anyone:'
+           - h2: Simple
+           - p: 'A simple automation language allows Salt to be used by anyone:'
            - ul:
              - sysadmins
              - developers
              - IT managers
-           - p: It's easy to write, read, maintain, and evolve - without writing scripts or custom code.
+           - p: YAML, It's easy to write, read, maintain, and evolve - without writing scripts or custom code.
          -
            - h2: Fast
-           - p: Ansible is easy to learn.
+           - p: Salt is easy to learn.
            - p: Setup is fast.
+           - p: ZeroMQ and msgpack.
            - class_notes: |
                1. You can automate in under 30 minutes. Forget about how it works, just do it.
-               2. No agents. SSH keys are typically already in place.
+               2. ZeroMQ and msgpack allow for lightning fast communication.
          -
-           - h2: Complete
-           - p: 'Ansible is several tools in one:'
+           - h2: Flexible
+           - p: 'Salt can be used for basic or custome configurations:'
            - ul:
-             - configuration management
+             - write modules in any language
              - application deployment
              - orchestration
              - provisioning
-           - p: Hundreds of built-in modules.
-         -
-           - h2: Efficient
-           - p: Ansible doesn't require a custom agent or software to install. 
-           - p: Ansible runs on OpenSSH. 
-           - class_notes: |
-               1. With no additional software infrastructure, you don't have to
-               worry about managing the management tool.
-               2. That means anywhere SSH goes, Ansible goes.
-               3. It doesn't suck memory or CPU resources when it is not in use.
-               4. Designed from day one to automate no-downtime rolling updates
-               and multi-tier orchestration.
+             - SSH or Agent based
+           - p: Can configure any device that runs python.
          -
            - h2: Secure
-           - p: No agent. 
-           - p: SSH transport.
-           - p: Ansible plays can be read by anyone. 
+           - p: Keys secure the master minion connections.
+           - p: AES secures data payload.
+           - p: msgpack
            - class_notes: |
-               1. It doesn't need additional ports or root level daemons.
-               2. It uses built-in OS authentication for better security - login
-               as who you are, sudo if you want to sudo.
-               3. You can work with tools like Kerberos, LDAP, and sssd.
-               4. OpenSSH is the most peer-reviewed security component around.
-               5. This makes it auditable. You know what you're automating,
-               and bugs have nowhere to hide.
+               1. Keys secure the relationship between the master and the minion nodes.
+               2. while the faster AES encryption secures the data payload.
