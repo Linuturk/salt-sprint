@@ -17,9 +17,7 @@ slides:
          -
            - h2: Project Languages
            - ul:
-             - Chef
-             - ul:
-               - Ruby
+             - Chef - Ruby
              - Ansible - Python
              - Salt - Python
          -
