@@ -38,7 +38,7 @@ slides:
                2. ZeroMQ and msgpack allow for lightning fast communication.
          -
            - h2: Flexible
-           - p: 'Salt can be used for basic or custome configurations:'
+           - p: 'Salt can be used for basic or custom configurations:'
            - ul:
              - write modules in any language
              - application deployment
