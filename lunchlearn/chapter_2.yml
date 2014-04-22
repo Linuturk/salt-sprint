@@ -41,9 +41,9 @@ slides:
          -
            - h2: Style
            - ul:
-	         - Chef - Imperative
-	         - Ansible - Imperative
-	         - Salt - Declarative
+             - Chef - Imperative
+             - Ansible - Imperative
+             - Salt - Declarative
          -
            - h2: Communication Style
            - ul:
