@@ -16,11 +16,12 @@ slides:
            - h1: What are the differences between Salt, Chef and Ansible?
          -
            - h2: Project Languages
-           - ul:
-             - Chef - Ruby
-             - image: http://cdn2.hubspot.net/hub/330046/file-449187601-png/ansible_badge.png
-             - Python
-             - Salt - Python
+           - p: Chef
+           - p: '  - Ruby'
+           - image: http://cdn2.hubspot.net/hub/330046/file-449187601-png/ansible_badge.png
+           - p: '  - Python'
+           - p: Salt
+           - p: '  - Python'
          -
            - h2: Users write in
            - ul:
