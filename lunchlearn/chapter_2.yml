@@ -26,7 +26,7 @@ slides:
            - h2: Users write in
            - image: 'https://raw.githubusercontent.com/Linuturk/salt-sprint/master/lunchlearn/chef_logo.png'
            - p: Ruby DSL
-           - image:'https://raw.githubusercontent.com/Linuturk/salt-sprint/master/lunchlearn/ansible_logo.png'
+           - image: 'https://raw.githubusercontent.com/Linuturk/salt-sprint/master/lunchlearn/ansible_logo.png'
            - p: YAML
            - image: 'https://raw.githubusercontent.com/Linuturk/salt-sprint/master/lunchlearn/saltstack_logo.png'
            - p: YAML
@@ -34,7 +34,7 @@ slides:
            - h2: Architecture
            - image: 'https://raw.githubusercontent.com/Linuturk/salt-sprint/master/lunchlearn/chef_logo.png'
            - p: Server + Client, Solo
-           - image:'https://raw.githubusercontent.com/Linuturk/salt-sprint/master/lunchlearn/ansible_logo.png'
+           - image: 'https://raw.githubusercontent.com/Linuturk/salt-sprint/master/lunchlearn/ansible_logo.png'
            - p: Agentless with inventory
            - image: 'https://raw.githubusercontent.com/Linuturk/salt-sprint/master/lunchlearn/saltstack_logo.png'
            - p: Master + Minion, Standalone
@@ -42,7 +42,7 @@ slides:
            - h2: Style
            - image: 'https://raw.githubusercontent.com/Linuturk/salt-sprint/master/lunchlearn/chef_logo.png'
            - p: Imperative
-           - image:'https://raw.githubusercontent.com/Linuturk/salt-sprint/master/lunchlearn/ansible_logo.png'
+           - image: 'https://raw.githubusercontent.com/Linuturk/salt-sprint/master/lunchlearn/ansible_logo.png'
            - p: Imperative
            - image: 'https://raw.githubusercontent.com/Linuturk/salt-sprint/master/lunchlearn/saltstack_logo.png'
            - p: Declarative
@@ -50,14 +50,14 @@ slides:
            - h2: Idempotency
            - image: 'https://raw.githubusercontent.com/Linuturk/salt-sprint/master/lunchlearn/chef_logo.png'
            - p: Non Idempotent
-           - image:'https://raw.githubusercontent.com/Linuturk/salt-sprint/master/lunchlearn/ansible_logo.png'
+           - image: 'https://raw.githubusercontent.com/Linuturk/salt-sprint/master/lunchlearn/ansible_logo.png'
            - p: Idempotent
            - p: Sale - Idempotent
          -
            - h2: Communication Style
            - image: 'https://raw.githubusercontent.com/Linuturk/salt-sprint/master/lunchlearn/chef_logo.png'
            - p: SSH
-           - image:'https://raw.githubusercontent.com/Linuturk/salt-sprint/master/lunchlearn/ansible_logo.png'
+           - image: 'https://raw.githubusercontent.com/Linuturk/salt-sprint/master/lunchlearn/ansible_logo.png'
            - p: SSH, ØMQ
            - image: 'https://raw.githubusercontent.com/Linuturk/salt-sprint/master/lunchlearn/saltstack_logo.png'
            - p: ØMQ, SSH
