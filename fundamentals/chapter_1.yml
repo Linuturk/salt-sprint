@@ -53,7 +53,8 @@ slides:
 
          -
            - h2: What could you use Salt for?
-           - p: 'In small groups discuss otherways salt could help improve a customers infrastructure.'
-           - p: 'See what examples you can come up with where configuration management like salt would have saved time or resources.'
+           - ul:
+             - 'In small groups discuss otherways salt could help improve a customers infrastructure.'
+             - 'See what examples you can come up with where configuration management like salt would have saved time or resources.'
            - class_notes: |
                1. Get the class involved. However they want to come up with use cases based on what the know now, which isnt much but the concepts should be imediately practical
