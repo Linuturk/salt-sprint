@@ -14,6 +14,9 @@ slides:
              - SSH key management
              - Salt Modules
          -
+           - image: 'http://jenkins.onitato.com:8080/job/Salt%20Sprint%20Slides/ws/fundamentals/salt-master-minions.svg'
+
+         -
            - h2: Salt Master
            - p: 'Controller of your Salt Minions'
            - ul:
