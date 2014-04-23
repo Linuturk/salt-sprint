@@ -63,7 +63,7 @@ slides:
 
          -
            - h2: Lab
-           - p: 'Step One: Download the salt-bootstrap script and read the help'
+           - p: 'Step One: Download the salt-bootstrap script'
            - p: 'Step Two: Read the help file on salt-bootstrap'
            - p: 'Step Three: Install the Salt Master / Minion on the same box'
            - p: 'Step Four: Verify that the Salt Master is installed'
