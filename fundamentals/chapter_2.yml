@@ -52,7 +52,10 @@ slides:
              - Execution Modules
              - State Modules
              - and the rest...
+           - code |
+               salt '*' user.add name
            - class_notes: |
              1. Execution modules allow you to run processes on a minion.
-             2. State Modules are built on top of Execution Modules and allow you to combine actions in to a single state file.
-             3. Salt execution modules are different from state modules and cannot be called directly within state files. You must use the module state module to call execution modules within state runs.
+             2. An example of an execution module is the useradd module.
+             3. State Modules are built on top of Execution Modules and allow you to combine actions in to a single state file.
+             4. Salt execution modules are different from state modules and cannot be called directly within state files. You must use the module state module to call execution modules within state runs.
