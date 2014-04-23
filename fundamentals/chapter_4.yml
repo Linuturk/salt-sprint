@@ -1,0 +1,74 @@
+---
+header:
+  author: Jason Swindle
+  title: Install and Deploy Salt
+  description: How to install a Salt Master / Minion and then verify the install.
+
+slides:
+  -
+     - nested:
+
+         -
+           - h1: Install and Deploy Salt
+           - ul:
+             - salt-bootstrap
+             - Download salt-bootstrap
+             - Run salt-bootstrap
+             - Verify installation
+             - Lab
+
+         -
+           - h2: salt-bootstrap
+           - p: 'salt-bootstrap is the preferred method to install SaltStack.'
+           - ul:
+             - Multiple OS support
+             - Highly extendable
+             - Can install Salt Master / Minion
+             - Can use GitHub tags like packages.
+           - class_notes: |
+               Created and maintained by Pedro Algarvio.  Pedro has more commits than Thomas Hach, the CTO and founder of SaltStack.
+
+         -
+           - h2: 'Download salt-bootstrap'
+           - code: |
+              # curl -o salt_install.sh -L http://bootstrap.saltstack.org
+
+         -
+           - h2: 'Run salt-bootstrap'
+           - code: |
+              # sh salt_install.sh [FLAG]
+           - p: 'This example will install the minion, but -h will list all the flags.'
+           - class_notes: |
+               The goal is to get the to read the help notes on the script.
+               They can be view here as well, https://github.com/saltstack/salt-bootstrap/blob/develop/bootstrap-salt.sh
+
+         -
+           - h2: 'Verify installation'
+           - code: |
+              # salt-minon --versions-report
+           - p: 'If installed correctly, you will see something like:'
+           - code: |
+              Salt: 2014.1.0
+              Python: 2.7.6 (default, Mar 22 2014, 22:59:56)
+              Jinja2: 2.7.2
+              M2Crypto: 0.21.1
+              msgpack-python: 0.3.0
+              msgpack-pure: Not Installed
+              pycrypto: 2.6.1
+              PyYAML: 3.10
+              PyZMQ: 14.0.1
+              ZMQ: 4.0.4
+
+         -
+           - h2: Lab
+           - p: Install SaltStack Master and Minion on the same machine
+           - class_notes: |
+              $ curl -o salt_install.sh -L http://bootstrap.saltstack.org
+              $ sudo sh salt_install.sh -M
+
+         -
+           - h2: Lab
+           - p: Verify that Salt Master / Minion installed correctly
+           - class_notes: |
+              $ salt-master --versions-report
+              $ salt-minion --versions-report
