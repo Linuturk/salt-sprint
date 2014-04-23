@@ -28,6 +28,6 @@ do
     echo "******** Generating Slides on $i ********"
     python revelator/write_it $i_comp.yml output/$i
     echo "******** Hacking stylesheets for $i ********"
-    sed -e '32s/#eeeeee/#000000/' -i output/fundamentals/css/theme/default.css
-    sed -e '49s/#eeeeee/#000000/' -i output/fundamentals/css/theme/default.css
+    sed -e '32s/#eeeeee/#000000/' -i output/$i/css/theme/default.css
+    sed -e '49s/#eeeeee/#000000/' -i output/$i/css/theme/default.css
 done
