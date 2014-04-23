@@ -21,12 +21,12 @@ slides:
              - /etc/init.d/salt-master
              - Communicate via ZeroMQ or SSH
              - SSH keys handled with salt-key
-             - code: |
-                 salt-key -L
-                 salt-key -a minion
-                 salt-key -A
-                 salt-key -d minion
-                 salt-key -d
+           - code: |
+              salt-key -L
+              salt-key -a minion
+              salt-key -A
+              salt-key -d minion
+              salt-key -d
            - class_notes: |
                1. The salt master allows you to interact with salt minions.
                2. The configuration file for the Salt Master is located in /etc/salt/master.
@@ -53,7 +53,7 @@ slides:
              - State Modules
              - and the rest...
            - code: |
-                 salt '*' user.add name
+               salt '*' user.add name
            - class_notes: |
                1. Execution modules allow you to run processes on a minion.
                2. An example of an execution module is the useradd module.
