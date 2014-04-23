@@ -21,42 +21,6 @@ slides:
                4. Speak to the need for provisioning resources dynamically in the API based world we now live in
 
          -
-           - h2: What could you use Salt for?
-           - p: 'In small groups discuss otherways salt could help improve a customers infrastructure.'
-           - p: 'See what examples you can come up with where configuration management like salt would have saved time or resources.'
-           - class_notes: |
-               1. Get the class involved. However they want to come up with use cases based on what the know now, which isnt much but the concepts should be imediately practical
-
-         -
-           - h2: Fast
-           - ul:
-             - Salt is easy to learn.
-             - Setup is fast.
-             - ZeroMQ and msgpack.
-           - class_notes: |
-               1. You can automate in under 30 minutes. Forget about how it works, just do it.
-               2. ZeroMQ and msgpack allow for lightning fast communication.
-
-         -
-           - h2: Flexible
-           - p: 'Salt can be used for basic or custom configurations:'
-           - ul:
-             - write modules in any language
-             - application deployment
-             - orchestration
-             - provisioning
-             - SSH or Agent based
-           - p: ""
-           - p: Can configure any device that runs python.
-         -
-           - h2: Secure
-           - ul:
-             - Keys secure the master minion connections.
-             - AES secures data payload.
-           - class_notes: |
-               1. Keys secure the relationship between the master and the minion nodes.
-               2. while the faster AES encryption secures the data payload.
-         -
            - h1: What can Salt do?
            - ul:
              - configure
@@ -66,3 +30,35 @@ slides:
              - monitor
            - class_notes: |
                1. Talk to configuration management in general.
+               2. talk about building infrastructure via salt-cloud.
+               3. Talk about running remote command adhoc, and speak to retrieving data about nodes.
+
+         -
+           - h2: Salt is not alone
+           - ul:
+             - image: 'http://www.john-james-andersen.com/wp-content/uploads/opscode_chef_html_logo.jpg'
+             - image: 'http://siliconflorist.com/wp-content/uploads/2010/07/puppet-labs.jpg'
+             - image: 'https://raw.githubusercontent.com/Linuturk/salt-sprint/master/lunchlearn/ansible_logo.png'
+             - image: 'http://img3.douban.com/view/event_poster/raw/public/08697a2855f3392.jpg'
+           - class_notes: |
+               1. Speak to the community around configuration management. And the differeing tools out there.
+               2. Mentione that we will compare them directly later but for now just use this to build context around what salt does.
+
+         -
+           - h2: Who uses Salt now?
+           - ul:
+             - Rackspace
+             - Customers
+             - Linkdin
+             - You?
+           - class_notes: |
+               1. Give examples of how rackers have used salt. Example (heartbleed patching)
+               2. Find examples of where customers have used salt or configuration management.
+               3. See if any in the room have used salt.
+
+         -
+           - h2: What could you use Salt for?
+           - p: 'In small groups discuss otherways salt could help improve a customers infrastructure.'
+           - p: 'See what examples you can come up with where configuration management like salt would have saved time or resources.'
+           - class_notes: |
+               1. Get the class involved. However they want to come up with use cases based on what the know now, which isnt much but the concepts should be imediately practical
