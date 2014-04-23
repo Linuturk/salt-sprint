@@ -22,11 +22,11 @@ slides:
              - Communicate via ZeroMQ or SSH
              - SSH keys handled with salt-key
              - code: |
-               salt-key -L
-               salt-key -a minion
-               salt-key -A
-               salt-key -d minion
-               salt-key -d
+                 salt-key -L
+                 salt-key -a minion
+                 salt-key -A
+                 salt-key -d minion
+                 salt-key -d
            - class_notes: |
                1. The salt master allows you to interact with salt minions.
                2. The configuration file for the Salt Master is located in /etc/salt/master.
