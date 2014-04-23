@@ -39,7 +39,7 @@ slides:
            - h2: 'Run salt-bootstrap'
            - code: |
               # sh salt_install.sh
-           - p: 'This example will install the minion, but -h will list all the flags. Go read them.'
+           - p: 'This example will install the minion, but -h will list all the flags'
            - class_notes: |
                The goal is to get the to read the help notes on the script.
                They can be view here as well, https://github.com/saltstack/salt-bootstrap/blob/develop/bootstrap-salt.sh
@@ -64,24 +64,14 @@ slides:
          -
            - h2: Lab
            - p: 'Step One: Download the salt-bootstrap script and read the help'
+           - p: 'Step Two: Read the help file on salt-bootstrap'
+           - p: 'Step Three: Install the Salt Master / Minion on the same box'
+           - p: 'Step Four: Verify that the Salt Master is installed'
            - class_notes: |
               # wget -O salt_install.sh http://bootstrap.saltstack.org<br/>
-
-         -
-           - h2: Lab
-           - p: 'Step Two: Read the help file on salt-bootstrap'
            - class_notes: |
-              # sh salt_install.sh -h
-
-         -
-           - h2: Lab
-           - p: 'Step Three: Install the Salt Master / Minion on the same box'
-           - p: 'Hint: "-A localhost" will be your friend...'
+              # sh salt_install.sh -h<br/>
            - class_notes: |
-              # sh install_salt.sh -M -A localhost
-
-         -
-           - h2: Lab
-           - p: 'Step Four: Verify that the Salt Master is installed'
+              # sh install_salt.sh -M -A localhost<br/>
            - class_notes: |
               # salt-master --versions-report
