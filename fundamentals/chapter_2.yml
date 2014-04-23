@@ -36,7 +36,7 @@ slides:
                6. Examples of salt-key show listing keys, adding key for specific minion, adding all key which are not added yet, delete a key for a specific minion, and finally delete all keys for all minions.
          -
            - h2: Salt Minion
-           - p: 'The Salt Minion service allows for a Salt Master to control it"
+           - p: 'The Salt Minion service allows for a Salt Master to control it'
            - ul:
              - /etc/salt/minion
              - /var/log/salt/minion
