@@ -21,7 +21,7 @@ slides:
              - /etc/init.d/salt-master
              - Communicate via ZeroMQ or SSH
              - SSH keys handled with salt-key
-             - code |
+             - code: |
                salt-key -L
                salt-key -a minion
                salt-key -A
@@ -52,7 +52,7 @@ slides:
              - Execution Modules
              - State Modules
              - and the rest...
-           - code |
+           - code: |
                salt '*' user.add name
            - class_notes: |
                1. Execution modules allow you to run processes on a minion.
