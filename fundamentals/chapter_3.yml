@@ -1,0 +1,58 @@
+---
+header:
+  author: PI
+  title: How Does Salt Compare?
+  description: How does salt stack up against other configuration management competitors?
+
+slides:
+
+   - set_global:
+       transition: rotate
+
+   -
+     - nested:
+         -
+           - h1: Salt, Chef, and Ansible Compared
+         -
+           - h2: About
+           - ul:
+             - "Chef is an industry standard for many years. Well known and well established. 'open' but not really"
+             - "Ansible is very recent, open source, very active on github, community driven development"
+             - "Salt is using them on version 0.8.9 in prod, Has a yearly Conference and certification program "
+         -
+           - h2: Philosophy
+           - ul:
+             - "Chef is about coding in ruby to suit your needs; uses a large pre-built base of cookbooks, or RYO"
+             - "Ansible is about simple, batteries included, easy to use and read without coding"
+             - "Salt is about simple yet deeply flexible infrastructure management, at high speeds, at an enterprise scale"
+         -
+           - h2: Languages
+           - ul:
+             - "Chef: Ruby using a specialize DSL (Domain Specific Language)"
+             - "Ansible: Python, but users use YAML"
+             - "Saltstack: Python but users use YAML"
+         -
+           - h2: Architecture
+           - ul:
+             - "Chef: Server + Client agent, or Solo (no network component)"
+             - "Ansible: Agentless (uses ssh)"
+             - "Salt: Master + Minion (client), or Standalone"
+         -
+           - h2: Style
+           - ul:
+             - "Chef: Code based pull)"
+             - "Ansible: YAML based push"
+             - "Salt: YAML based pull"
+         -
+           - h2: Communication Style
+           - ul:
+             - "Chef: custom SSL"
+             - "Ansible: SSH, MQ option"
+             - "Salt: MQ, SSH"
+         -
+           - h2: Advantages of Salt
+           - ul:
+             - Agents add flexibility
+             - HA options availible
+             - Highly modular
+             - Friendly community driven development
