@@ -20,4 +20,6 @@ do
     python build_single.py $i > $i_comp.yml
     echo "******** Generating Slides on $i ********"
     python revelator/write_it $i_comp.yml output/$i
+    echo "******** Hacking stylesheets for $i ********"
+    sed -e '32s/#eeeeee/#000000/' -i output/fundamentals/css/theme/default.css
 done
