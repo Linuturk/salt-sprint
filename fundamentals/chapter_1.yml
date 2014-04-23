@@ -23,38 +23,39 @@ slides:
          -
            - h1: What can Salt do?
            - ul:
-             - configure
-             - deploy
-             - build
-             - execute and retrieve
-             - monitor
+             - Configure
+             - Deploy
+             - Build
+             - Execute and retrieve
+             - Monitor
            - class_notes: |
                1. Talk to configuration management in general.
-               2. talk about building infrastructure via salt-cloud.
+               2. Talk about building infrastructure via salt-cloud.
                3. Talk about running remote command adhoc, and speak to retrieving data about nodes.
 
          -
            - p: '<table style="display:inline-block;:"><tr><td><img style="width: 300px" src="http://www.john-james-andersen.com/wp-content/uploads/opscode_chef_html_logo.jpg"></td><td><img style="width: 300px" src="http://siliconflorist.com/wp-content/uploads/2010/07/puppet-labs.jpg"></td></tr><tr><td><img style="width: 300px" src="http://www.socallinuxexpo.org/sites/default/files/logos/AnsibleLogo_transparent_web.png"></td><td><img style="width: 300px" src="http://static.squarespace.com/static/524cf70fe4b05018590c3fb3/t/52718a36e4b079ec23e2c895/1383172756774/SaltStack%20logo%20-%20black%20on%20white.png?format=300w"></td></tr></table>'
            - class_notes: |
                1. Speak to the community around configuration management. And the differeing tools out there.
-               2. Mentione that we will compare them directly later but for now just use this to build context around what salt does.
+               2. Mention that we will compare them directly later but for now just use this to build context around what salt does.
 
          -
            - h2: Who uses Salt now?
            - ul:
              - Rackspace
              - Customers
-             - Linkdin
+             - Linkedin
              - You?
            - class_notes: |
                1. Give examples of how rackers have used salt. Example (heartbleed patching)
                2. Find examples of where customers have used salt or configuration management.
                3. See if any in the room have used salt.
+               4. Touch on salts scale, Linkedin has more than 10k servers managed by a single master
 
          -
            - h2: What could you use Salt for?
            - ul:
-             - 'In small groups discuss otherways salt could help improve a customers infrastructure.'
+             - 'In small groups discuss other ways salt could help improve a customers infrastructure.'
              - 'See what examples you can come up with where configuration management like salt would have saved time or resources.'
            - class_notes: |
                1. Get the class involved. However they want to come up with use cases based on what the know now, which isnt much but the concepts should be imediately practical
