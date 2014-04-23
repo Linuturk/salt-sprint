@@ -24,14 +24,16 @@ slides:
              - Multiple OS support
              - Highly extendable
              - Can install Salt Master / Minion
-             - Can use GitHub tags like packages.
+             - Can use GitHub tags like packages
            - class_notes: |
-               Created and maintained by Pedro Algarvio.  Pedro has more commits than Thomas Hach, the CTO and founder of SaltStack.
+               Created and maintained by Pedro Algarvio.  Fun fact: Pedro has more commits than Thomas Hach, the CTO and founder of SaltStack.
 
          -
            - h2: 'Download salt-bootstrap'
            - code: |
               # curl -o salt_install.sh -L http://bootstrap.saltstack.org
+           - class_notes: |
+              Created and maintained by Pedro Algarvio.  Fun fact: Pedro has more commits than Thomas Hach, the CTO and founder of SaltStack.
 
          -
            - h2: 'Run salt-bootstrap'
@@ -63,7 +65,7 @@ slides:
            - h2: Lab
            - p: Install SaltStack Master and Minion on the same machine
            - class_notes: |
-              $ curl -o salt_install.sh -L http://bootstrap.saltstack.org
+              $ curl -o salt_install.sh -L http://bootstrap.saltstack.org<br/>
               $ sudo sh salt_install.sh -M
 
          -
