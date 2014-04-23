@@ -5,11 +5,6 @@ header:
   description: Example commands and state files for various tasks.
 
 slides:
-
-   - set_global:
-       transition: rotate
-       background: 'black'
-
    -
      - nested:
          -

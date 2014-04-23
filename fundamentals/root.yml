@@ -3,4 +3,7 @@ header:
   author: Rackspace University
   title: Salt Fundamentals
   description: Salt Fundamentals
-slides: []
+slides:
+  - set_global:
+     transition: rotate
+     background: 'white'

@@ -5,11 +5,6 @@ header:
   description: Ansible Fundamentals Course
 
 slides:
-
-   - set_global:
-       transition: rotate
-       background: 'white'
-
    -
      - nested:
          -
