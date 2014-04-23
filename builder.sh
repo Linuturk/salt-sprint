@@ -4,10 +4,17 @@
 # Exit if any command returns non-zero
 set -e
 
-echo "******** Setting up Revelator ********"
-rm -rf revelator
-git clone https://github.com/mpdehaan/revelator.git
-ln -fs revelator/reveal_js_261
+
+if [ -d revelator ]; then
+  echo "******** Checking for latest version of Revelator ********"
+  cd revelator
+  git pull
+  cd ..
+else
+  echo "******** Downloading Revelator ********"
+  git clone https://github.com/mpdehaan/revelator.git
+  ln -fs revelator/reveal_js_261
+fi
 
 echo "******** Looping over folders ********"
 for i in fundamentals lunchlearn operational
