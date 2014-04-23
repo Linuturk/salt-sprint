@@ -34,7 +34,7 @@ slides:
                3. Talk about running remote command adhoc, and speak to retrieving data about nodes.
 
          -
-           - p: '<table style="display:inline-block;:"><tr><td><img style="width: 30%" src="http://www.john-james-andersen.com/wp-content/uploads/opscode_chef_html_logo.jpg"></td><td><img style="width: 30%" src="http://siliconflorist.com/wp-content/uploads/2010/07/puppet-labs.jpg"></td></tr><tr><td><img style="width: 30%" src="http://cdn2.hubspot.net/hub/330046/file-449187601-png/ansible_badge.png?t=1389409622000"></td><td><img style="width: 30%" src="http://static.squarespace.com/static/524cf70fe4b05018590c3fb3/t/52718a36e4b079ec23e2c895/1383172756774/SaltStack%20logo%20-%20black%20on%20white.png?format=300w"></td></tr></table>'
+           - p: '<table style="display:inline-block;:"><tr><td><img style="width: 30%" src="http://www.john-james-andersen.com/wp-content/uploads/opscode_chef_html_logo.jpg"></td><td><img style="width: 30%" src="http://siliconflorist.com/wp-content/uploads/2010/07/puppet-labs.jpg"></td></tr><tr><td><img style="width: 30%" src="http://www.socallinuxexpo.org/sites/default/files/logos/AnsibleLogo_transparent_web.png"></td><td><img style="width: 30%" src="http://static.squarespace.com/static/524cf70fe4b05018590c3fb3/t/52718a36e4b079ec23e2c895/1383172756774/SaltStack%20logo%20-%20black%20on%20white.png?format=300w"></td></tr></table>'
            - class_notes: |
                1. Speak to the community around configuration management. And the differeing tools out there.
                2. Mentione that we will compare them directly later but for now just use this to build context around what salt does.
