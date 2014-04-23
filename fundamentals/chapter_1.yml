@@ -35,11 +35,10 @@ slides:
 
          -
            - h2: Salt is not alone
-           - ul:
-             - image: 'http://www.john-james-andersen.com/wp-content/uploads/opscode_chef_html_logo.jpg'
-             - image: 'http://siliconflorist.com/wp-content/uploads/2010/07/puppet-labs.jpg'
-             - image: 'https://raw.githubusercontent.com/Linuturk/salt-sprint/master/lunchlearn/ansible_logo.png'
-             - image: 'http://img3.douban.com/view/event_poster/raw/public/08697a2855f3392.jpg'
+           - image: 'http://www.john-james-andersen.com/wp-content/uploads/opscode_chef_html_logo.jpg'
+           - image: 'http://siliconflorist.com/wp-content/uploads/2010/07/puppet-labs.jpg'
+           - image: 'https://raw.githubusercontent.com/Linuturk/salt-sprint/master/lunchlearn/ansible_logo.png'
+           - image: 'http://img3.douban.com/view/event_poster/raw/public/08697a2855f3392.jpg'
            - class_notes: |
                1. Speak to the community around configuration management. And the differeing tools out there.
                2. Mentione that we will compare them directly later but for now just use this to build context around what salt does.
