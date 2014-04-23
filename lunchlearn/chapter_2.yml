@@ -8,6 +8,7 @@ slides:
 
    - set_global:
        transition: rotate
+       color: 'black'
        background: '#FFFFFF'
 
    -
