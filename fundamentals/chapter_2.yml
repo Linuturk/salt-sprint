@@ -1,0 +1,58 @@
+---
+header:
+  author: Eric Hernandez
+  title: Salt Architecture
+  description: Identify and understand the major components of a Salt deployment and their relationships to each other.
+
+slides:
+   -
+     - nested:
+         -
+           - h1: Salt Architecture
+           - ul:
+             - Master and Minions
+             - Salt Modules
+         -
+           - h2: Salt Master
+           - p: 'The Salt Master is the controller of your Salt Minions'
+           - ul:
+             - /etc/salt/master
+             - /var/log/salt/master
+             - /etc/init.d/salt-master
+             - Communicate via ZeroMQ or SSH
+             - SSH keys handled with salt-key
+             - code |
+               salt-key -L
+               salt-key -a minion
+               salt-key -A
+               salt-key -d minion
+               salt-key -d
+           - class_notes: |
+             1. The salt master allows you to interact with salt minions.
+             2. The configuration file for the Salt Master is located in /etc/salt/master.
+             3. The service script for the Salt Master is located in /etc/init.d/salt-master.
+             4. The log file for the Salt Master is located in /var/log/salt/master.
+             5. The command salt-key works with the SSH keys used for master->minion connections.
+             6. Examples of salt-key show listing keys, adding key for specific minion, adding all key which are not added yet, delete a key for a specific minion, and finally delete all keys for all minions.
+         -
+           - h2: Salt Minion
+           - p: 'The Salt Minion service allows for a Salt Master to control it"
+           - ul:
+             - /etc/salt/minion
+             - /var/log/salt/minion
+             - /etc/init.d/salt-minion
+           - class_notes: |
+             1. The salt master allows you to interact with salt minions.
+             2. The configuration file for the Salt Master is located in /etc/salt/master.
+             3. The service script for Salt Minion is located in /etc/init.d/salt-minion.
+         -
+           - h2: Salt Modules
+           - p: 'Execution Modules and State Modules'
+           - ul:
+             - Execution Modules
+             - State Modules
+             - and the rest...
+           - class_notes: |
+             1. Execution modules allow you to run processes on a minion.
+             2. State Modules are built on top of Execution Modules and allow you to combine actions in to a single state file.
+             3. Salt execution modules are different from state modules and cannot be called directly within state files. You must use the module state module to call execution modules within state runs.
