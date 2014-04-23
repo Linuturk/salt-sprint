@@ -31,15 +31,15 @@ slides:
          -
            - h2: 'Download salt-bootstrap'
            - code: |
-              # curl -o salt_install.sh -L http://bootstrap.saltstack.org
+              # wget -O salt_install.sh http://bootstrap.saltstack.org
            - class_notes: |
               Created and maintained by Pedro Algarvio.  Fun fact: Pedro has more commits than Thomas Hach, the CTO and founder of SaltStack.
 
          -
            - h2: 'Run salt-bootstrap'
            - code: |
-              # sh salt_install.sh [FLAG]
-           - p: 'This example will install the minion, but -h will list all the flags.'
+              # sh salt_install.sh
+           - p: 'This example will install the minion, but -h will list all the flags. Go read them.'
            - class_notes: |
                The goal is to get the to read the help notes on the script.
                They can be view here as well, https://github.com/saltstack/salt-bootstrap/blob/develop/bootstrap-salt.sh
@@ -63,14 +63,25 @@ slides:
 
          -
            - h2: Lab
-           - p: Install SaltStack Master and Minion on the same machine
+           - p: 'Step One: Download the salt-bootstrap script and read the help'
            - class_notes: |
-              $ curl -o salt_install.sh -L http://bootstrap.saltstack.org<br/>
-              $ sudo sh salt_install.sh -M
+              # wget -O salt_install.sh http://bootstrap.saltstack.org<br/>
 
          -
            - h2: Lab
-           - p: Verify that Salt Master / Minion installed correctly
+           - p: 'Step Two: Read the help file on salt-bootstrap'
            - class_notes: |
-              $ salt-master --versions-report
-              $ salt-minion --versions-report
+              # sh salt_install.sh -h
+
+         -
+           - h2: Lab
+           - p: 'Step Three: Install the Salt Master / Minion on the same box'
+           - p: 'Hint: "-A localhost" will be your friend...'
+           - class_notes: |
+              # sh install_salt.sh -M -A localhost
+
+         -
+           - h2: Lab
+           - p: 'Step Four: Verify that the Salt Master is installed'
+           - class_notes: |
+              # salt-master --versions-report
