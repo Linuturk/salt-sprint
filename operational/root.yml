@@ -3,4 +3,7 @@ header:
   author: Rackspace University
   title: Operational Salt
   description: Operational Salt
-slides: []
+slides:
+  - set_global:
+    transition: rotate
+    background: 'black'
