@@ -8,7 +8,7 @@ slides:
 
    - set_global:
        transition: rotate
-       background: '#565656'
+       background: '#FFFFFF'
 
    -
      - nested:
