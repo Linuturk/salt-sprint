@@ -1,66 +1,64 @@
 ---
 header:
   author: CC, PI
-  title: Chapter 1, Ansible Fundamentals
-  description: Ansible Fundamentals Course
+  title: Chapter 1, Salt Fundamentals
+  description: Salt Fundamentals Course
 
 slides:
    -
      - nested:
          -
-           - h1: What is Ansible?
-           - ul: 
-             - Clear
-             - Fast
-             - Complete
-             - Efficient
-             - Secure
+           - h1: Why use Salt?
+           - ul:
+             - Automate
+             - Configure
+             - Deploy
+             - Provision
+           - class_notes: |
+               1. Explain the need for automation in the ever growing scale of modern IT infrastructure. Example "patching heartbleed"
+               2. Speak to the need to eliminate snow flake servers. Those special servers that can never be replicated
+               3. Talk about deploying applications from source control and other uses
+               4. Speak to the need for provisioning resources dynamically in the API based world we now live in
 
          -
-           - h2: Clear
-           - p: 'A simple automation language allows Ansible to be used by anyone:'
+           - h1: What can Salt do?
            - ul:
-             - sysadmins
-             - developers
-             - IT managers
-           - p: It's easy to write, read, maintain, and evolve - without writing scripts or custom code.
-         -
-           - h2: Fast
-           - p: Ansible is easy to learn.
-           - p: Setup is fast.
+             - configure
+             - deploy
+             - build
+             - execute and retrieve
+             - monitor
            - class_notes: |
-               1. You can automate in under 30 minutes. Forget about how it works, just do it.
-               2. No agents. SSH keys are typically already in place.
+               1. Talk to configuration management in general.
+               2. talk about building infrastructure via salt-cloud.
+               3. Talk about running remote command adhoc, and speak to retrieving data about nodes.
+
          -
-           - h2: Complete
-           - p: 'Ansible is several tools in one:'
+           - h2: Salt is not alone
            - ul:
-             - configuration management
-             - application deployment
-             - orchestration
-             - provisioning
-           - p: Hundreds of built-in modules.
-         -
-           - h2: Efficient
-           - p: Ansible doesn't require a custom agent or software to install. 
-           - p: Ansible runs on OpenSSH. 
+             - image: 'http://www.john-james-andersen.com/wp-content/uploads/opscode_chef_html_logo.jpg'
+             - image: 'http://siliconflorist.com/wp-content/uploads/2010/07/puppet-labs.jpg'
+             - image: 'https://raw.githubusercontent.com/Linuturk/salt-sprint/master/lunchlearn/ansible_logo.png'
+             - image: 'http://img3.douban.com/view/event_poster/raw/public/08697a2855f3392.jpg'
            - class_notes: |
-               1. With no additional software infrastructure, you don't have to
-               worry about managing the management tool.
-               2. That means anywhere SSH goes, Ansible goes.
-               3. It doesn't suck memory or CPU resources when it is not in use.
-               4. Designed from day one to automate no-downtime rolling updates
-               and multi-tier orchestration.
+               1. Speak to the community around configuration management. And the differeing tools out there.
+               2. Mentione that we will compare them directly later but for now just use this to build context around what salt does.
+
          -
-           - h2: Secure
-           - p: No agent. 
-           - p: SSH transport.
-           - p: Ansible plays can be read by anyone. 
+           - h2: Who uses Salt now?
+           - ul:
+             - Rackspace
+             - Customers
+             - Linkdin
+             - You?
            - class_notes: |
-               1. It doesn't need additional ports or root level daemons.
-               2. It uses built-in OS authentication for better security - login
-               as who you are, sudo if you want to sudo.
-               3. You can work with tools like Kerberos, LDAP, and sssd.
-               4. OpenSSH is the most peer-reviewed security component around.
-               5. This makes it auditable. You know what you're automating,
-               and bugs have nowhere to hide.
+               1. Give examples of how rackers have used salt. Example (heartbleed patching)
+               2. Find examples of where customers have used salt or configuration management.
+               3. See if any in the room have used salt.
+
+         -
+           - h2: What could you use Salt for?
+           - p: 'In small groups discuss otherways salt could help improve a customers infrastructure.'
+           - p: 'See what examples you can come up with where configuration management like salt would have saved time or resources.'
+           - class_notes: |
+               1. Get the class involved. However they want to come up with use cases based on what the know now, which isnt much but the concepts should be imediately practical
