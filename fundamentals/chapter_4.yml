@@ -19,7 +19,7 @@ slides:
 
          -
            - h2: salt-bootstrap
-           - p: 'salt-bootstrap is the preferred method to install SaltStack.'
+           - p: 'salt-bootstrap is the easiest method to install SaltStack.'
            - ul:
              - Multiple OS support
              - Highly extendable
@@ -47,7 +47,7 @@ slides:
          -
            - h2: 'Verify installation'
            - code: |
-              # salt-minon --versions-report
+              # salt-master --versions-report
            - p: 'If installed correctly, you will see something like:'
            - code: |
               Salt: 2014.1.0
@@ -67,6 +67,7 @@ slides:
            - p: 'Step Two: Read the help file on salt-bootstrap'
            - p: 'Step Three: Install the Salt Master / Minion on the same box'
            - p: 'Step Four: Verify that the Salt Master is installed'
+           - p: 'Bonus: Are there any salt keys to accept?'
            - class_notes: |
               # wget -O salt_install.sh http://bootstrap.saltstack.org<br/>
            - class_notes: |
@@ -75,3 +76,5 @@ slides:
               # sh install_salt.sh -M -A localhost<br/>
            - class_notes: |
               # salt-master --versions-report
+           - class_notes: |
+              # salt-key
