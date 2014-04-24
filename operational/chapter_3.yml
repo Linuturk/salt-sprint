@@ -17,8 +17,6 @@ slides:
              - Running Commands
              - Output print options
 
-             - Lab: Add a user
-
          -
            - h2: What is an Execution Module
            - p: 'Execution modules are used when calling modules directly from the command line'
