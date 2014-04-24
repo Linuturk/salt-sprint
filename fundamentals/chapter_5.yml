@@ -130,7 +130,7 @@ slides:
          -
            - h2: Your turn!
            - ul:
-             - Write a state.sls file that will install the nginx webserver
+             - Write a state.sls file that will install the cowsay package
              - execute that state file from the command line using the state.sls module
            - p: hint
            - code: |
@@ -154,6 +154,10 @@ slides:
                SSH to your salt master, and run the command "salt '*' grains.items" and show the class all the various data collected in grains.
 
          -
-           - h2: Lab
-           - p: Find an execution or state module in SaltStack's Documentation and share it with the class.
-           - link: [ 'http://docs.saltstack.org', 'http://docs.saltstack.org' ]
+           - h2: Write your own state file to...
+           - ul:
+             - install the nginx webserver package
+             - start the ngnix service
+             - add the user thatch
+           - class_notes: |
+               1. last task of the day, challenge them to weild there newly learned skills and get as much out of this lab as they can. This is the time to break stuff and figure out what is really going on.
