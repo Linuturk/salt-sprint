@@ -18,7 +18,7 @@ slides:
            - ul:
              - "Chef (2009) has been an industry standard, Puppet lineage, (2) flavors: Open Source, and Enterprise (adds hosted/private server, push capable, better web UI, central authentication, multi-tenancy, RBAC, reporting and support)"
              - "Ansible (2012) is very recent, fully open source, active community driven development, (3) flavors: Guru (command line core only), Tower (adds web UI, LDAP, ReST API), and Enterprise Tower (adds support + SLA) "
-             - "Salt (2011) comes between Ansible and Chef in capability, originally for remote execution "
+             - "Salt (2011) comes between Ansible and Chef in capability, fully open source, supports Windows, originally for remote execution "
          -
            - h2: User Experiences
            - ul:
@@ -42,7 +42,7 @@ slides:
            - class_notes: |
                Explain basic notion of a DSL, show Ruby v. YAML code snippets (next slide)
          -
-           - h2: Ruby v. YAML
+           - h2: Adduser in Ruby
            - code: |
                user "fred" do
                  supports :manage_home => true
@@ -65,7 +65,7 @@ slides:
                Explain what ruby code is doing (creating a user 'fred')
                Assumes groups wheel and storage already exist
          -
-           - h2: Ruby v. YAML
+           - h2: Adduser in YAML
            - code: |
                fred:
                  user.present:
@@ -90,7 +90,7 @@ slides:
            - ul:
              - "Chef: Code based pull, but added ZeroMQ push feature recently"
              - "Ansible: YAML based push using ssh or ZeroMQ"
-             - "Salt: YAML based pull/command push"
+             - "Salt: YAML based push/pull"
            - class_notes: |
                Explain basic notion of a message queue, and push v. pull models
          -
@@ -98,9 +98,9 @@ slides:
            - ul:
              - "Chef: standard key-based SSL"
              - "Ansible: standard SSH (or paramiko), MQ option"
-             - "Salt: MQ, custom AES"
+             - "Salt: MQ, custom SSH"
            - class_notes: |
-               Verify understanding of SSL, MQ, AES
+               Verify understanding of SSL, MQ
          -
            - h2: Templating
            - ul:
@@ -109,10 +109,12 @@ slides:
              - "Salt: Jinja2, others"
            - class_notes: |
                Explain notion of templating
+               Mention Ansible and Salt use jinja2 differently 
+                 i.e. Ansible parses YAML files 1st, then does jinja2; Salt does jinja interpolations, then parses as YAML
          -
            - h2: Advantages of Salt
            - ul:
-             - Agents add flexibility
+             - Agents add (targeting) flexibility
              - HA options availible
              - Highly modular
              - Friendly community driven development
