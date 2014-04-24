@@ -1,4 +1,4 @@
----
+----
 header:
   author: PI
   title: How Does Salt Compare?
@@ -12,25 +12,73 @@ slides:
    -
      - nested:
          -
-           - h1: Salt, Chef, and Ansible Compared
+           - h1: Salt v. Chef v. Ansible
          -
-           - h2: About
+           - h2: Nutshell
            - ul:
-             - "Chef is an industry standard for many years. Well known and well established. 'open' but not really"
-             - "Ansible is very recent, open source, very active on github, community driven development"
-             - "Salt is using them on version 0.8.9 in prod, Has a yearly Conference and certification program "
+             - "Chef (2009) has been an industry standard, Puppet lineage, (2) flavors: Open Source, and Enterprise (adds hosted/private server, push capable, better web UI, central authentication, multi-tenancy, RBAC, reporting and support)"
+             - "Ansible (2012) is very recent, fully open source, active community driven development, (3) flavors: Guru (command line core only), Tower (adds web UI, LDAP, ReST API), and Enterprise Tower (adds support + SLA) "
+             - "Salt (2011) comes between Ansible and Chef in capability, originally for remote execution "
+         -
+           - h2: User Experiences
+           - ul:
+             - p: Chef video snippets
+             - p: Ansible video snippets
+             - p: Salt video snippets
          -
            - h2: Philosophy
            - ul:
-             - "Chef is about coding in ruby to suit your needs; uses a large pre-built base of cookbooks, or RYO"
-             - "Ansible is about simple, batteries included, easy to use and read without coding"
-             - "Salt is about simple yet deeply flexible infrastructure management, at high speeds, at an enterprise scale"
+             - "Chef is about coding in ruby to suit your needs, and leverages a large pre-built base of re-usable code"
+             - "Ansible is about simple, extensible, batteries included, best ease of use, no coding"
+             - "Salt is about simple, extensible, ultra high speed, enterprise scale, batteries included, coding optional"
+           - class_notes: |
+               Make sure everyone understands scaling
          -
            - h2: Languages
            - ul:
-             - "Chef: Ruby using a specialize DSL (Domain Specific Language)"
-             - "Ansible: Python, but users use YAML"
-             - "Saltstack: Python but users use YAML"
+             - "Chef: Ruby code using a specialize DSL (Domain Specific Language)"
+             - "Ansible: Python (but YAML for users)"
+             - "Saltstack: Python (but YAML for users)"
+           - class_notes: |
+               Explain basic notion of a DSL, show Ruby v. YAML code snippets (next slide)
+         -
+           - h2: Ruby v. YAML
+           - code: |
+               user "fred" do
+                 supports :manage_home => true
+                 comment "Fred Flintstone"
+                 uid 4000
+                 home "/home/fred"
+                 shell "/bin/zsh"
+               end
+               group "wheel" do
+                 action :modify
+                 members "fred"
+                 append true
+               end
+               group "storage" do
+                 action :modify
+                 members "fred"
+                 append true
+               end
+           - class_notes: |
+               Explain what ruby code is doing (creating a user 'fred')
+               Assumes groups wheel and storage already exist
+         -
+           - h2: Ruby v. YAML
+           - code: |
+               fred:
+                 user.present:
+                   - fullname: Fred Flintstone
+                   - shell: /bin/zsh
+                   - home: /home/fred
+                   - uid: 4000
+                   - gid: 4000
+                   - groups:
+                     - wheel
+                     - storage
+           - class_notes: |
+               Explain how YAMLis doing the same thing (creating a user 'fred')
          -
            - h2: Architecture
            - ul:
@@ -38,17 +86,29 @@ slides:
              - "Ansible: Agentless (uses ssh)"
              - "Salt: Master + Minion (client), or Standalone"
          -
-           - h2: Style
+           - h2: Management 
            - ul:
-             - "Chef: Code based pull)"
-             - "Ansible: YAML based push"
-             - "Salt: YAML based pull"
+             - "Chef: Code based pull, but added ZeroMQ push feature recently"
+             - "Ansible: YAML based push using ssh or ZeroMQ"
+             - "Salt: YAML based pull/command push"
+           - class_notes: |
+               Explain basic notion of a message queue, and push v. pull models
          -
-           - h2: Communication Style
+           - h2: Communications
            - ul:
-             - "Chef: custom SSL"
-             - "Ansible: SSH, MQ option"
-             - "Salt: MQ, SSH"
+             - "Chef: standard key-based SSL"
+             - "Ansible: standard SSH (or paramiko), MQ option"
+             - "Salt: MQ, custom AES"
+           - class_notes: |
+               Verify understanding of SSL, MQ, AES
+         -
+           - h2: Templating
+           - ul:
+             - "Chef: Ruby ERB "
+             - "Ansible: Jinja2"
+             - "Salt: Jinja2, others"
+           - class_notes: |
+               Explain notion of templating
          -
            - h2: Advantages of Salt
            - ul:
