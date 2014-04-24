@@ -30,6 +30,26 @@ slides:
                2. Custom grains can be set via command line or in /etc/salt/grains.
 
          -
+           - h2: Command Line Examples
+           - code: |
+               salt '*' grains.ls
+               salt '*' grains.items
+               salt -G 'os:CentOS' test.ping
+           - class_notes: |
+               1. The first 2 command line examples list out the minion grains.
+               2. You can target based on grains using the '-G' flag via command line.
+
+         -
+           - h2: State example
+           - code: |
+               'role:web':
+                   - match: grain
+                   - webserver
+               'role:database':
+                   - match: grain
+                   - database
+
+         -
            - h2: Pillar
            - p: 'Designed to offer global variables to minions'
            - ul:
@@ -40,3 +60,15 @@ slides:
                1. Pillar provides a way to share data with all minions.
                2. Pillar top file and state files stored in /srv/pillar.
                3. Unlike state tree, pillar data is only available for the targeted minion specified by the matcher type. This makes it useful for storing sensitive data specific to a particular minion.
+
+         -
+           - h2: Examples
+           - code: |
+               salt '*' pillar.items
+               salt -P 'key:value' test.ping
+           - code: |
+               {{ pillar['key'] }}
+           - class_notes: |
+               1. List out pillar items.
+               2. You can target base on pillar with the '-P' flag.
+               3. You reference pillar items in state file using '{{ pillar['key'] }}' and the value of key will be dropped in.
