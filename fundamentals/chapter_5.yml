@@ -76,6 +76,8 @@ slides:
            - h2: State Modules
            - p: 'State modules are used when calling state.sls or highstate against a minion.'
            - code: |
+               salt '*' state.sls myslsfile
+           - code: |
                fred:
                  user.present:
                    - fullname: Fred Jones
@@ -88,7 +90,7 @@ slides:
                      - storage
                      - games
            - class_notes: |
-               1. Talk to the ability to write state files that make use of state modules.
+               1. Talk to the ability to write state files that make use of modules.
                2. State files are written in yaml
                3. Mention basic structure but point out how similar it is to running the same command earlier on command line.
 
