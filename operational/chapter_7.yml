@@ -26,7 +26,7 @@ slides:
              - templating
              - variables
            - p: ""
-           - link: ['File module docs', 'http://docs.saltstack.com/en/latest/ref/states/all/salt.states.file.html#module-salt.states.file']
+           - link: ['docs.saltstack.com', 'http://docs.saltstack.com/en/latest/ref/states/all/salt.states.file.html#module-salt.states.file']
            - class_notes: |
                1. These are the components of the file module that we are gonna focus on.
                2. There are many more that you can discover using the docs
