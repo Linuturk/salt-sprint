@@ -1,0 +1,94 @@
+---
+header:
+  author: Jason Swindle
+  title: Using Execution Modules
+  description: How to install a Salt Master / Minion and then verify the install.
+
+slides:
+  -
+     - nested:
+
+         -
+           - h1: Using Execution Modules
+           - ul:
+             - What is an Execution Module
+             - Documentation
+             - Installing a package
+             - Running Commands
+             - Output print options
+
+             - Lab: Add a user
+
+         -
+           - h2: What is an Execution Module
+           - p: 'Execution modules are used when calling modules directly from the command line'
+           - code: |
+               salt '*' user.add fred uid gid groups home shell
+           - class_notes: |
+               1. Speak to how basic targeting is done, with just * for now.
+               2. Talk about how Modules perform all the work for salt.
+               3. Show how you would use a module via the command line.
+
+         -
+           - h2: Documentation
+           - p: "Salt's documentation is embeded inside and can be reach via command-line"
+           - code: |
+               salt '*' sys.doc
+           - p: "Or you can run -d, --doc on newer versions of Salt."
+           - code: |
+               salt --doc
+           - class_notes: |
+               When in doubt, read the docs online; but know you have the at CLI.
+
+         -
+           - h2: Installing a package
+           - p: 'Installing a package from command-line very simple.  Just use pkg.install'
+           - code: |
+               salt '*' pkg.install cowsay
+           - class_notes: |
+               pkg.install is CLI and pkg.installed is used in state files.
+
+         -
+           - h2: Lab
+           - ul:
+             - 'Install cowsay on your minions'
+           - class_notes: |
+              salt '*' pkg.install cowsay
+
+         -
+           - h2: Running Commands
+           - p: Running arbitrary commands can come in handy for one time operations. This is done with the cmd.run module<br/>
+           - p: Execution Example
+           - code: |
+               salt '*' cmd.run 'cowsay HELLO EVERYBODY!'
+           - p: or
+           - code: |
+              salt \* cmd.run 'tail /var/log/syslog'
+           - class_notes: |
+              cmd.run is just like running the command on the remote machine.
+
+         -
+           - h2: Lab
+           - ul:
+             - 'Disable your firewall using cmd.run'
+           - class_notes: |
+              1. salt '*' cmd.run 'iptables -F'
+              2. Cannot be skipped
+
+         -
+           - h2: Output print options
+           - p: Salt can print a large range of formatted outputs using the --out flag<br/>
+           - code: |
+               grains, highstate, json, key, overstatestage, pprint, raw, txt, yaml
+           - class_notes: |
+               salt '*' test.ping --out json<br/>
+               To show that the test.ping is now JSONed
+
+         -
+           - h2: Lab
+           - ul:
+             - 'Add an user named "thatch" using cmd.run with JSON output'
+           - class_notes: |
+              1. salt '*' user.add thatch
+              2. This lab cannot be skipped, it is used later.
+              3. http://docs.saltstack.com/en/latest/ref/modules/all/salt.modules.useradd.html
