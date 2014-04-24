@@ -66,7 +66,7 @@ slides:
            - ul:
              - on your salt master run the test.ping module targeting all minions
              - Look up the documentation on the user module
-           - link: 'http://docs.saltstack.com/en/latest/ref/modules/all/salt.modules.useradd.html'
+           - link: ['http://docs.saltstack.com/en/latest/ref/modules/all/salt.modules.useradd.html', 'http://docs.saltstack.com/en/latest/ref/modules/all/salt.modules.useradd.html' ]
            - code: |
                salt --doc
            - class_notes: |
