@@ -41,25 +41,25 @@ slides:
                2. The configuration file for the Salt Master is located in /etc/salt/master.
                3. The service script for Salt Minion is located in /etc/init.d/salt-minion.
          -
-           - h2: Salt-key
-           - p: 'Managing Salt SSH keys'
-           - code: |
-               salt-key -L
-               salt-key -a minion
-               salt-key -A
-               salt-key -d minion
-               salt-key -d
+           - h2: Key Management
+           - ul:
+             - SSH keys use for communications
+             - Minions generate keys
+             - salt-key on Master
+             - /etc/salt/pki
            - class_notes: |
                1. The command salt-key works with the SSH keys used for master->minion connections.
-               2. Examples of salt-key show listing keys, adding key for specific minion, adding all key which are not added yet, delete a key for a specific minion, and finally delete all keys for all minions.
+               2. When the minion is first started it will generate cryptographic keys and attempt to connect to its configured master.
+               3. Next step is to go to the master and use accept the key from the minion using the command salt-key.
+               4. Keys stored in /etc/salt/pki on both master and minion, directory can be set in configuration files.
+         -
+           - image: 'http://jenkins.onitato.com:8080/job/Salt%20Sprint%20Slides/ws/fundamentals/salt-keys.png'
          -
            - h2: Salt Modules
            - ul:
              - Execution Modules
              - State Modules
              - and the rest...
-           - code: |
-               salt '*' user.add name
            - class_notes: |
                1. Execution modules, usually written in python, allow you to run processes on a minion.
                2. An example of an execution module is the useradd module.
