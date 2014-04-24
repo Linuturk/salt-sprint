@@ -50,8 +50,9 @@ slides:
                salt webservers cmd.run "service apache2 restart"
            - p: State Example
            - code: |
-               touch /tmp/foo:
+               touches_foo:
                  cmd.run:
+                   - name: touch /tmp/foo
                    - creates: /tmp/foo
            - class_notes: |
                Make sure you make the point that one of commands shouldn't be run over and over unless they are idempotent. Idempotent is the idea that a state file or command can be run over and over, and it checks to make sure it needs to perform an action before attempting to do so.
@@ -102,8 +103,9 @@ slides:
                salt '*' pkg.install vim
            - p: State Example
            - code: |
-               vim:
-                 pkg.installed
+               install_vim:
+                 pkg.installed:
+                   - name: vim
            - p: Package names can still be different between distributions. (ie. apache2 and httpd)
 
          -
@@ -119,9 +121,11 @@ slides:
                salt '*' service.start apache2
            - p: State Example
            - code: |
-               apache2:
+               run_apache2:
                  service:
                    - running
+                   - name: apache2
+                   - enable: True
            - p: Service names can still be different between distributions. (ie. apache2 and httpd)
 
          -
@@ -136,8 +140,9 @@ slides:
              - execute that state file from the command line using the state.sls module
            - p: hint
            - code: |
-               vim:
-                 pkg.installed
+               vim_install:
+                 pkg.installed:
+                   - name: vim
            - class_notes: |
                1. Have the students attempt to write a file that contains a state to install nginx
 
