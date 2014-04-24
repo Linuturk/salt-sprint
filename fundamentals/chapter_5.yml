@@ -15,26 +15,17 @@ slides:
              - command
              - pkg and service
              - Lab
+
          -
-           - h2: State and Execution Modules
-           - p: 'State modules are used when calling state.sls or highstate against a minion.'
-           - code: |
-               fred:
-                 user.present:
-                   - fullname: Fred Jones
-                   - shell: /bin/zsh
-                   - home: /home/fred
-                   - uid: 4000
-                   - gid: 4000
-                   - groups:
-                     - wheel
-                     - storage
-                     - games
-         -
-           - h2: State and Execution Modules
+           - h2: Execution Modules
            - p: 'Execution modules are used when calling modules directly from the command line.'
            - code: |
                salt '*' user.add fred uid gid groups home shell
+           - class_notes: |
+               1. Speak to how basic targeting is done, with just * for now.
+               2. Talk about how Modules perform all the work for salt.
+               3. Show how you would use a module via the command line.
+
          -
            - h2: test.ping
            - p: This is the most basic module you can run. It simply connects to the targeted minion(s) and returns True if that minion responds.
@@ -45,10 +36,12 @@ slides:
                minion2:
                    True
            - p: There is no matching state module for test.ping.
+
          -
            - h2: test.ping Demo
            - class_notes: |
                SSH to your salt master, and run the command "salt '*' test.ping" and show the output to the class.
+
          -
            - h2: Running Commands
            - p: Running arbitrary commands can come in handy for one time operations. This is done with the cmd.run module.
@@ -62,10 +55,43 @@ slides:
                    - creates: /tmp/foo
            - class_notes: |
                Make sure you make the point that one of commands shouldn't be run over and over unless they are idempotent. Idempotent is the idea that a state file or command can be run over and over, and it checks to make sure it needs to perform an action before attempting to do so.
+
          -
            - h2: Date Command Demo
            - class_notes: |
                SSH to your salt master, and run the command "salt '*' cmd.run date" and show the output to the class. This should output the result of the date command as run on each minion.
+
+         -
+           - h2: Your turn!
+           - ul:
+             - on your salt master run the test.ping module targeting all minions
+             - Look up the documentation on the user module
+           - link: http://docs.saltstack.com/en/latest/ref/modules/all/salt.modules.useradd.html
+           - code: |
+               salt --doc
+           - class_notes: |
+               1. Semi guided lab. There may be many who need help at first. Guide them through running the test.ping command and looking up documentation on a module.
+
+         -
+           - h2: State Modules
+           - p: 'State modules are used when calling state.sls or highstate against a minion.'
+           - code: |
+               fred:
+                 user.present:
+                   - fullname: Fred Jones
+                   - shell: /bin/zsh
+                   - home: /home/fred
+                   - uid: 4000
+                   - gid: 4000
+                   - groups:
+                     - wheel
+                     - storage
+                     - games
+           - class_notes: |
+               1. Talk to the ability to write state files that make use of state modules.
+               2. State files are written in yaml
+               3. Mention basic structure but point out how similar it is to running the same command earlier on command line.
+
          -
            - h2: Installing a Package
            - p: Package installations are abstracted by Salt. You don't have to invoke a specific yum or apt module, but a pkg module.
@@ -77,10 +103,12 @@ slides:
                vim:
                  pkg.installed
            - p: Package names can still be different between distributions. (ie. apache2 and httpd)
+
          -
            - h2: Installing sysstat Demo
            - class_notes: |
-               SSH to your salt master, and run the command "salt '*' pkg.install sysstat" and show the output to the class. This should install the vim package on the targeted minions, and show the old/new package versions.
+               SSH to your salt master, and run the command "salt '*' pkg.install sysstat" and show the output to the class. This should install the sysstat package on the targeted minions, and show the old/new package versions.
+
          -
            - h2: Starting a Service
            - p: Starting services is done with the service module.
@@ -93,10 +121,24 @@ slides:
                  service:
                    - running
            - p: Service names can still be different between distributions. (ie. apache2 and httpd)
+
          -
            - h2: Restart SSH Demo
            - class_notes: |
                SSH to your salt master, and run the command "salt '*' service.restart ssh" and show the output to the class. This should restart the ssh service and show True if successful.
+
+         -
+           - h2: Your turn!
+           - ul:
+             - Write a state.sls file that will install the nginx webserver
+             - execute that state file from the command line using the state.sls module
+           - p: hint
+           - code: |
+               vim:
+                 pkg.installed
+           - class_notes: |
+               1. Have the students attempt to write a file that contains a state to install nginx
+
          -
            - h2: Grains
            - p: A grain is a piece of data related directly to a Salt Minion. You can view all grains related to a node with the grains.items module.
@@ -105,10 +147,12 @@ slides:
            - p: You can target minions using data in grains. This example will target all your CentOS servers with a test.ping.
            - code: |
                salt -G 'os:CentOS' test.ping
+
          -
            - h2: Grains Demo
            - class_notes: |
                SSH to your salt master, and run the command "salt '*' grains.items" and show the class all the various data collected in grains.
+
          -
            - h2: Lab
            - p: Find an execution or state module in SaltStack's Documentation and share it with the class.
