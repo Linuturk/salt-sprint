@@ -8,6 +8,54 @@ slides:
    -
      - nested:
          -
+           - h1: Salt Terms
+
+         -
+           - h1: Master
+           - p: A central Salt daemon from which commands can be issued to listening minions.
+
+         -
+           - h1: Minion
+           - p: A server running a Salt minion daemon which can listen to commands from a master and perform the requested tasks. Generally, minions are servers which are to be controlled using Salt.
+           - image: 'http://www.soz6.com/sds-uploads/avatars/785ffe2588e37c31fc10bd47e529623122373.png'
+
+         -
+           - h1: Targeting
+           - p: Specifying which minions should run a command or execute a state by matching against hostnames, or system information, or defined groups, or even combinations thereof.
+
+         -
+           - h1: Module
+           - p: Functions called by the salt command that perform specific tasks.
+
+         -
+           - h1: Salt-key
+           - p: Executes simple management of Salt server public keys used for authentication between masters and minions.
+
+         -
+           - h1: Grain
+           - p: A key-value pair which contains a fact about a system, such as its hostname, network addresses.
+
+         -
+           - h1: SLS
+           - p: stands for Salt State.
+
+         -
+           - h1: State
+           - p: The definition of the desired state of salt minions, States comprise of single or multiple salt modules.
+
+         -
+           - h1: State Module
+           - p: A module which contains a set of state functions.
+
+         -
+           - h1: State Function
+           - p: A function which can manage the application of a particular state to a system. State functions frequently call out to one or more execution modules to perform a given task.
+
+         -
+           - h1: YAML
+           - p: is a human-readable data format.
+
+         -
            - h1: Why use Salt?
            - ul:
              - Automate
