@@ -1,0 +1,187 @@
+---
+header:
+  author: Kenneth Wilke
+  title: Writing Salt States
+  description: Cover the basics of writing salt states.
+
+slides:
+   -
+     - nested:
+         -
+           - h1: Writing Salt States
+           - ul: 
+             - Understand YAML syntax
+             - Write a basic state file
+             - Utilize Jinja for state file templating
+             - Target minions with top.sls
+
+         -
+           - h2: YAML
+           - p: YAML Ain't Markup Language
+           - ul:
+             - Human readable
+             - Superset of JSON
+             - 'Basic Structures: List, Associative Array'
+             - The de-facto data structure for Salt States
+
+         -
+           - h2: Lists in YAML
+           - p: Block format
+           - code: |
+               - lions
+               - tigers
+               - bears
+           - p: Inline format
+           - code: |
+               [lions, tigers, bears]
+           - p: Oh my
+
+         -
+           - h2: Associative arrays in YAML
+           - p: Block format
+           - code: |
+               key: value
+               username: lovekittyvideos
+               password: can_haz_cheezburger
+           - p: Inline format
+           - code: |
+               {key: value, username: lovekittyvideos, password: can_haz_cheezburger}
+
+         -
+           - h2: Complex structures in YAML
+           - p: Nested associative array
+           - code: |
+               John Doe:
+                 age: 30
+           - p: List of associative arrays
+           - code: |
+               - {name: John Doe, age: 30}
+               - name: Jane Doe
+                 age: 32
+           - p: Associative array of Lists
+           - code: |
+               men: [John, Frank]
+               women: 
+                 - Jane
+                 - Susie
+
+         -
+           - h2: What's in a Salt State
+           - p: A salt state consists of identifiers, state module and function declarations, and sometimes function parameters
+           - ul:
+             - Identifiers name the resources to operate on
+             - State modules bundle functionality to manage a type of resource
+             - State functions are used to define the desired state of the resource
+             - Function parameters provide specific details for the state function
+
+         -
+           - h2: Basic Salt State
+           - p: A state file to ensure mysql-server is installed
+           - h6: /srv/salt/mysql.sls
+           - code: |
+               mysql-server:    # Identifier
+                 pkg:           # State module
+                   - installed  # State function
+           - p: You may also supply the State module and function on a single line
+           - code: |
+               mysql-server:     # Identifier
+                  pkg.installed  # State module and function on the same line
+
+         -
+           - h2: Salt State with function parameters
+           - p: A state file to ensure the directory <b>/tmp/test</b> exists
+           - h6: /srv/salt/testfolder.sls
+           - code: |
+               /tmp/test:           # Identifier
+                 file.directory:    # State module and function
+                   - user: root     # State function parameter
+                   - dir_mode: 644  # Another parameter
+
+         -
+           - h2: Applying a Salt State
+           - p: Applying the <b>/srv/salt/mysql.sls</b> Salt State to all minions
+           - code: |
+               salt '*' state.sls mysql
+
+         -
+           - h2: Lab
+           - ul:
+             - 'Write a salt state <b>/srv/salt/apache.sls</b> that ensures apache is installed'
+             - 'Apply this new state to a minion'
+
+         -
+           - h2: Jinja
+           - ul:
+             - Templating framework for Python
+             - Inspired by Django's templating language
+
+         -
+           - h2: Variables in Jinja
+           - p: Use double curly brackets for variable substitution
+           - code: |
+               Hello, {{ name }}.
+           - p: Rendered template
+           - code: |
+               Hello, Clarice.
+
+         -
+           - h2: Loops in Jinja
+           - p: Use curly bracket and percent for control structures such as loops
+           - h6: A loop in Jinja
+           - code: |
+               {% for username in ['root', 'apache'] %}
+               - {{ username }}
+               {% endfor %}
+           - p: Rendered template
+           - code: |
+               - root
+               
+               - apache
+               
+
+         -
+           - h2: Jinja in a Salt State
+           - p: Managing multiple users with a loop
+           - code: |
+               {% for username in ['root', 'apache', 'bob'] %}
+               {{ username }}:
+                 user.present
+               {% endfor %}
+           - p: Rendered Salt State
+           - code: |
+               root:
+                 user.present
+               
+               apache:
+                 user.present
+               
+               bob:
+                 user.present
+
+         -
+           - h2: Target minions with the top file
+           - ul:
+             - <b>/srv/salt/top.sls</b> is the "top file"
+             - Generates the <b>highstate</b>, a collection of states to apply to a minion
+             - Supports multiple environments, <b>base</b> is the default
+
+         -
+           - h2: Example top.sls file
+           - code: |
+               base:         # Environment
+                 '*':        # Minion targeting; * matches all minions
+                   - mysql   # State to apply to all minions
+                 'web*':     # Target minions with names that start with 'web'
+                   - apache  # State to apply to select minions
+
+         -
+           - h2: Applying highstate
+           - p: Apply highstate to all minions
+           - code: |
+               salt '*' state.highstate
+
+         -
+           - h2: Lab
+           - ul:
+             - 'Write a topfile that will apply the apache state to all minions'
+             - 'Run <b>state.highstate</b> to verify'
