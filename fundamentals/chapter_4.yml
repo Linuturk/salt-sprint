@@ -14,6 +14,7 @@ slides:
              - salt-bootstrap
              - Download salt-bootstrap
              - Run salt-bootstrap
+             - Salt Keys
              - Verify installation
              - Lab
 
