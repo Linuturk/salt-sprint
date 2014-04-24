@@ -72,3 +72,15 @@ slides:
                1. List out pillar items.
                2. You can target base on pillar with the '-P' flag.
                3. You reference pillar items in state file using '{{ pillar['key'] }}' and the value of key will be dropped in.
+
+         -
+           - h2: 'Lab: Using Grains'
+           - p: 'Use grains in a state file to install a package tergeting minions with a specific grain.'
+           - class_notes: |
+               1. Lab will have them use grain data in a state file to set what package gets installed.
+
+         -
+           - h2: 'Lab: Using Pillar'
+           - p: 'Set pillar data based on OS grain and use that pillar data in the state created in the previous lab instead of the grain.'
+           - class_notes: |
+               1. Lab will have them set pillar data targeted by os grain, and use that pillar data in the state instead of the previous grain if statement.
