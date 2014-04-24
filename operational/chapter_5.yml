@@ -1,0 +1,42 @@
+---
+header:
+  author: Eric Hernandez
+  title: Salt Operational, Chapter 5, Leveraging Grains and Pillars
+  description: Explore the uses for the information provided by Salt grain and pillar data.
+
+slides:
+   -
+     - nested:
+         -
+           - h1: Leveraging Grains and Pillars
+           - ul: 
+             - Grains
+             - Pillar
+             - Targeting
+           - class_notes: |
+               1. Understand grains and its uses.
+               2. Understand pillars and its uses.
+               3. Targeting based on pillar variables and grains in states and command line.
+
+         -
+           - h2: Grains
+           - p: 'Information about the system the minion is running on or custom grains'
+           - ul:
+             - Static info from minion start
+             - Custom grains
+             - /etc/salt/grains
+           - class_notes: |
+               1. Grains give infomation about the underlying system the minion is running on. 
+               2. Custom grains can be set via command line or in /etc/salt/grains.
+
+         -
+           - h2: Pillar
+           - p: 'Designed to offer global variables to minions'
+           - ul:
+             - Managed like Salt State Tree
+             - /srv/pillar
+             - Storing sensitive data
+           - class_notes: |
+               1. Pillar provides a way to share data with all minions.
+               2. Pillar top file and state files stored in /srv/pillar.
+               3. Unlike state tree, pillar data is only available for the targeted minion specified by the matcher type. This makes it useful for storing sensitive data specific to a particular minion.
