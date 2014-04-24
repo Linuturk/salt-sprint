@@ -26,7 +26,7 @@ slides:
          -
            - h1: Module
            - p: Functions called by the salt command that perform specific tasks.
-           - p: There are many types of moduls:
+           - p: There are many types of moduls
            - ul:
              - execution module
              - state module
