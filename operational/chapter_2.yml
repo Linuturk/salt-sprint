@@ -16,7 +16,6 @@ slides:
              - Run salt-bootstrap
              - Salt Keys
              - Verify installation
-             - Lab
 
          -
            - h2: salt-bootstrap
@@ -25,6 +24,8 @@ slides:
              - Multiple OS support
              - Highly extendable
              - Can install Salt Master / Minion
+             - Can configure the Minion
+             - Can use Github tags like packages
            - class_notes: |
                Created and maintained by Pedro Algarvio.  Fun fact: Pedro has more commits than Thomas Hach, the CTO and founder of SaltStack.
 
@@ -36,30 +37,51 @@ slides:
               Downloading salt-bootstrap is pretty to the point.
 
          -
-           - h2: 'Run salt-bootstrap'
-           - code: |
-              sh install_salt.sh
-           - p: 'This example will install the minion, but -h show the help'
+           - h2: Lab
+           - ul:
+             - 'Download the salt-bootstrap script to all machines'
            - class_notes: |
-               The goal is to get them to read the help notes on the script.<br/>
-               They can be viewed here as well:<br/>
-               https://github.com/saltstack/salt-bootstrap/blob/develop/bootstrap-salt.sh
+              wget -O install_salt.sh http://bootstrap.saltstack.org
 
          -
-           - h2: 'Example flags'
+           - h2: 'Example flags for Minions'
            - code: |
-              sh install_salt.sh -M -A localhost
-           - p: 'This will install the Master and Minion (and configure it) all on the same machine.'
+              sh install_salt.sh -A [ Master's IP or DNS Record ]
+           - p: 'This will install the Minion and configure it to talk to the master'
            - class_notes: |
-               The -M installs the Master<br/>
-               The -A localhost configures the minion to talk to the master on the same box
+              The -A configures the minion to talk to the master
+
+         -
+           - h2: 'Example flags for Master'
+           - code: |
+              sh install_salt.sh -M -N
+           - p: 'This will install only the Master'
+           - class_notes: |
+              The -M installs the master<br/>
+              The -N does not install the minion
+
+         -
+           - h2: Lab
+           - ul:
+             - 'Install Salt on the Minions and Master'
+           - class_notes: |
+              sh install_salt.sh -M -N (Master)
+              sh install_salt.sh -A [IP or DNS] (Minion)
 
          -
            - h2: 'Salt Keys'
            - p: 'Salt Keys manages which machines are allowed / not allowed to commicate with the Salt Master'
            - code: |
               salt-key
-           - p: 'The -A flag will accept all pending keys'
+           - p: 'The -A flag will accept all pending keys...but -a [ HostName ] is best'
+
+         -
+           - h2: Lab
+           - ul:
+             - 'Read the salt-key help file'
+             - "Accept the Minion's keys"
+           - class_notes: |
+              salt-key -h, salt-key --help
 
          -
            - h2: 'Verify installation'
@@ -83,14 +105,7 @@ slides:
          -
            - h2: Lab
            - ul:
-             - 'Step One: Download the salt-bootstrap script'
-             - 'Step Two: Read the help file on salt-bootstrap'
-             - 'Step Three: Install the Salt Master / Minion on the same box'
-             - 'Step Four: Verify that the Salt Master is installed'
-             - "Step five:  Accept the minion's keys"
+             - 'Verify the Minion and Master installations'
            - class_notes: |
-              wget -O install_salt.sh http://bootstrap.saltstack.org<br/>
-              sh install_salt.sh -h<br/>
-              sh install_salt.sh -M -A localhost<br/>
-              salt-master --versions-report<br/>
-              salt-key -A
+              salt-master --versions-report (Master)
+              salt-minion --versions-report (Minion)
