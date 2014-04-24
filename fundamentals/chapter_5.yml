@@ -121,9 +121,11 @@ slides:
                salt '*' service.start apache2
            - p: State Example
            - code: |
-               apache2:
+               run_apache2:
                  service:
                    - running
+                   - name: apache2
+                   - enable: True
            - p: Service names can still be different between distributions. (ie. apache2 and httpd)
 
          -
