@@ -1,0 +1,80 @@
+---
+header:
+  author: Bruce Stringer and Justin Phelps
+  title: Salt Operational, Chapter 5, Ordering Execution
+  description: Through the use of salt requisites students will learn how to make sure certain things happen in a specific order as well as react to changes. EX. make sure packages are installed before starting a service. Restart a service after a config change.
+
+slides:
+   -
+     - nested:
+         -
+           - h1: Ordering Execution
+           - ul: 
+             - Require
+             - Watch
+             - Prereq
+             - Import
+           - class_notes: |
+               1. Understand grains and its uses.
+               2. Understand pillars and its uses.
+               3. Targeting based on pillar variables and grains in states and command line.
+
+         -
+           - h2: Require
+           - p: 'Used to load the dependent state before the depending current'
+           - code: |
+               vim:
+                 pkg.installed
+
+               /etc/vimrc:
+                 file.managed:
+                   - source: salt://edit/vimrc
+                   - require:
+                     - pkg: vim
+
+           - class_notes: |
+               1. 
+               2. 
+
+         -
+           - h2: Watch
+           - p: 'Statement used to monitor changes in other states'
+           - code: |
+               ntpd:
+                 service.running:
+                   - watch:
+                     - file: /etc/ntp.conf
+           - class_notes: |
+               1. 
+               2. 
+
+         -
+           - h2: Prereq
+           - p: 'Allows for actions to be taken based on the expected results of a state that has not yet been executed'
+           - code: |
+             graceful-down:
+               cmd.run:
+                 - name: service apache graceful
+                 - prereq:
+                   - file: site-code
+
+             site-code:
+               file.recurse:
+                 - name: /opt/site_code
+                 - source: salt://site/code
+           - class_notes: |
+               1. 
+               2. 
+
+         -
+           - h2: Import
+           - p: 'something about import'
+           - ul:
+             - sdfsdf
+             - sdfsdfdsf
+             - sdfsdf
+           - class_notes: |
+               1. 
+               2. 
+
+

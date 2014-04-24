@@ -1,7 +1,7 @@
 ---
 header:
-  author: Eric Hernandez
-  title: Salt Operational, Chapter 5, Leveraging Grains and Pillars
+  author: Allen Oster and Eric Hernandez
+  title: Salt Operational, Chapter 6, Leveraging Grains and Pillars
   description: Explore the uses for the information provided by Salt grain and pillar data.
 
 slides:
