@@ -140,8 +140,9 @@ slides:
              - execute that state file from the command line using the state.sls module
            - p: hint
            - code: |
-               vim:
-                 pkg.installed
+               vim_install:
+                 pkg.installed:
+                   - name: vim
            - class_notes: |
                1. Have the students attempt to write a file that contains a state to install nginx
 
