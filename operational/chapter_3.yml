@@ -58,7 +58,7 @@ slides:
                - {name: John Doe, age: 30}
                - name: Jane Doe
                  age: 32
-           - p: Associative array of Lists
+           - p: Associative array of lists
            - code: |
                men: [John, Frank]
                women: 
@@ -143,7 +143,7 @@ slides:
            - h2: Jinja in a Salt State
            - p: Managing multiple users with a loop
            - code: |
-               {% for username in ['root', 'apache', 'bob'] %}
+               {% for username in ['root', 'apache', 'thatch'] %}
                {{ username }}:
                  user.present
                {% endfor %}
@@ -155,7 +155,7 @@ slides:
                apache:
                  user.present
                
-               bob:
+               thatch:
                  user.present
 
          -
