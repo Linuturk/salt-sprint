@@ -1,6 +1,6 @@
 ---
 header:
-  author: Eric Hernandez
+  author: Kenneth Wilke and Eric Hernandez
   title: Salt Architecture
   description: Identify and understand the major components of a Salt deployment and their relationships to each other.
 
