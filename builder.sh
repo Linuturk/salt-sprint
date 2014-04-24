@@ -18,7 +18,7 @@ fi
 
 echo "******** Looping over folders ********"
 for i in fundamentals lunchlearn operational
-do
+  do
     echo "******** Syntax Check on $i ********"
     python syntax_check.py $i/*.yml
     echo "******** Creating output folder for $i ********"
@@ -28,6 +28,6 @@ do
     echo "******** Generating Slides on $i ********"
     python revelator/write_it $i_comp.yml output/$i
     echo "******** Hacking stylesheets for $i ********"
-    sed -e '32s/#eeeeee/#000000/' -i output/$i/css/theme/default.css
-    sed -e '49s/#eeeeee/#000000/' -i output/$i/css/theme/default.css
-done
+    sed -e '32s/#eeeeee/#000000/'  -i bak output/$i/css/theme/default.css
+    sed -e '49s/#eeeeee/#000000/'  -i bak output/$i/css/theme/default.css
+  done
