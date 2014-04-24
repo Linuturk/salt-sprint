@@ -52,16 +52,16 @@ slides:
            - h2: Prereq
            - p: 'Allows for actions to be taken based on the expected results of a state that has not yet been executed'
            - code: |
-             graceful-down:
-               cmd.run:
-                 - name: service apache graceful
-                 - prereq:
-                   - file: site-code
+               graceful-down:
+                 cmd.run:
+                   - name: service apache graceful
+                   - prereq:
+                     - file: site-code
 
-             site-code:
-               file.recurse:
-                 - name: /opt/site_code
-                 - source: salt://site/code
+               site-code:
+                 file.recurse:
+                   - name: /opt/site_code
+                   - source: salt://site/code
            - class_notes: |
                1. 
                2. 
