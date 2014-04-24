@@ -26,6 +26,10 @@ slides:
          -
            - h1: Module
            - p: Functions called by the salt command that perform specific tasks.
+           - p: There are many types of moduls:
+           - ul:
+             - execution module
+             - state module
 
          -
            - h1: Salt-key
@@ -45,11 +49,7 @@ slides:
 
          -
            - h1: State Module
-           - p: A module which contains a set of state functions.
-
-         -
-           - h1: State Function
-           - p: A function which can manage the application of a particular state to a system. State functions frequently call out to one or more execution modules to perform a given task.
+           - p: A module which contains a set of functions (things that need to be done).
 
          -
            - h1: YAML
