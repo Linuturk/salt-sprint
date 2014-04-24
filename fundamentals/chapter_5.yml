@@ -103,8 +103,9 @@ slides:
                salt '*' pkg.install vim
            - p: State Example
            - code: |
-               vim:
-                 pkg.installed
+               install_vim:
+                 pkg.installed:
+                   - name: vim
            - p: Package names can still be different between distributions. (ie. apache2 and httpd)
 
          -
