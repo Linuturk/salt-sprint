@@ -1,7 +1,7 @@
 ---
 header:
   author: RU,
-  title: Chapter 6, Salt Fundamentals
+  title: Chapter 7, Salt Fundamentals
   description: Salt Fundamentals Course
 
 slides:
@@ -41,6 +41,7 @@ slides:
                    - user: thatch
                    - group: thatch
                    - mode: '0644'
+           - image: 'http://shipitsquirrel.github.io/images/ship%20it%20squirrel.png'
            - class_notes: |
                1. Speak to each part of this example.
                2. Point out setting the name of the file and that the source can be a remote lcation aswell.
@@ -123,7 +124,7 @@ slides:
                4. Point out that naming the files .jinja make it more readable
 
          -
-           - h2: Jinja in the index,html
+           - h2: Jinja in the index.html
            - code: |
                {% for user in users_list %}
                {{ user }}</br>
