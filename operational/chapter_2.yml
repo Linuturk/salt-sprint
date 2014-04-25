@@ -16,6 +16,7 @@ slides:
              - Run salt-bootstrap
              - Salt Keys
              - Verify installation
+             - Config Tours
 
          -
            - h2: salt-bootstrap
