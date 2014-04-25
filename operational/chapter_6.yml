@@ -34,18 +34,6 @@ slides:
                3. have them browse the docs while we discuss
 
          -
-           - h2: Example pillar sls file
-           - code: |
-              bob_ross: 'happy little trees'
-
-              list_of_words:
-                - its
-                - so
-                - fluffy
-           - class_notes: |
-               1. setting a single value and a list of values
-
-         -
            - h2: Command Line Examples
            - code: |
                salt '*' grains.ls
@@ -120,6 +108,27 @@ slides:
                3. You reference pillar items in state file using '{{ pillar['key'] }}' and the value of key will be dropped in.
 
          -
+           - h2: Example pillar sls file
+           - p: exampple in pillar
+           - code: |
+              bob_ross: 'happy little trees'
+
+              list_of_words:
+                - its
+                - so
+                - fluffy
+           - p: example in jinja
+           - code: |
+               {{ pillar['bob_ross'] }}
+           - p: example when rednered
+           - code: |
+               happy little trees
+           - class_notes: |
+               1. setting a single value and a list of values
+               2. how it looks in jinja template
+               3. how it looks when jinja renders it
+
+         -
            - h2: 'Lab: Using Pillar'
            - p: 'Set pillar data based on OS grain and use that pillar data in the state created in the previous lab instead of the grain.'
            - ul:
@@ -129,7 +138,7 @@ slides:
                1. Lab will have them set pillar data targeted by os grain, and use that pillar data in the state instead of the previous grain if statement.
 
          -
-           - h2: Cliff notes
+           - h2: Cliff notes top.sls
            - p: /srv/pillar/top.sls
            - code: |
                base:
@@ -140,3 +149,9 @@ slides:
                  'os:CentOS':
                    - match: grain
                    - CentOS
+
+         -
+           - h2: Cliff notes pillar sls files
+           - p: /srv/pillar/Ubuntu/init.sls
+           - code: |
+               apache_package: apache2
