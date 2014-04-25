@@ -212,8 +212,8 @@ slides:
          -
            - h2: All together now!
            - ul:
-             - In pillar create a list of users that only ubuntu minions will share
-             - In pillar create a different list of users that only RedHat minions will share
+             - In pillar create a list of users that only Ubuntu minions will share
+             - In pillar create a different list of users that only CentOS minions will share
              - Use that list of users in your templated index.html
              - Also have your index.html display its OS
            - class_notes: |
