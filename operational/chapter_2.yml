@@ -63,9 +63,10 @@ slides:
          -
            - h2: Lab
            - ul:
-             - 'Install Salt on the Minions and Master'
+             - 'Install salt-minion on machine minion01 and minion02'
+             - 'Install salt-master on the Master'
            - class_notes: |
-              sh install_salt.sh -M -N (Master)
+              sh install_salt.sh -M -N (Master)<br/>
               sh install_salt.sh -A [IP or DNS] (Minion)
 
          -
