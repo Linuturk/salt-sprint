@@ -14,8 +14,6 @@ slides:
              - Write a basic state file
              - Utilize Jinja for state file templating
              - Target minions with top.sls
-           - class_notes: |
-              stuff and things
 
          -
            - h2: YAML

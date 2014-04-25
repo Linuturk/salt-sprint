@@ -1,0 +1,72 @@
+---
+header:
+  author: Kenneth Wilke
+  title: Fleur De Sel
+  description: Cover the basics of writing salt states.
+
+slides:
+   -
+     - nested:
+         -
+           - h1: Fleur De Sel
+           - p: Really fancy salt
+           - ul: 
+             - Salt Cloud
+             - Salt Mine
+             - Reactor
+             - Syndic
+             - Returners and Runners
+
+         -
+           - h2: Salt Cloud
+           - p: Spins up servers on the cloud, automatically installing the Salt Minion and approving the minions key
+           - p: Works with popular cloud APIs
+           - ul:
+             - Rackspace Cloud
+             - Openstack
+             - Parallels
+             - Softlayer
+             - Amazon
+
+         -
+           - h2: Salt Mine
+           - p: Runs arbitrary salt execution functions at a specified interval
+           - ul:
+             - Provides results to all minions
+             - Useful for integrating live data in state runs and executions
+
+         -
+           - h2: Reactor
+           - p: Provides a system where commands can be executed in response to events within the infrastructure
+           - p: Provides a <b>tag</b> variable to indicate the type of event
+           - p: Provides a <b>data</b> dictionary with the details of the event
+           - p: Examples of types of events
+           - ul:
+             - Minion added to instracture
+             - Highstate ran
+             - Cloud-based server removed
+
+         -
+           - h2: Syndic
+           - p: Like a proxy for salt masters, it allows you to create a hierarchal structure of control for large or sprawling infrastructure
+           - ul:
+             - Good for infrastructures with thousands of nodes
+             - Good for infrastructures that span multiple regions or datacenters
+           - image: 'http://jenkins.onitato.com:8080/job/Salt%20Sprint%20Slides/ws/operational/salt-syndic.svg'
+
+         -
+           - h2: Salt Returners
+           - p: Stores the results of Salt jobs in an external backend
+           - ul:
+             - Redis
+             - MongoDB
+             - Postgres
+             - SMTP
+
+         -
+           - h2: Salt Runners
+           - p: Like execution modules but run on the master, interacting with minions using the salt client
+           - ul:
+             - Handy for scripting large scale events
+             - Written in python, structurally similar to other modules
+             - Ran via <b>salt-run</b>
