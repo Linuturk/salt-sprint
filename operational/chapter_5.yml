@@ -98,7 +98,7 @@ slides:
                2. 
 
          -
-           - h2: LAB: Prereq
+           - h2: "LAB: Prereq"
            - p: 'Perform an Apache service restart if the Apache package is installed and be sure Apache is running'
            - class_notes: |
                1. notes here
@@ -124,7 +124,7 @@ slides:
                2. 
 
          -
-           - h2: LAB: Include
+           - h2: "LAB: Include"
            - p: 'Split our your big state file in to seperate directories with a init.sls file in it and include them in a single state'
            - class_notes: |
                1. notes here
