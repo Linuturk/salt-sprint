@@ -51,15 +51,33 @@ slides:
 
          -
            - h2: 'Lab: View and Set Grains'
-           - p: 'List and view available grains and set a custom grain of role to your minions.'
+           - ul:
+            - List and view available grains
+            - set a custom grain of role to your minions
            - class_notes: |
-               1. Lab will have them use grain data in a state file to set what package gets installed.
+               2. salt \* grains.items; salt \* grans.append role web
 
          -
            - h2: 'Lab: Using Grains in States'
            - p: 'Targeting based on OS grain information.'
+           - ul:
+             - in your install apache state. set a jinja variable to the correct package name, using an if statement based on the os Grain.
+             - use that variable in the install apache state to install the correct package depending on OS
            - class_notes: |
                1. In this lab you will actually want them to go into there previously created state and setup a jinja if statement where if grain['os'] == ubuntu then apache2, etc.
+
+         -
+           - h2: cliff notes
+           - code: |
+               {% if grain['os'] == 'Ubuntu' %}
+               {% set apache_package == 'apache2' %}
+               {% elseif grain['os'] == 'CentOS' %}
+               {% set apache_package == 'httpd' %}
+               {% endif %}
+
+               install_apache:
+                 pkg.installed:
+                   - name: {{ apache_package }}
 
          -
            - h2: Pillar
@@ -88,5 +106,21 @@ slides:
          -
            - h2: 'Lab: Using Pillar'
            - p: 'Set pillar data based on OS grain and use that pillar data in the state created in the previous lab instead of the grain.'
+           - ul:
+             - set up your pillar top file to target based on the os grain and use differnt pillar sls files for each OS
+             - Set the correct apache package name to a variable in the respective OS's pillar file
            - class_notes: |
                1. Lab will have them set pillar data targeted by os grain, and use that pillar data in the state instead of the previous grain if statement.
+
+         -
+           - h2: Cliff notes
+           - p: /srv/pillar/top.sls
+           - code: |
+               base:
+                 'os:Ubuntu':
+                   - match: grain
+                   - Ubuntu
+
+                 'os:CentOS':
+                   - match: grain
+                   - CentOS
