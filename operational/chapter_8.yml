@@ -22,7 +22,7 @@ slides:
            - p: Spins up servers on the cloud, automatically installing the Salt Minion and approving the minions key
            - p: Works with popular cloud APIs
            - ul:
-             - Openstack (ie. Rackspace)
+             - Openstack (ie. Rackspace Cloud Server)
              - Parallels
              - Softlayer
              - Amazon
@@ -37,8 +37,7 @@ slides:
          -
            - h2: Reactor
            - p: Provides a system where commands can be executed in response to events within the infrastructure
-           - p: Provides a <b>tag</b> variable to indicate the type of event
-           - p: Provides a <b>data</b> dictionary with the details of the event
+           - p: '<br/>'
            - p: Examples of types of events
            - ul:
              - Minion added to instracture
