@@ -122,6 +122,8 @@ slides:
            - p: If we've put an additional state in <b>/srv/salt/mysql/service.sls</b> it can be ran as <b>mysql.service</b>
            - code: |
                salt '*' state.sls mysql.service
+           - class_notes: |
+               encourage whiteboarding for this example
 
          -
            - h2: External State Files
