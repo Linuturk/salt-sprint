@@ -94,7 +94,7 @@ slides:
            - h2: 'cliff notes'
            - code: |
               salt-key -a lab1
-              
+
          -
            - h2: 'Verify installation'
            - code: |
@@ -121,4 +121,22 @@ slides:
            - class_notes: |
               salt-master --versions-report (Master)
               salt-minion --versions-report (Minion)
-              
+
+         -
+           - h2: 'cliff notes'
+           - code: |
+              salt-master --versions-report
+
+         -
+           - h2: Master Config Tour
+           - class_notes: |
+              Touch points<br/>
+              user, job_cache, client_acl, file_roots<br/>
+              By default, you rarely if ever need to edit the salt master and if you do, do it inside master.d/*.conf
+
+         -
+           - h2: Minion Config Tour
+           - class_notes: |
+              Touch points<br/>
+              master, grains<br/>
+              By default, you rarely if ever need to edit the salt master and if you do, do it inside minion.d/*.conf
