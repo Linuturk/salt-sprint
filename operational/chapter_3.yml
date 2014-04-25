@@ -92,7 +92,7 @@ slides:
            - ul:
              - 'Add an user named "thatch" using cmd.run with JSON output'
            - class_notes: |
-              1. salt '*' user.add thatch<br/>
+              1. salt '*' user.add thatch --out json<br/>
               2. This lab cannot be skipped, it is used later.<br/>
               3. http://docs.saltstack.com/en/latest/ref/modules/all/salt.modules.useradd.html
          -
