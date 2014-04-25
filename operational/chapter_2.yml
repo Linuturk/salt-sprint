@@ -9,7 +9,7 @@ slides:
      - nested:
 
          -
-           - h1: Install and Deploy Salt
+           - h1: Install & Deploy Salt
            - ul:
              - salt-bootstrap
              - Download salt-bootstrap
