@@ -23,58 +23,125 @@ slides:
            - h2: Require
            - p: 'Used to load the dependent state before the depending current'
            - code: |
-               vim:
-                 pkg.installed
+               mysql_install:
+                 pkg.installed:
+                   - name: mysql
 
-               /etc/vimrc:
+               mysql_config:
                  file.managed:
-                   - source: salt://edit/vimrc
+                   - name: /etc/my.cnf
+                   - source: salt://files/my.cnf
                    - require:
-                     - pkg: vim
+                     - pkg: mysql_install
 
            - class_notes: |
-               1. 
-               2. 
+               1. The require statement is used to load one action before another action.
+               2. Very important because actions do not load in sequential order.
+
+         -
+           - h2: Require_in
+           - p: 'Does the reverse of require'
+           - code: |
+               mysql_install:
+                 pkg.installed:
+                   - name: mysql
+                   - require_in:
+                     - file: mysql_config
+
+               mysql_config:
+                 file.managed:
+                   - name: /etc/my.cnf
+                   - source: salt://files/my.cnf
+                   - require:
+                     - pkg: mysql_install
+
+           - class_notes: |
+               1. The require_in is the literal reverse of require.
+               2. Example above is the same as the previous example but using require_in.
 
          -
            - h2: Watch
            - p: 'Statement used to monitor changes in other states'
            - code: |
-               ntpd:
-                 service.running:
+               mysql_service_restart:
+                 service.restart:
+                   - name: mysqld
                    - watch:
-                     - file: /etc/ntp.conf
+                     - file: mysql_config
            - class_notes: |
-               1. 
-               2. 
+               1. Watch only applies when a high state is run.
+               2. Does not watch for user modifications to file but only if salt itself modifies it.
+               3. In this example we have a mysql restart action that watches and triggers on the mysql_config action from the previous example.
 
          -
            - h2: Prereq
            - p: 'Allows for actions to be taken based on the expected results of a state that has not yet been executed'
            - code: |
-               graceful-down:
+               graceful_down:
                  cmd.run:
                    - name: service apache graceful
                    - prereq:
-                     - file: site-code
+                     - file: site_code
 
-               site-code:
+               apache_start:
+                 cmd.run:
+                   - name: service apache start
+                   - watch:
+                     - file: site_code
+
+               site_code:
                  file.recurse:
                    - name: /opt/site_code
                    - source: salt://site/code
            - class_notes: |
-               1. 
+               1.
                2. 
 
          -
-           - h2: Import
-           - p: 'something about import'
-           - ul:
-             - sdfsdf
-             - sdfsdfdsf
-             - sdfsdf
+           - h2: "LAB: Prereq"
+           - p: 'Perform an Apache service restart if the Apache package is installed and be sure Apache is running'
            - class_notes: |
-               1. 
+               1. notes here
+
+         -
+           - h2: Cliff Notes
+           - code: |
+               code here
+
+         -
+           - h2: Include
+           - p: 'You can include whole sls files in your states'
+           - code: |
+             include:
+               - foo
+           
+             bar:
+               pkg.installed:
+                 - require:
+                   - sls: foo
+           - class_notes: |
+               1. Here we are including the sls file 'foo' and in the 'bar' action we require the sls 'foo'.
                2. 
 
+         -
+           - h2: "LAB: Include"
+           - p: 'Split our your big state file in to seperate directories with a init.sls file in it and include them in a single state'
+           - class_notes: |
+               1. notes here
+         
+         -
+           - h2: Cliff Notes
+           - code: |
+               code here
+
+         -
+           - h2: Order
+           - code: |
+               mysql_install:
+                 pkg.installed:
+                   - name: mysql-server
+                   - order: 1
+           - class_notes: |
+               1. Not a best practice and require should be used before this.
+               2. 'last' is also an option for order along with numeric values.
 
