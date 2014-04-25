@@ -111,7 +111,7 @@ slides:
 
          -
            - h2: Example pillar sls file
-           - p: exampple in pillar
+           - p: example in pillar
            - code: |
               bob_ross: 'happy little trees'
 
@@ -122,7 +122,7 @@ slides:
            - p: example in jinja
            - code: |
                {{ pillar['bob_ross'] }}
-           - p: example when rednered
+           - p: example when rendered
            - code: |
                happy little trees
            - class_notes: |
