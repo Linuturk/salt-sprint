@@ -140,10 +140,12 @@ slides:
          -
            - h2: Include
            - p: 'You can include whole sls files in your states'
+           - p: init.sls
            - code: |
                include:
                  - foo
-
+           - p: foo.sls
+           - code: |
                bar_install:
                  pkg.installed:
                    - name: bar
