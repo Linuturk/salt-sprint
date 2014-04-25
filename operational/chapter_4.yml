@@ -182,6 +182,8 @@ slides:
                
                thatch:
                  user.present
+           - class_notes: |
+               comment on whitespace added between loop iterations
 
          -
            - h2: Target minions with the top file
