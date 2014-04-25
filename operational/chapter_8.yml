@@ -52,6 +52,9 @@ slides:
            - ul:
              - Good for infrastructures with thousands of nodes
              - Good for infrastructures that span multiple regions or datacenters
+
+         -
+           - h2: Syndic example topology
            - image: 'http://jenkins.onitato.com:8080/job/Salt%20Sprint%20Slides/ws/operational/salt-syndic.svg'
 
          -
