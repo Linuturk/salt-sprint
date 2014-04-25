@@ -68,6 +68,12 @@ slides:
            - class_notes: |
               sh install_salt.sh -M -N (Master)<br/>
               sh install_salt.sh -A [IP or DNS] (Minion)
+         -
+           - h2: 'cliff notes'
+           - code: |
+              wget  --no-check-certificate -O install_salt.sh http://bootstrap.saltstack.org
+              sh install_salt.sh -M -N
+              sh install_salt.sh -A sd-pipeline.com
 
          -
            - h2: 'Salt Keys'
@@ -84,6 +90,11 @@ slides:
            - class_notes: |
               salt-key -h, salt-key --help
 
+         -
+           - h2: 'cliff notes'
+           - code: |
+              salt-key -a lab1
+              
          -
            - h2: 'Verify installation'
            - code: |
@@ -110,3 +121,8 @@ slides:
            - class_notes: |
               salt-master --versions-report (Master)
               salt-minion --versions-report (Minion)
+         -
+           - h2: 'cliff notes'
+           - code: |
+              salt-master --versions-report
+              

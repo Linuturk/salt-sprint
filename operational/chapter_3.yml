@@ -73,6 +73,10 @@ slides:
            - class_notes: |
               1. salt '*' cmd.run 'iptables -F'<br/>
               2. This is needed later, it cannot be skipped
+         -
+           - h2: 'cliff notes'
+           - code: |
+              salt '*' cmd.run 'service iptables stop'
 
          -
            - h2: Output formatting
@@ -91,3 +95,7 @@ slides:
               1. salt '*' user.add thatch<br/>
               2. This lab cannot be skipped, it is used later.<br/>
               3. http://docs.saltstack.com/en/latest/ref/modules/all/salt.modules.useradd.html
+         -
+           - h2: 'cliff notes'
+           - code: |
+              salt '*' user.add thatch --out json

@@ -110,6 +110,10 @@ slides:
              - 'Apply this new state to minion01'
 
          -
+           - h2: 'cliff notes'
+           - code: |
+              salt '*' state.sls apache
+         -
            - h2: Organizing Salt States
            - p: State files may be organized in folders
            - p: Our <b>/srv/salt/mysql.sls</b> could be moved to <b>/srv/salt/mysql/init.sls</b> and used in the same manner
@@ -204,3 +208,10 @@ slides:
            - ul:
              - 'Write a topfile that will apply the apache state to minion01'
              - 'Run <b>state.highstate</b> to verify'
+         -
+           - h2: 'cliff notes'
+           - code: |
+              vi /srv/salt/top.sls
+              salt '*' state.highstate
+
+
