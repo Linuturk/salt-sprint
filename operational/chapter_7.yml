@@ -40,7 +40,7 @@ slides:
                    - source: salt://webserver/files/shippingfile.txt
                    - user: thatch
                    - group: thatch
-                   - mode: 644
+                   - mode: '0644'
            - class_notes: |
                1. Speak to each part of this example.
                2. Point out setting the name of the file and that the source can be a remote lcation aswell.
@@ -54,7 +54,7 @@ slides:
                    - name: /home/thatch/mydirs/dir1
                    - user: thatch
                    - group: thatch
-                   - mode: 755
+                   - mode: '0755'
                    - makedirs: True
            - class_notes: |
                1. Talk about creating directories
@@ -63,6 +63,7 @@ slides:
 
          -
            - h2: Game of Chowns!
+           - h2: Lab
            - ul:
              - Create a state that will create a directory in the thatch users home directory called saltstuff
              - Create a file on your master that you want to ship to the minions
@@ -80,11 +81,13 @@ slides:
                    - source: salt://files/saltfile.txt
                    - user: thatch
                    - group: thatch
-                   - mode: 755
+                   - file_mode: '0744'
+                   - dir_mode: '0755'
                    - makedirs: True
            - class_notes: |
                1. this is the answer to the previous lab.
                2. point out that this accomplishes two steps in one as the mkdirs will create the directory as well.
+               3. Show that we can set the permissions for the created directory and the created file seperately
 
          -
            - h1: Where the magic happens
@@ -104,7 +107,7 @@ slides:
                    - source: salt://files/saltfile.txt.jinja
                    - user: thatch
                    - group: thatch
-                   - mode: 755
+                   - mode: '0755'
                    - makedirs: True
                    - template: jinja
                    - context:
@@ -127,6 +130,7 @@ slides:
                {% endfor %}
            - class_notes: |
                1. SHow quick example of what would be in the index file.
+               2. mention white space control in jinja
 
          -
            - h2: Files With context Lab
@@ -149,7 +153,7 @@ slides:
                    - source: salt://files/index.html.jinja
                    - user: thatch
                    - group: thatch
-                   - mode: 755
+                   - mode: '0755'
                    - makedirs: True
                    - template: jinja
                    - context:
@@ -157,6 +161,9 @@ slides:
                          - fred
                          - wilma
                          - pebbles
+                         - bambam
+           - class_notes: |
+               1. mention the ability to use recurse to recusively set permissions in a directory
 
          -
            - h2: cliff notes index
@@ -199,7 +206,7 @@ slides:
                {% endfor %}
            - class_notes: |
                1. Show them that accessing pillar data is just as easy
-               2. show them how they can use these variables directly in the file without the need to set context in teh state
+               2. show them how they can use these variables directly in the file without the need to set context in the state
 
          -
            - h2: All together now!
