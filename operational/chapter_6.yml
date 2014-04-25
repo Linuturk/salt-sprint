@@ -24,6 +24,7 @@ slides:
            - ul:
              - Static info from minion start
              - Custom grains
+             - /etc/salt/minion
              - /etc/salt/grains
            - class_notes: |
                1. Grains give infomation about the underlying system the minion is running on. 
