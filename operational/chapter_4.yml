@@ -112,7 +112,7 @@ slides:
          -
            - h2: 'cliff notes'
            - code: |
-              salt '*' state.sls apache
+              salt 'minion01' state.sls apache
          -
            - h2: Organizing Salt States
            - p: State files may be organized in folders
