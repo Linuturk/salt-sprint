@@ -107,7 +107,7 @@ slides:
            - h2: Lab
            - ul:
              - 'Write a salt state <b>/srv/salt/apache.sls</b> that ensures apache is installed'
-             - 'Apply this new state to a minion'
+             - 'Apply this new state to minion01'
 
          -
            - h2: Organizing Salt States
@@ -202,5 +202,5 @@ slides:
          -
            - h2: Lab
            - ul:
-             - 'Write a topfile that will apply the apache state to all minions'
+             - 'Write a topfile that will apply the apache state to minion01'
              - 'Run <b>state.highstate</b> to verify'
