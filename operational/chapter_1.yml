@@ -27,23 +27,16 @@ slides:
            - p: The collection of processed states after requisites and order are evaluated
 
          -
-           - h2: Node Group
-           - p: A pre-defined group of minions declared in the master configuration file
-
-         -
            - h2: Overstate
            - p: A system by which a Master can issue function calls to minions in a deterministic order
 
          -
-           - h2: Pillar
-           - p: A simple key-value store for user-defined data to be made available to a minion. Often used to store and distribute sensitive data to minions
+           - h2: Grain
+           - p: A key-value pair which contains a fact about a system, such as its hostname, network addresses
 
          -
-           - h2: Proxy Minion
-           - p: A minion which can control devices that are unable to run a Salt minion locally, such as routers and switches
-         -
-           - h2: Reactor
-           - p: An interface for listening to events and defining actions that Salt should taken upon receipt of given events
+           - h2: Pillar
+           - p: A simple key-value store for user-defined data to be made available to a minion. Often used to store and distribute sensitive data to minions
 
          -
            - h2: State Module
