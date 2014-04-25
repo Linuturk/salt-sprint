@@ -46,7 +46,7 @@ slides:
 
          -
            - h2: Syndic
-           - p: Like a proxy for salt masters, it allows you to create a hierarchal structure of control for large or sprawling infrastructure
+           - p: Like a master of masters, it allows you to create a hierarchal structure of control for large or sprawling infrastructure
            - ul:
              - Good for infrastructures with thousands of nodes
              - Good for infrastructures that span multiple regions or datacenters

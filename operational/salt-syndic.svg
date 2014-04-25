@@ -5,21 +5,21 @@
     <ellipse style="fill: #ffffff" cx="390" cy="50" rx="50" ry="50"/>
     <ellipse style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" cx="390" cy="50" rx="50" ry="50"/>
     <text font-size="12.7998" style="fill: #000000;text-anchor:middle;font-family:sans-serif;font-style:normal;font-weight:normal" x="390" y="53.9">
-      <tspan x="390" y="53.9">Salt Master</tspan>
+      <tspan x="390" y="53.9">Salt Syndic</tspan>
     </text>
   </g>
   <g>
     <ellipse style="fill: #ffffff" cx="170" cy="170" rx="50" ry="50"/>
     <ellipse style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" cx="170" cy="170" rx="50" ry="50"/>
     <text font-size="12.7998" style="fill: #000000;text-anchor:middle;font-family:sans-serif;font-style:normal;font-weight:normal" x="170" y="173.9">
-      <tspan x="170" y="173.9">Salt Syndic</tspan>
+      <tspan x="170" y="173.9">Salt Master</tspan>
     </text>
   </g>
   <g>
     <ellipse style="fill: #ffffff" cx="610" cy="170" rx="50" ry="50"/>
     <ellipse style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" cx="610" cy="170" rx="50" ry="50"/>
     <text font-size="12.7998" style="fill: #000000;text-anchor:middle;font-family:sans-serif;font-style:normal;font-weight:normal" x="610" y="173.9">
-      <tspan x="610" y="173.9">Salt Syndic</tspan>
+      <tspan x="610" y="173.9">Salt Master</tspan>
     </text>
   </g>
   <g>
