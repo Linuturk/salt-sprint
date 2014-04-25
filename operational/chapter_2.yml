@@ -121,8 +121,4 @@ slides:
            - class_notes: |
               salt-master --versions-report (Master)
               salt-minion --versions-report (Minion)
-         -
-           - h2: 'cliff notes'
-           - code: |
-              salt-master --versions-report
               
