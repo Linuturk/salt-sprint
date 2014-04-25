@@ -52,8 +52,8 @@ slides:
          -
            - h2: 'Lab: View and Set Grains'
            - ul:
-            - List and view available grains
-            - set a custom grain of role to your minions
+             - List and view available grains
+             - set a custom grain of role to your minions
            - class_notes: |
                2. salt \* grains.items; salt \* grans.append role web
 
