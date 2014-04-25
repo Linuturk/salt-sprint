@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.0//EN" "http://www.w3.org/TR/2001/PR-SVG-20010719/DTD/svg10.dtd">
-<svg width="37cm" height="23cm" viewBox="279 -1 722 442" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+<svg width="37cm" height="24cm" viewBox="279 -21 722 462" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
   <g>
     <rect style="fill: #ffffff" x="280" y="240" width="320" height="200"/>
     <rect style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" x="280" y="240" width="320" height="200"/>
@@ -26,27 +26,27 @@
     <tspan x="760" y="260">minion02 (CentOS)</tspan>
   </text>
   <g>
-    <rect style="fill: #ffffff" x="480" y="0" width="320" height="120"/>
-    <rect style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" x="480" y="0" width="320" height="120"/>
-    <line style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" x1="512" y1="0" x2="512" y2="120"/>
-    <line style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" x1="768" y1="0" x2="768" y2="120"/>
-    <text font-size="12.7998" style="fill: #000000;text-anchor:middle;font-family:sans-serif;font-style:normal;font-weight:normal" x="640" y="64">
-      <tspan x="640" y="64"></tspan>
+    <rect style="fill: #ffffff" x="480" y="-20" width="320" height="140"/>
+    <rect style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" x="480" y="-20" width="320" height="140"/>
+    <line style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" x1="512" y1="-20" x2="512" y2="120"/>
+    <line style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" x1="768" y1="-20" x2="768" y2="120"/>
+    <text font-size="12.7998" style="fill: #000000;text-anchor:middle;font-family:sans-serif;font-style:normal;font-weight:normal" x="640" y="54">
+      <tspan x="640" y="54"></tspan>
     </text>
   </g>
   <g>
-    <line style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" x1="590.774" y1="128.916" x2="517.79" y2="231.094"/>
-    <polygon style="fill: #000000" points="595.133,122.813 593.39,133.857 590.774,128.916 585.252,128.044 "/>
-    <polygon style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" points="595.133,122.813 593.39,133.857 590.774,128.916 585.252,128.044 "/>
-    <polygon style="fill: #000000" points="513.431,237.197 515.175,226.153 517.79,231.094 523.312,231.965 "/>
-    <polygon style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" points="513.431,237.197 515.175,226.153 517.79,231.094 523.312,231.965 "/>
+    <line style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" x1="585.522" y1="128.993" x2="515.187" y2="230.979"/>
+    <polygon style="fill: #000000" points="589.78,122.819 588.219,133.889 585.522,128.993 579.987,128.212 "/>
+    <polygon style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" points="589.78,122.819 588.219,133.889 585.522,128.993 579.987,128.212 "/>
+    <polygon style="fill: #000000" points="510.929,237.153 512.49,226.082 515.187,230.979 520.722,231.76 "/>
+    <polygon style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" points="510.929,237.153 512.49,226.082 515.187,230.979 520.722,231.76 "/>
   </g>
   <g>
-    <line style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" x1="689.226" y1="128.916" x2="762.21" y2="231.094"/>
-    <polygon style="fill: #000000" points="684.867,122.813 694.748,128.044 689.226,128.916 686.61,133.857 "/>
-    <polygon style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" points="684.867,122.813 694.748,128.044 689.226,128.916 686.61,133.857 "/>
-    <polygon style="fill: #000000" points="766.569,237.197 756.688,231.965 762.21,231.094 764.825,226.153 "/>
-    <polygon style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" points="766.569,237.197 756.688,231.965 762.21,231.094 764.825,226.153 "/>
+    <line style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" x1="694.478" y1="128.993" x2="764.813" y2="230.979"/>
+    <polygon style="fill: #000000" points="690.22,122.819 700.013,128.212 694.478,128.993 691.781,133.889 "/>
+    <polygon style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" points="690.22,122.819 700.013,128.212 694.478,128.993 691.781,133.889 "/>
+    <polygon style="fill: #000000" points="769.071,237.153 759.278,231.76 764.813,230.979 767.51,226.082 "/>
+    <polygon style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" points="769.071,237.153 759.278,231.76 764.813,230.979 767.51,226.082 "/>
   </g>
   <g>
     <rect style="fill: #ffffff" x="320" y="380" width="240" height="40"/>
@@ -90,8 +90,8 @@
       <tspan x="840" y="323.9">FILE: /var/www/html/index.html</tspan>
     </text>
   </g>
-  <text font-size="12.7998" style="fill: #000000;text-anchor:start;font-family:sans-serif;font-style:normal;font-weight:normal" x="600" y="20">
-    <tspan x="600" y="20">Salt Master</tspan>
+  <text font-size="12.7998" style="fill: #000000;text-anchor:start;font-family:sans-serif;font-style:normal;font-weight:normal" x="600" y="0">
+    <tspan x="600" y="0">Salt Master</tspan>
   </text>
   <g>
     <rect style="fill: #ffffff" x="520" y="60" width="240" height="40"/>
@@ -102,5 +102,15 @@
   </g>
   <text font-size="12.7998" style="fill: #000000;text-anchor:start;font-family:sans-serif;font-style:normal;font-weight:normal" x="640" y="80">
     <tspan x="640" y="80"></tspan>
+  </text>
+  <g>
+    <rect style="fill: #ffffff" x="520" y="20" width="240" height="40"/>
+    <rect style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" x="520" y="20" width="240" height="40"/>
+    <text font-size="12.7998" style="fill: #000000;text-anchor:middle;font-family:sans-serif;font-style:normal;font-weight:normal" x="640" y="43.9">
+      <tspan x="640" y="43.9">TOP FILE: /srv/salt/top.sls</tspan>
+    </text>
+  </g>
+  <text font-size="12.7998" style="fill: #000000;text-anchor:start;font-family:sans-serif;font-style:normal;font-weight:normal" x="640" y="40">
+    <tspan x="640" y="40"></tspan>
   </text>
 </svg>
