@@ -22,8 +22,7 @@ slides:
            - p: Spins up servers on the cloud, automatically installing the Salt Minion and approving the minions key
            - p: Works with popular cloud APIs
            - ul:
-             - Rackspace Cloud
-             - Openstack
+             - Openstack (ie. Rackspace)
              - Parallels
              - Softlayer
              - Amazon
