@@ -94,8 +94,8 @@ slides:
                    - name: /opt/site_code
                    - source: salt://site/code
            - class_notes: |
-               1.
-               2. 
+               1. In this example we show how repreq can work in conjunction with watch to have Apache shutdown before site_code executes.
+               2. Then, apache_start will run based on its watching of site_code being actioned.
 
          -
            - h2: "LAB: Prereq"
@@ -112,16 +112,16 @@ slides:
            - h2: Include
            - p: 'You can include whole sls files in your states'
            - code: |
-             include:
-               - foo
+               include:
+                 - foo
            
-             bar:
-               pkg.installed:
-                 - require:
-                   - sls: foo
+               bar_install:
+                 pkg.installed:
+                   - name: bar
+                   - require:
+                     - sls: foo
            - class_notes: |
                1. Here we are including the sls file 'foo' and in the 'bar' action we require the sls 'foo'.
-               2. 
 
          -
            - h2: "LAB: Include"
