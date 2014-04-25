@@ -212,8 +212,10 @@ slides:
              - 'Run <b>state.highstate</b> to verify'
          -
            - h2: 'cliff notes'
+           - b: /srv/salt/top.sls
            - code: |
-              vi /srv/salt/top.sls
-              salt '*' state.highstate
+              base:
+                'minion01':
+                  - apache
 
 
