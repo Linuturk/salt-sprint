@@ -45,7 +45,8 @@ slides:
                2. You can target based on grains using the '-G' flag via command line.
 
          -
-           - h2: State example
+           - h2: Top file example
+           - p: /srv/pillar/top.sls
            - code: |
                'role:web':
                    - match: grain
