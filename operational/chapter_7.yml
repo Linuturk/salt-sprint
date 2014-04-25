@@ -130,6 +130,7 @@ slides:
          -
            - h2: Files With context Lab
            - ul:
+             - Create a state that will ship an index.html file to /var/www/html on the minions.
              - Modify your state so that the index.html is templated.
              - Pass it variables via context, make the variables a list of users.
              - fred, wilma, pebbles, bambam.
@@ -141,20 +142,20 @@ slides:
          -
            - h2: Cliff notes state
            - code: |
-             ship_salt_stuff_file:
-               file.managed:
-               - name: /var/www/html/index.html.jinja
-               - source: salt://files/index.html.jinja
-               - user: thatch
-               - group: thatch
-               - mode: 755
-               - makedirs: True
-               - template: jinja
-               - context:
-                   users_list:
-                     - fred
-                     - wilma
-                     - pebbles
+               ship_salt_stuff_file:
+                 file.managed:
+                   - name: /var/www/html/index.html.jinja
+                   - source: salt://files/index.html.jinja
+                   - user: thatch
+                   - group: thatch
+                   - mode: 755
+                   - makedirs: True
+                   - template: jinja
+                   - context:
+                       users_list:
+                         - fred
+                         - wilma
+                         - pebbles
 
          -
            - h2: cliff notes index
@@ -204,8 +205,24 @@ slides:
            - ul:
              - In pillar create a list of users that only ubuntu minions will share
              - In pillar create a different list of users that only RedHat minions will share
-             - In your template pass in that list of users
-             - Also have your template display its OS
+             - Use that list of users in your templated index.html
+             - Also have your index.html display its OS
            - class_notes: |
                They should have the top file in pillar point to seperate users list based on OS grain.
                They should also have in there templates the jinja loop based on pillar data with the os grain listed.
+
+         -
+           - h2: Cliff notes
+           - p: /srv/pillar/top.sls
+           - code: |
+               base:
+                 'os:{{ grains['os'] }}':
+                   - match: grain
+                   - {{ grains['os'] }}
+           - p: /srv/pillar/Ubuntu.sls
+           - code: |
+               users_list:
+                 - fred
+                 - wilma
+                 - pebbles
+                 - bambam
