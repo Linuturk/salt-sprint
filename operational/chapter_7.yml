@@ -69,6 +69,7 @@ slides:
              - create a state that will ship the file you just created to the saltstuff directory that you created
            - class_notes: |
                1. an example of what this looks like follows
+               2 Speak to an excellent use case for something like this would be shipping ssh public keys to all minions.
 
          -
            - h2: cliff notes
