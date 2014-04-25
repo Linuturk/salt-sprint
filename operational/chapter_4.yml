@@ -14,6 +14,8 @@ slides:
              - Write a basic state file
              - Utilize Jinja for state file templating
              - Target minions with top.sls
+           - class_notes: |
+              stuff and things
 
          -
            - h2: YAML
@@ -108,6 +110,25 @@ slides:
            - ul:
              - 'Write a salt state <b>/srv/salt/apache.sls</b> that ensures apache is installed'
              - 'Apply this new state to a minion'
+
+         -
+           - h2: Organizing Salt States
+           - p: State files may be organized in folders
+           - p: Our <b>/srv/salt/mysql.sls</b> could be moved to <b>/srv/salt/mysql/init.sls</b> and used in the same manner
+           - code: |
+               salt '*' state.sls mysql
+           - p: If we've put an additional state in <b>/srv/salt/mysql/service.sls</b> it can be ran as <b>mysql.service</b>
+           - code: |
+               salt '*' state.sls mysql.service
+
+         -
+           - h2: External State Files
+           - p: Salt has <b>fileserver</b> modules that can refer to remote state files
+           - p: States can be referenced directly from version control systems
+           - ul:
+             - Git (<b>gitfs</b>)
+             - Mercurial (<b>hgfs</b>)
+             - Subversion (<b>svnfs</b>)
 
          -
            - h2: Jinja
