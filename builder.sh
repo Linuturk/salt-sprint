@@ -20,11 +20,11 @@ echo "******** Looping over folders ********"
 for i in fundamentals lunchlearn operational
   do
     echo "******** Syntax Check on $i ********"
-    python syntax_check.py $i/*.yml
+    python $DRONE_BUILD_DIR/syntax_check.py $DRONE_BUILD_DIR/$i/*.yml
     echo "******** Creating output folder for $i ********"
     mkdir -p output/$i
     echo "******** Build Single on $i ********"
-    python build_single.py $i > $i_comp.yml
+    python $DRONE_BUILD_DIR/build_single.py $DRONE_BUILD_DIR/$i > $i_comp.yml
     echo "******** Generating Slides on $i ********"
     python revelator/write_it $i_comp.yml output/$i
     echo "******** Hacking stylesheets for $i ********"
