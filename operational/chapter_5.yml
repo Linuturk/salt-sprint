@@ -11,6 +11,7 @@ slides:
            - h1: Ordering Execution
            - ul: 
              - Require
+             - Require_in
              - Watch
              - Prereq
              - Import
@@ -93,9 +94,9 @@ slides:
            - h2: Prereq
            - p: 'Allows for actions to be taken based on the expected results of a state that has not yet been executed'
            - code: |
-               graceful_down:
+               apache_stop:
                  cmd.run:
-                   - name: service apache graceful
+                   - name: service apache stop
                    - prereq:
                      - file: site_code
 
@@ -114,10 +115,10 @@ slides:
                2. Then, apache_start will run based on its watching of site_code being actioned.
 
          -
-           - h2: "LAB: Prereq"
+           - h2: "Lab: Prereq"
            - ul:
-             - in your states, have a state that will run the echo command before apache will be installed
-             - create another state that will run a different echo command after apache gets installed
+             - In your states, have a state that will run the echo command before apache will be installed
+             - Create another state that will run a different echo command after apache gets installed
            - class_notes: |
                1. just have them play with prereq and watch
 
@@ -155,14 +156,14 @@ slides:
                1. Here we are including the sls file 'foo' and in the 'bar' action we require the sls 'foo'.
 
          -
-           - h2: "LAB: Include"
+           - h2: "Lab: Include"
            - p: 'Split our your big state file in to seperate directories with a init.sls file in it and include them in a single state'
            - ul:
              - Create seperate sls files for each of your states
-             - Remove your sates form the init.sls file and replace them with includes for the files you created
+             - Remove your state from the init.sls file and replace them with includes for the files you created
            - class_notes: |
-               1. student should be told that this is considered best practice, to have the init just include state files.
-               2. state files can have more than one state in them
+               1. Student should be told that this is considered best practice, to have the init just include state files.
+               2. State files can have more than one state in them
          
          -
            - h2: Cliff Notes
