@@ -4,6 +4,7 @@
 # Exit if any command returns non-zero
 set -e
 
+BUILD_DIR=$HOME/$CIRCLE_PROJECT_REPONAME
 
 if [ -d revelator ]; then
   echo "******** Checking for latest version of Revelator ********"
@@ -20,11 +21,11 @@ echo "******** Looping over folders ********"
 for i in fundamentals lunchlearn operational
   do
     echo "******** Syntax Check on $i ********"
-    python $DRONE_BUILD_DIR/syntax_check.py $DRONE_BUILD_DIR/$i/*.yml
+    python $BUILD_DIR/syntax_check.py $BUILD_DIR/$i/*.yml
     echo "******** Creating output folder for $i ********"
     mkdir -p output/$i
     echo "******** Build Single on $i ********"
-    python $DRONE_BUILD_DIR/build_single.py $DRONE_BUILD_DIR/$i > $i_comp.yml
+    python $BUILD_DIR/build_single.py $BUILD_DIR/$i > $i_comp.yml
     echo "******** Generating Slides on $i ********"
     python revelator/write_it $i_comp.yml output/$i
     echo "******** Hacking stylesheets for $i ********"

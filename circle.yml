@@ -1,0 +1,8 @@
+test:
+  override:
+    - bash builder.sh
+deployment:
+  production:
+    branch: master
+    commands:
+      - turbolift -u $RAXUSER -a $RAXAPIKEY --os-rax-auth $RAXREGION upload -s $HOME/$CIRCLE_PROJECT_REPONAME/output -c $CONTAINER
