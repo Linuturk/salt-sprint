@@ -37,7 +37,7 @@ slides:
 
            - class_notes: |
                1. The require statement is used to load one action before another action.
-               2. Very important because actions do not load in sequential order.
+               2. States are ordered natively. If an installed package failed, a required state won't run.
 
          -
            - h2: Require_in
