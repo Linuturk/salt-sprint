@@ -89,11 +89,7 @@ slides:
 
          -
            - h2: Who uses Salt now?
-           - ul:
-             - Rackspace
-             - Customers
-             - Linkedin
-             - You?
+           - p: '<table style="display:inline-block;:"><tr><td><img style="width: 300px" src="https://raw.githubusercontent.com/Linuturk/salt-sprint/master/images/lyft-miami-logo.jpg"></td><td><img style="width: 300px" src="https://raw.githubusercontent.com/Linuturk/salt-sprint/master/images/kubernetes-logo.png"></td></tr><tr><td><img style="width: 300px" src="https://raw.githubusercontent.com/Linuturk/salt-sprint/master/images/nasa.png"></td><td><img style="width: 300px" src="https://raw.githubusercontent.com/Linuturk/salt-sprint/master/images/Wikimedia.jpg"></td></tr></table>'
            - class_notes: |
                1. Give examples of how rackers have used salt. Example (heartbleed patching)
                2. Find examples of where customers have used salt or configuration management.
