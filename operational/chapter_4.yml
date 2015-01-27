@@ -184,6 +184,7 @@ slides:
                  user.present
            - class_notes: |
                comment on whitespace added between loop iterations
+               whitespace control in Jinja can be done, but is hard and unpredictable
 
          -
            - h2: Target minions with the top file
