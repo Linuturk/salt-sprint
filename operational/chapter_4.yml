@@ -34,7 +34,7 @@ slides:
            - p: Inline format
            - code: |
                [lions, tigers, bears]
-           - image: ''
+           - image: 'https://raw.githubusercontent.com/Linuturk/salt-sprint/master/images/ohmy.png'
 
          -
            - h2: Associative arrays in YAML
