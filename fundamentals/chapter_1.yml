@@ -41,7 +41,7 @@ slides:
 
          -
            - h1: SLS
-           - p: stands for Salt State.
+           - p: Stands for Salt State, and is the file extension used for state files.
 
          -
            - h1: State
