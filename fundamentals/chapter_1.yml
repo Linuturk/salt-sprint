@@ -17,7 +17,7 @@ slides:
          -
            - h1: Minion
            - p: A server running a Salt minion daemon which can listen to commands from a master and perform the requested tasks. Generally, minions are servers which are to be controlled using Salt.
-           - image: 'http://www.soz6.com/sds-uploads/avatars/785ffe2588e37c31fc10bd47e529623122373.png'
+           - image: 'minion.jpg'
 
          -
            - h1: Targeting
