@@ -111,7 +111,7 @@ slides:
                    - mode: '0755'
                    - makedirs: True
                    - template: jinja
-                   - context:
+                   - defaults:
                        users_list:
                          - fred
                          - wilma
@@ -120,8 +120,9 @@ slides:
            - class_notes: |
                1. This is where we explain that you can template a file
                2. show that you set what template style that is
-               3. show how your passing in variables via context
+               3. show how your passing in variables via defaults
                4. Point out that naming the files .jinja make it more readable
+               5. Point out the unique spacing requirements of defaults (4 spaces instead of 2)
 
          -
            - h2: Jinja in the index.html
@@ -137,11 +138,11 @@ slides:
                5. {{ is for calling variables
 
          -
-           - h2: Files With context Lab
+           - h2: Files With Defaults Lab
            - ul:
              - Create a state that will ship an index.html file to /var/www/html on the minions.
              - Modify your state so that the index.html is templated.
-             - Pass it variables via context, make the variables a list of users.
+             - Pass it variables via defaults, make the variables a list of users.
              - fred, wilma, pebbles, bambam.
              - in the index.html file have it list out those users, exept for the user bambam.
            - class_notes: |
@@ -160,7 +161,7 @@ slides:
                    - mode: '0755'
                    - makedirs: True
                    - template: jinja
-                   - context:
+                   - defaults:
                        users_list:
                          - fred
                          - wilma
@@ -210,7 +211,7 @@ slides:
                {% endfor %}
            - class_notes: |
                1. Show them that accessing pillar data is just as easy
-               2. show them how they can use these variables directly in the file without the need to set context in the state
+               2. show them how they can use these variables directly in the file without the need to set defaults in the state
                3. Pillar data is rendered on the master.
                4. Minion specific data should go in grains!
 
