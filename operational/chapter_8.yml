@@ -53,7 +53,7 @@ slides:
 
          -
            - h2: Syndic example topology
-           - image: 'http://jenkins.onitato.com:8080/job/Salt%20Sprint%20Slides/ws/operational/salt-syndic.svg'
+           - image: 'https://raw.githubusercontent.com/Linuturk/salt-sprint/master/images/SaltSyndic.png'
 
          -
            - h2: Salt Returners
