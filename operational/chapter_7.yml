@@ -208,6 +208,8 @@ slides:
            - class_notes: |
                1. Show them that accessing pillar data is just as easy
                2. show them how they can use these variables directly in the file without the need to set context in the state
+               3. Pillar data is rendered on the master.
+               4. Minion specific data should go in grains!
 
          -
            - h2: All together now!
