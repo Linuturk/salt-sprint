@@ -48,6 +48,8 @@ slides:
              - Minion added to instracture
              - Highstate ran
              - Cloud-based server removed
+           - class_notes: |
+                   React to git commits to deploy new application code automatically.
 
          -
            - h2: Syndic
