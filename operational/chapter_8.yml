@@ -71,3 +71,4 @@ slides:
              - Handy for scripting large scale events
              - Written in python, structurally similar to other modules
              - Ran via <b>salt-run</b>
+             - Usually run against the entire environment
