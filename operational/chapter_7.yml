@@ -132,6 +132,9 @@ slides:
            - class_notes: |
                1. SHow quick example of what would be in the index file.
                2. mention white space control in jinja
+               3. point out the difference between {{ and {%
+               4. {% is for logic (if, for, set)
+               5. {{ is for calling variables
 
          -
            - h2: Files With context Lab
