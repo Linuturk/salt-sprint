@@ -33,6 +33,11 @@ slides:
            - ul:
              - Provides results to all minions
              - Useful for integrating live data in state runs and executions
+           - class_notes: |
+                   Load balancer nodes
+                   firewall IP ranges
+                   data in mine can be stale!
+                   publish.publish is another option
 
          -
            - h2: Reactor
