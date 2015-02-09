@@ -45,7 +45,7 @@ slides:
 
          -
            - h1: State
-           - p: The definition of the desired state of salt minions, States comprise of single or multiple salt modules.
+           - p: A description of the disired configuration of salt minions, States comprise of single or multiple salt modules.
 
          -
            - h1: State Module
