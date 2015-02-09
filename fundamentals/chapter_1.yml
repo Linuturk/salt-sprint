@@ -38,11 +38,6 @@ slides:
          -
            - h1: Grain
            - p: A key-value pair which contains a fact about a system, such as its hostname, network addresses. This should always be static information.
-
-         -
-           - h1: SLS
-           - p: Stands for Salt State, and is the file extension used for state files.
-
          -
            - h1: State
            - p: A description of the disired configuration of salt minions, States comprise of single or multiple salt modules.
@@ -50,7 +45,9 @@ slides:
          -
            - h1: State Module
            - p: A module which contains a set of functions (things that need to be done).
-
+         -
+           - h1: SLS
+           - p: Stands for Salt State, and is the file extension used for state files.
          -
            - h1: YAML
            - p: is a human-readable data format.
