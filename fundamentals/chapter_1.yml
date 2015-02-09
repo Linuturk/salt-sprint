@@ -37,7 +37,7 @@ slides:
 
          -
            - h1: Grain
-           - p: A key-value pair which contains a fact about a system, such as its hostname, network addresses.
+           - p: A key-value pair which contains a fact about a system, such as its hostname, network addresses. This should always be static information.
 
          -
            - h1: SLS
