@@ -183,6 +183,6 @@ slides:
                    - name: mysql-server
                    - order: 1
            - class_notes: |
-               1. Not a best practice and require should be used before this.
-               2. 'last' is also an option for order along with numeric values.
+               1. States are executed in the order they are defined. Require, Watch, etc should be used.
+               2. Most usefule with the keyword 'last', for making a state run at the end of the state tree.
 
