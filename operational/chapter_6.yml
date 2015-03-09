@@ -108,7 +108,16 @@ slides:
                1. List out pillar items.
                2. You can target base on pillar with the '-P' flag.
                3. You reference pillar items in state file using '{{ pillar['key'] }}' and the value of key will be dropped in.
-
+         -
+           - h2: Referencing Pillar in Jinja
+           - code: |
+               {{ pillar[role][web][mysql] }}
+               {{ pillar.get('role.web.mysql', 'default') }}
+               {{ salt['pillar.get']('role:web:mysql', 'default') }}
+           - class_notes: |
+               1. First example is referencing the pillar dictionary by keys, just like in python.
+               2. Second is using the python dictionary .get() function.
+               3. Third calls the pillar.get function in salt. Best practice.
          -
            - h2: Example pillar sls file
            - p: example in pillar

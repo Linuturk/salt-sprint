@@ -193,8 +193,12 @@ slides:
            - p: You can access grains in your template by the {{ grains }} variable substitution
            - code: |
                {{ grains['os'] }}
+               {{ grains.get('os', default) }}
+               {{ salt['grains.get']('os', default ) }}
            - class_notes: |
                1. Talk to the ability to access grains dirctly just like you would a jinja variable
+               2. First two examples work like a python dictonary.
+               3. Third example calls the grains.get salt fuction, and is a best practice!
 
          -
            - h2: Pillar
