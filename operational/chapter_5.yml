@@ -157,10 +157,10 @@ slides:
 
          -
            - h2: "Lab: Include"
-           - p: 'Split our your big state file in to seperate directories with a init.sls file in it and include them in a single state'
+           - p: 'Split your big state file into separate directories with a init.sls file and include them in a single state.'
            - ul:
-             - Create seperate sls files for each of your states
-             - Remove your state from the init.sls file and replace them with includes for the files you created
+             - Create separate sls files for each of your states.
+             - Remove your state from the init.sls file and replace them with includes for the files you created.
            - class_notes: |
                1. Student should be told that this is considered best practice, to have the init just include state files.
                2. State files can have more than one state in them
