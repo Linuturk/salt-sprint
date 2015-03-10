@@ -54,7 +54,7 @@ slides:
                3. Next step is to go to the master and use accept the key from the minion using the command salt-key.
                4. Keys stored in /etc/salt/pki on both master and minion, directory can be set in configuration files.
          -
-           - image: 'http://jenkins.onitato.com:8080/job/Salt%20Sprint%20Slides/ws/fundamentals/salt-keys.png'
+           - image: 'https://raw.githubusercontent.com/Linuturk/salt-sprint/master/fundamentals/salt-keys.png'
          -
            - h2: Salt Modules
            - ul:
