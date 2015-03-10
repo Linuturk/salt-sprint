@@ -113,6 +113,8 @@ slides:
                  pkg.installed:
                    - name: vim
            - p: Package names can still be different between distributions. (ie. apache2 and httpd)
+           - class_notes: |
+               Note the difference between the install execution module and the installed state module.
 
          -
            - h2: Installing sysstat Demo
