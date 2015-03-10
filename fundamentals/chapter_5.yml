@@ -77,7 +77,7 @@ slides:
 
          -
            - h2: YAML Examples
-           - p: SaltStack has some good examples documented here:
+           - p: "SaltStack has some good examples documented here:"
            - code: |
                http://docs.saltstack.com/en/latest/topics/yaml/index.html
          -
