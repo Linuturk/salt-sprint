@@ -146,6 +146,7 @@ slides:
            - h2: Variables in Jinja
            - p: Use double curly brackets for variable substitution
            - code: |
+               {% set name = "John" %}
                Hello, {{ name }}.
            - p: Rendered template
            - code: |
@@ -162,9 +163,7 @@ slides:
            - p: Rendered template
            - code: |
                - root
-               
                - apache
-               
 
          -
            - h2: Jinja in a Salt State
