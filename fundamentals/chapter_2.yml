@@ -14,7 +14,7 @@ slides:
              - SSH key management
              - Salt Modules
          -
-           - image: 'https://raw.githubusercontent.com/Linuturk/salt-sprint/master/fundamentals/salt-master-minions.svg'
+           - image: 'https://raw.githubusercontent.com/Linuturk/salt-sprint/master/fundamentals/salt-master-minions.png'
 
          -
            - h2: Salt Master
