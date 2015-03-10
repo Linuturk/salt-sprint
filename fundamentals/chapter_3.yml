@@ -118,3 +118,5 @@ slides:
              - HA options availible
              - Highly modular
              - Friendly community driven development
+             - API
+             - Vendor agnostic infrastructure management
