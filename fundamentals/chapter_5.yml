@@ -164,6 +164,9 @@ slides:
            - p: You can target minions using data in grains. This example will target all your CentOS servers with a test.ping.
            - code: |
                salt -G 'os:CentOS' test.ping
+           - class_notes: |
+               Grains are typically static information about a host.
+               Custom grains can be set (ie role:webserver)
 
          -
            - h2: Grains Demo
