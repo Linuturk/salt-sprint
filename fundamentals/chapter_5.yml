@@ -179,5 +179,6 @@ slides:
              - install the nginx webserver package
              - start the ngnix service
              - add the user thatch
+             - attempt to target using grains
            - class_notes: |
                1. last task of the day, challenge them to weild there newly learned skills and get as much out of this lab as they can. This is the time to break stuff and figure out what is really going on.
