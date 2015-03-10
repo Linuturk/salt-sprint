@@ -44,12 +44,12 @@ slides:
          -
            - h2: Key Management
            - ul:
-             - SSH keys use for communications
+             - RSA keys used for encryption and authentication
              - Minions generate keys
              - salt-key on Master
              - /etc/salt/pki
            - class_notes: |
-               1. The command salt-key works with the SSH keys used for master->minion connections.
+               1. The command salt-key works with the RSA keys used for master->minion connections.
                2. When the minion is first started it will generate cryptographic keys and attempt to connect to its configured master.
                3. Next step is to go to the master and use accept the key from the minion using the command salt-key.
                4. Keys stored in /etc/salt/pki on both master and minion, directory can be set in configuration files.
