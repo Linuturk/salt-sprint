@@ -11,10 +11,6 @@ slides:
            - h1: Saltier Terms
 
          -
-           - h2: Job
-           - p: The complete set of tasks to be performed by the execution of a Salt command 
-
-         -
            - h2: High Data
            - p: The data structure in a SLS file the represents a set of state declarations
 
@@ -53,3 +49,7 @@ slides:
          -
            - h2: Top File
            - p: Determines which SLS files should be applied to various systems and organizes those groups of systems into environments.
+
+         -
+           - h2: Job
+           - p: The complete set of tasks to be performed by the execution of a Salt command 
