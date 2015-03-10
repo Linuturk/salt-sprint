@@ -31,7 +31,7 @@ slides:
          -
            - h2: 'Download salt-bootstrap'
            - code: |
-              wget -O install_salt.sh http://bootstrap.saltstack.org
+              wget -O install_salt.sh https://bootstrap.saltstack.com
            - class_notes: |
               Downloading salt-bootstrap is pretty to the point.
 
@@ -89,7 +89,7 @@ slides:
              - 'Step Four: Verify that the Salt Master is installed'
              - "Step five:  Accept the minion's keys"
            - class_notes: |
-              wget -O install_salt.sh http://bootstrap.saltstack.org<br/>
+              wget -O install_salt.sh https://bootstrap.saltstack.com<br/>
               sh install_salt.sh -h<br/>
               sh install_salt.sh -M -A localhost<br/>
               salt-master --versions-report<br/>
