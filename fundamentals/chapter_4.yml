@@ -61,6 +61,9 @@ slides:
            - code: |
               salt-key
            - p: 'The -A flag will accept all pending keys'
+           - class_notes: |
+               Don't use -A. Accept single keys per hostname.
+               Use -L to list all keys.
 
          -
            - h2: 'Verify installation'
