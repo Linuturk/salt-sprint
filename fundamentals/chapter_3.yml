@@ -17,8 +17,8 @@ slides:
            - h2: Nutshell
            - ul:
              - "Chef (2009) has been an industry standard, Puppet lineage, (2) flavors: Open Source, and Enterprise (adds hosted/private server, push capable, better web UI, central authentication, multi-tenancy, RBAC, reporting and support)"
-             - "Ansible (2012) is very recent, fully open source, active community driven development, (3) flavors: Guru (command line core only), Tower (adds web UI, LDAP, ReST API), and Enterprise Tower (adds support + SLA) "
-             - "Salt (2011) comes between Ansible and Chef in capability, fully open source, supports Windows, originally for remote execution "
+             - "Ansible (2012) is very recent, fully open source, active community driven development. Released as an open source command line tool, and a licensed GUI."
+             - "Salt (2011) is fully open source, supports Windows, and is built on remote execution. Highly modular and extensible system."
          -
            - h2: Philosophy
            - ul:
