@@ -36,7 +36,7 @@ slides:
            - class_notes: |
                Explain basic notion of a DSL, show Ruby v. YAML code snippets (next slide)
          -
-           - h2: Adduser in Ruby
+           - h2: Adduser in Chef
            - code: |
                user "fred" do
                  supports :manage_home => true
@@ -59,7 +59,7 @@ slides:
                Explain what ruby code is doing (creating a user 'fred')
                Assumes groups wheel and storage already exist
          -
-           - h2: Adduser in YAML
+           - h2: Adduser in Salt
            - code: |
                fred:
                  user.present:
@@ -72,7 +72,7 @@ slides:
                      - wheel
                      - storage
            - class_notes: |
-               Explain how YAMLis doing the same thing (creating a user 'fred')
+               Explain how YAML is doing the same thing (creating a user 'fred')
          -
            - h2: Architecture
            - ul:
