@@ -31,7 +31,7 @@ slides:
            - h2: Documentation
            - p: "Salt's documentation is embeded inside and can be reach via command-line"
            - code: |
-               salt '*' sys.doc
+               salt-call sys.doc
            - p: "Or you can run -d, --doc on newer versions of Salt."
            - p: "The best place for the docs is online at http://docs.saltstack.com"
            - code: |
