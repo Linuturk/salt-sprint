@@ -24,6 +24,7 @@ slides:
              - /var/log/salt/master
              - /etc/init.d/salt-master
              - Communicate via ZeroMQ or SSH
+             - New RAET system replacing ZeroMQ
            - class_notes: |
                1. The salt master allows you to interact with salt minions.
                2. The configuration file for the Salt Master is located in /etc/salt/master.
