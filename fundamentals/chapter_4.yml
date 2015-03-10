@@ -39,7 +39,8 @@ slides:
            - h2: 'Run salt-bootstrap'
            - code: |
               sh install_salt.sh
-           - p: 'This example will install the minion, but -h show the help'
+           - p: 'This example installs the minion'
+           - p: 'Use -h to show the help'
            - class_notes: |
                The goal is to get them to read the help notes on the script.<br/>
                They can be viewed here as well:<br/>
