@@ -74,6 +74,11 @@ slides:
                1. Semi guided lab. There may be many who need help at first. Guide them through running the test.ping command and looking up documentation on a module.
 
          -
+           - h2: YAML Examples
+           - p: SaltStack has some good examples documented here:
+           - code: |
+               http://docs.saltstack.com/en/latest/topics/yaml/index.html
+         -
            - h2: State Modules
            - p: 'State modules are used when calling state.sls or highstate against a minion.'
            - code: |
