@@ -19,7 +19,7 @@ slides:
 
          -
            - h2: What is an Execution Module
-           - p: 'Execution modules are used when calling modules directly from the command line'
+           - p: 'Execution modules are used when calling modules directly from the command line.'
            - code: |
                salt '*' user.add fred uid gid groups home shell
            - class_notes: |
