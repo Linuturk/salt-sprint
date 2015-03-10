@@ -36,6 +36,8 @@ slides:
                minion2:
                    True
            - p: There is no matching state module for test.ping.
+           - class_notes: |
+               This is not an ICMP ping over the network. This is the salt minion responding on the minion.
 
          -
            - h2: test.ping Demo
