@@ -92,7 +92,7 @@ slides:
            - ul:
              - "Chef: standard key-based SSL"
              - "Ansible: standard SSH (or paramiko), MQ option"
-             - "Salt: MQ, custom SSH"
+             - "Salt: ZeroMQ, SSH, or the new RAET"
            - class_notes: |
                Verify understanding of SSL, MQ
          -
