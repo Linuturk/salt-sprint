@@ -33,7 +33,7 @@ slides:
          -
            - h2: 'Download salt-bootstrap'
            - code: |
-              wget -O install_salt.sh http://bootstrap.saltstack.com
+              wget -O install_salt.sh https://bootstrap.saltstack.com
            - class_notes: |
               Downloading salt-bootstrap is pretty to the point.
 
@@ -42,7 +42,7 @@ slides:
            - ul:
              - 'Download the salt-bootstrap script to all machines'
            - class_notes: |
-              wget -O install_salt.sh http://bootstrap.saltstack.com
+              wget -O install_salt.sh https://bootstrap.saltstack.com
 
          -
            - h2: 'Example flags for Minions'
@@ -72,7 +72,7 @@ slides:
          -
            - h2: 'cliff notes'
            - code: |
-              wget  --no-check-certificate -O install_salt.sh http://bootstrap.saltstack.com
+              wget  --no-check-certificate -O install_salt.sh https://bootstrap.saltstack.com
               sh install_salt.sh -M -N
               sh install_salt.sh -A sd-pipeline.com
 
