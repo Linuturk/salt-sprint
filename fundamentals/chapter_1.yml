@@ -51,6 +51,7 @@ slides:
          -
            - h1: YAML
            - p: is a human-readable data format.
+           - p: the primary language to define and configure salt.
 
          -
            - h1: Why use Salt?
