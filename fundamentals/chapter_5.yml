@@ -118,6 +118,7 @@ slides:
            - h2: Installing sysstat Demo
            - class_notes: |
                SSH to your salt master, and run the command "salt '*' pkg.install sysstat" and show the output to the class. This should install the sysstat package on the targeted minions, and show the old/new package versions.
+               Run this command several more times to show it doesn't repeat the installation, as the package is already installed.
 
          -
            - h2: Starting a Service
