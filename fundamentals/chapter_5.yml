@@ -138,7 +138,8 @@ slides:
            - ul:
              - Write a state.sls file that will install the cowsay package
              - execute that state file from the command line using the state.sls module
-           - p: hint
+         -
+           - h2: Hint
            - code: |
                vim_install:
                  pkg.installed:
