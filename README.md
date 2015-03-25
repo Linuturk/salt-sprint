@@ -1,4 +1,4 @@
-[![Stories in Ready](https://badge.waffle.io/linuturk/salt-sprint.png?label=ready&title=Ready)](https://waffle.io/linuturk/salt-sprint) | [![Circle CI](https://circleci.com/gh/Linuturk/salt-sprint.svg?style=svg)](https://circleci.com/gh/Linuturk/salt-sprint)
+[![Stories in Ready](https://badge.waffle.io/linuturk/salt-sprint.png?label=ready&title=Ready)](https://waffle.io/linuturk/salt-sprint) [![Circle CI](https://circleci.com/gh/Linuturk/salt-sprint.svg?style=svg)](https://circleci.com/gh/Linuturk/salt-sprint)
 
 salt-sprint
 ===========
