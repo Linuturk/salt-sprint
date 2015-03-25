@@ -18,3 +18,12 @@ There are a few components of this repository.
 * Drone and builder.sh to run tests and autobuild the slides for each commit.
 
 Branch for the chapter you are working on, and don't forget to pull before you try to merge and push.
+
+## Contributing
+
+Here are the steps you should take to contribute or fix something in this material.
+
+1. Create/Find an issue that describes your problem.
+1. Assign that issue to yourself if you are working to fix this issue.
+1. Do your work on a feature branch, and submit a Pull Request.
+1. Ask someone else to review and approve your Pull Request. **No git selfies!**
