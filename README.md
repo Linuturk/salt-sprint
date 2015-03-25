@@ -1,3 +1,4 @@
+[![Stories in Ready](https://badge.waffle.io/linuturk/salt-sprint.png?label=ready&title=Ready)](https://waffle.io/linuturk/salt-sprint)
 salt-sprint
 ===========
 
