@@ -25,5 +25,5 @@ Here are the steps you should take to contribute or fix something in this materi
 
 1. Create/Find an issue that describes your problem.
 1. Assign that issue to yourself if you are working to fix this issue.
-1. Do your work on a feature branch, and submit a Pull Request.
-1. Ask someone else to review and approve your Pull Request. **No git selfies!**
+1. Do your work on a feature branch and watch for the test results in CircleCI.
+1. Submit a Pull Request, and ask someone to review and merge. **No git selfies!**
