@@ -1,247 +1,168 @@
 ---
 header:
-  author: RU,
-  title: Chapter 7, Salt Fundamentals
-  description: Salt Fundamentals Course
+  author: Allen Oster and Eric Hernandez
+  title: Salt Operational, Chapter 6, Leveraging Grains and Pillars
+  description: Explore the uses for the information provided by Salt grain and pillar data.
 
 slides:
    -
      - nested:
          -
-           - h1: Templating
-           - ul:
-             - Files
-             - States
-             - and more!
+           - h1: Leveraging Grains and Pillars
+           - ul: 
+             - Grains
+             - Pillar
+             - Targeting
            - class_notes: |
-               1. We are gonna start fully utilizing the power of config management now
-               2. Gonna learn how to customize files for our use. Good use is with config files.
+               1. Understand grains and its uses.
+               2. Understand pillars and its uses.
+               3. Targeting based on pillar variables and grains in states and command line.
+               4. Speak to setting this up in its own git repo for security best practice.
 
          -
-           - h2: The file Module
+           - h2: Grains
+           - p: 'Information about the system the minion is running on or custom grains'
            - ul:
-             - create/remove
-             - source
-             - permissions
-             - templating
-             - variables
+             - Static info from minion start
+             - Custom grains
+             - /etc/salt/minion
+             - /etc/salt/grains
            - p: ""
-           - link: ['docs.saltstack.com', 'http://docs.saltstack.com/en/latest/ref/states/all/salt.states.file.html#module-salt.states.file']
+           - link: ['docs.saltstack.com', 'http://docs.saltstack.com/en/latest/topics/pillar/']
            - class_notes: |
-               1. These are the components of the file module that we are gonna focus on.
-               2. There are many more that you can discover using the docs
+               1. Grains give infomation about the underlying system the minion is running on. 
+               2. Custom grains can be set via command line or in /etc/salt/grains.
+               3. have them browse the docs while we discuss
 
          -
-           - h2: Ship a file
+           - h2: Command Line Examples
            - code: |
-               ship_this_file:
-                 file.managed:
-                   - name: /home/fred/shippedfile.txt
-                   - source: salt://webserver/files/shippingfile.txt
-                   - user: thatch
-                   - group: thatch
-                   - mode: '0644'
-           - image: 'http://shipitsquirrel.github.io/images/ship%20it%20squirrel.png'
+               salt '*' grains.ls
+               salt '*' grains.items
+               salt -G 'os:CentOS' test.ping
            - class_notes: |
-               1. Speak to each part of this example.
-               2. Point out setting the name of the file and that the source can be a remote lcation aswell.
-               3. mention setting permissions
+               1. The first 2 command line examples list out the minion grains.
+               2. You can target based on grains using the '-G' flag via command line.
 
          -
-           - h2: Directories can be managed
+           - h2: Top file example
+           - p: /srv/pillar/top.sls
            - code: |
-               create_my_directories:
-                 file.directory:
-                   - name: /home/thatch/mydirs/dir1
-                   - user: thatch
-                   - group: thatch
-                   - mode: '0755'
-                   - makedirs: True
-           - class_notes: |
-               1. Talk about creating directories
-               2. speak to each component
-               3. talk about the mkdirs will create the full path if any directories does not exist
+               'role:web':
+                   - match: grain
+                   - webserver
+               'role:database':
+                   - match: grain
+                   - database
 
          -
-           - h2: Game of Chowns!
-           - h2: Lab
+           - h2: 'Lab: View and Set Grains'
            - ul:
-             - Create a state that will create a directory in the thatch users home directory called saltstuff
-             - Create a file on your master that you want to ship to the minions
-             - create a state that will ship the file you just created to the saltstuff directory that you created
+             - List and view available grains
+             - set a custom grain of role to your minions
            - class_notes: |
-               1. an example of what this looks like follows
-               2 Speak to an excellent use case for something like this would be shipping ssh public keys to all minions.
+               2. salt \* grains.items; salt \* grans.append role web
+
+         -
+           - h2: 'Lab: Using Grains in States'
+           - p: 'Targeting based on OS grain information.'
+           - ul:
+             - in your install apache state. set a jinja variable to the correct package name, using an if statement based on the os Grain.
+             - use that variable in the install apache state to install the correct package depending on OS
+           - class_notes: |
+               1. In this lab you will actually want them to go into there previously created state and setup a jinja if statement where if grain['os'] == ubuntu then apache2, etc.
 
          -
            - h2: cliff notes
            - code: |
-               ship_salt_stuff_file:
-                 file.managed:
-                   - name: /home/thatch/saltstuff/saltfile.txt
-                   - source: salt://files/saltfile.txt
-                   - user: thatch
-                   - group: thatch
-                   - file_mode: '0744'
-                   - dir_mode: '0755'
-                   - makedirs: True
-           - class_notes: |
-               1. this is the answer to the previous lab.
-               2. point out that this accomplishes two steps in one as the mkdirs will create the directory as well.
-               3. Show that we can set the permissions for the created directory and the created file seperately
-
-         -
-           - h1: Where the magic happens
-           - p: Bringing it all together. Pillar, Grains, and Jinja to template files
-           - p: Rule all the things!
-           - image: 'http://cdn2-b.examiner.com/sites/default/files/styles/image_content_width/hash/5d/f7/Despicable%20Me_2.jpg?itok=Z2SdJYc9'
-           - class_notes: |
-               1. We are going to start wielding configuration amangement now
-               2. Prepare yourselves for some templating magic
-
-         -
-           - h2: Use a template
-           - code: |
-               ship_salt_stuff_file:
-                 file.managed:
-                   - name: /home/thatch/saltstuff/saltfile.txt.jinja
-                   - source: salt://files/saltfile.txt.jinja
-                   - user: thatch
-                   - group: thatch
-                   - mode: '0755'
-                   - makedirs: True
-                   - template: jinja
-                   - defaults:
-                       users_list:
-                         - fred
-                         - wilma
-                         - pebbles
-                         - bambam
-           - class_notes: |
-               1. This is where we explain that you can template a file
-               2. show that you set what template style that is
-               3. show how your passing in variables via defaults
-               4. Point out that naming the files .jinja make it more readable
-               5. Point out the unique spacing requirements of defaults (4 spaces instead of 2)
-
-         -
-           - h2: Jinja in the index.html
-           - code: |
-               {% for user in users_list %}
-               {{ user }}</br>
-               {% endfor %}
-           - class_notes: |
-               1. SHow quick example of what would be in the index file.
-               2. mention white space control in jinja
-               3. point out the difference between {{ and {%
-               4. {% is for logic (if, for, set)
-               5. {{ is for calling variables
-
-         -
-           - h2: Files With Defaults Lab
-           - ul:
-             - Create a state that will ship an index.html file to /var/www/html on the minions.
-             - Modify your state so that the index.html is templated.
-             - Pass it variables via defaults, make the variables a list of users.
-             - fred, wilma, pebbles, bambam.
-             - in the index.html file have it list out those users, exept for the user bambam.
-           - class_notes: |
-               1. Refference previous slides for how this should look
-               2. Next slide will be a cliff note
-
-         -
-           - h2: Cliff notes state
-           - code: |
-               ship_salt_stuff_file:
-                 file.managed:
-                   - name: /var/www/html/index.html.jinja
-                   - source: salt://files/index.html.jinja
-                   - user: thatch
-                   - group: thatch
-                   - mode: '0755'
-                   - makedirs: True
-                   - template: jinja
-                   - defaults:
-                       users_list:
-                         - fred
-                         - wilma
-                         - pebbles
-                         - bambam
-           - class_notes: |
-               1. mention the ability to use recurse to recusively set permissions in a directory
-
-         -
-           - h2: cliff notes index
-           - code: |
-               {% for user in users_list %}
-               {% if user == 'bambam' %}
-               {% else %}
-               {{ user }}</br>
+               {% if grain['os'] == 'Ubuntu' %}
+               {% set apache_package == 'apache2' %}
+               {% elseif grain['os'] == 'CentOS' %}
+               {% set apache_package == 'httpd' %}
                {% endif %}
-               {% endfor %}
 
-         -
-           - h2: But who wants to set variables in every state?
-           - p: Variables can use many different sources
-           - ul:
-             - grains
-             - pillar
-             - jinja
-
-         -
-           - h2: Grains
-           - p: You can access grains in your template by the {{ grains }} variable substitution
-           - code: |
-               {{ grains['os'] }}
-               {{ grains.get('os', default) }}
-               {{ salt['grains.get']('os', default ) }}
-           - class_notes: |
-               1. Talk to the ability to access grains dirctly just like you would a jinja variable
-               2. First two examples work like a python dictonary.
-               3. Third example calls the grains.get salt fuction, and is a best practice!
+               install_apache:
+                 pkg.installed:
+                   - name: {{ apache_package }}
 
          -
            - h2: Pillar
-           - p: You can access pillar data the same way!
-           - code: |
-               {{ pillar['users_list'] }}
-           - p: You could have done this in the index.html if you had a pillar value set
-           - code: |
-               {% for user in pillar['users_list'] %}
-               {% if user == 'bambam' %}
-               {% else %}
-               {{ user }}</br>
-               {% endif %}
-               {% endfor %}
-           - class_notes: |
-               1. Show them that accessing pillar data is just as easy
-               2. show them how they can use these variables directly in the file without the need to set defaults in the state
-               3. Pillar data is rendered on the master.
-               4. Minion specific data should go in grains!
-
-         -
-           - h2: All together now!
+           - p: 'Designed to offer global variables to minions'
            - ul:
-             - In pillar create a list of users that only Ubuntu minions will share
-             - In pillar create a different list of users that only CentOS minions will share
-             - Use that list of users in your templated index.html
-             - Also have your index.html display its OS
+             - Managed like Salt State Tree
+             - /srv/pillar
+             - Storing sensitive data
            - class_notes: |
-               They should have the top file in pillar point to seperate users list based on OS grain.
-               They should also have in there templates the jinja loop based on pillar data with the os grain listed.
+               1. Pillar provides a way to share data with all minions.
+               2. Pillar top file and state files stored in /srv/pillar.
+               3. Unlike state tree, pillar data is only available for the targeted minion specified by the matcher type. This makes it useful for storing sensitive data specific to a particular minion.
 
          -
-           - h2: Cliff notes
+           - h2: Examples
+           - code: |
+               salt '*' pillar.items
+               salt -P 'key:value' test.ping
+           - code: |
+               {{ pillar['key'] }}
+           - class_notes: |
+               1. List out pillar items.
+               2. You can target base on pillar with the '-P' flag.
+               3. You reference pillar items in state file using '{{ pillar['key'] }}' and the value of key will be dropped in.
+         -
+           - h2: Referencing Pillar in Jinja
+           - code: |
+               {{ pillar[role][web][mysql] }}
+               {{ pillar.get('role.web.mysql', 'default') }}
+               {{ salt['pillar.get']('role:web:mysql', 'default') }}
+           - class_notes: |
+               1. First example is referencing the pillar dictionary by keys, just like in python.
+               2. Second is using the python dictionary .get() function.
+               3. Third calls the pillar.get function in salt. Best practice.
+         -
+           - h2: Example pillar sls file
+           - p: example in pillar
+           - code: |
+              bob_ross: 'happy little trees'
+
+              list_of_words:
+                - its
+                - so
+                - fluffy
+           - p: example in jinja
+           - code: |
+               {{ pillar['bob_ross'] }}
+           - p: example when rendered
+           - code: |
+               happy little trees
+           - class_notes: |
+               1. setting a single value and a list of values
+               2. how it looks in jinja template
+               3. how it looks when jinja renders it
+
+         -
+           - h2: 'Lab: Using Pillar'
+           - p: 'Set pillar data based on OS grain and use that pillar data in the state created in the previous lab instead of the grain.'
+           - ul:
+             - set up your pillar top file to target based on the os grain and use differnt pillar sls files for each OS
+             - Set the correct apache package name to a variable in the respective OS's pillar file
+           - class_notes: |
+               1. Lab will have them set pillar data targeted by os grain, and use that pillar data in the state instead of the previous grain if statement.
+
+         -
+           - h2: Cliff notes top.sls
            - p: /srv/pillar/top.sls
            - code: |
                base:
-                 'os:{{ grains['os'] }}':
+                 'os:Ubuntu':
                    - match: grain
-                   - {{ grains['os'] }}
-           - p: /srv/pillar/Ubuntu.sls
+                   - Ubuntu
+
+                 'os:CentOS':
+                   - match: grain
+                   - CentOS
+
+         -
+           - h2: Cliff notes pillar sls files
+           - p: /srv/pillar/Ubuntu/init.sls
            - code: |
-               users_list:
-                 - fred
-                 - wilma
-                 - pebbles
-                 - bambam
+               apache_package: apache2
