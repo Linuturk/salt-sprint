@@ -86,16 +86,26 @@ slides:
            - class_notes: |
                salt '*' test.ping --out json<br/>
                To show that the test.ping is now JSONed
+               Show the output formatting documentation here:
+               http://salt.readthedocs.org/en/latest/ref/output/all/index.html
 
          -
            - h2: Lab
+           - p: 'Using execution modules, answer these questions about the minions:'
            - ul:
-             - 'Add an user named "thatch" using cmd.run with JSON output'
+             - What OS is running?
+             - How much memory and disk space is used? available?
+             - What IP addresses are assigned to the network interfaces?
            - class_notes: |
-              1. salt '*' user.add thatch --out json<br/>
-              2. This lab cannot be skipped, it is used later.<br/>
-              3. http://docs.saltstack.com/en/latest/ref/modules/all/salt.modules.useradd.html
+               Encourage the students to look at the Salt documentation to try
+               and find execution modules that return this information.
+               While the cmd.run module can call system utilities to see
+               this information, there are execution modules for each item
+               specifically.
          -
            - h2: 'cliff notes'
            - code: |
-              salt '*' user.add thatch --out json
+               salt '*' grains.item osfinger
+               salt '*' disk.usage
+               salt '*' status.meminfo
+               salt '*' network.ip_addrs
