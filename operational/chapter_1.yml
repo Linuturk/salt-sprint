@@ -65,7 +65,7 @@ slides:
 
          -
            - h2: Engines
-           - p: Need some help here
+           - p: Custom code on the Salt Master that consumes messages from beacons, and performs some kind of action based on the information.
 
          -
            - h2: Enterprise UI
