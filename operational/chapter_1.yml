@@ -46,6 +46,7 @@ slides:
          -
            - h2: State Run
            - p: The application of a set of states on a set of systems
+
          -
            - h2: Top File
            - p: Determines which SLS files should be applied to various systems and organizes those groups of systems into environments.
@@ -53,3 +54,27 @@ slides:
          -
            - h2: Job
            - p: The complete set of tasks to be performed by the execution of a Salt command 
+
+         -
+           - h2: Raet
+           - p: The Reliable Asynchronous Event Transport, or RAET, is an alternative transport medium developed specifically with Salt in mind. It has been developed to allow queuing to happen up on the application layer and comes with socket layer encryption.
+
+         -
+           - h2: Beacons
+           - p: The beacon system allows the minion to hook into system processes and continually translate external events into the salt event bus. The primary example of this is the inotify beacon. This beacon uses inotify to watch configured files or directories on the minion for changes, creation, deletion etc. This allows for the changes to be sent up to the master where the reactor can respond to changes.
+
+         -
+           - h2: Engines
+           - p: Need some help here
+
+         -
+           - h2: Enterprise UI
+           - p: Full blown UI, its pretty great. 
+
+         -
+           - h2: Runners
+           - p: Salt runners work similarly to Salt execution modules however they execute on the Salt master itself instead of remote Salt minions. A Salt runner can be a simple client call or a complex application.         
+
+         -
+           - h2: Salt SSH
+           - p: Salt doesnt always need an agent, it can use ssh to login and do work similar to ansible. 
