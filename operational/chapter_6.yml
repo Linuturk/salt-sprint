@@ -1,47 +1,247 @@
 ---
 header:
-  author: Author Name
-  title: Chapter Title
-  description: Description of the chapter
+  author: RU,
+  title: Chapter 7, Salt Fundamentals
+  description: Salt Fundamentals Course
 
 slides:
+   -
+     - nested:
+         -
+           - h1: Templating
+           - ul:
+             - Files
+             - States
+             - and more!
+           - class_notes: |
+               1. We are gonna start fully utilizing the power of config management now
+               2. Gonna learn how to customize files for our use. Good use is with config files.
 
-  -
-    - nested:
+         -
+           - h2: The file Module
+           - ul:
+             - create/remove
+             - source
+             - permissions
+             - templating
+             - variables
+           - p: ""
+           - link: ['docs.saltstack.com', 'http://docs.saltstack.com/en/latest/ref/states/all/salt.states.file.html#module-salt.states.file']
+           - class_notes: |
+               1. These are the components of the file module that we are gonna focus on.
+               2. There are many more that you can discover using the docs
 
-      -
-        - h1: chapter title slide
-        - h3: subtitle/info
+         -
+           - h2: Ship a file
+           - code: |
+               ship_this_file:
+                 file.managed:
+                   - name: /home/fred/shippedfile.txt
+                   - source: salt://webserver/files/shippingfile.txt
+                   - user: thatch
+                   - group: thatch
+                   - mode: '0644'
+           - image: 'http://shipitsquirrel.github.io/images/ship%20it%20squirrel.png'
+           - class_notes: |
+               1. Speak to each part of this example.
+               2. Point out setting the name of the file and that the source can be a remote lcation aswell.
+               3. mention setting permissions
 
-      -
-        - h1: content slide
-        - p: content content content
+         -
+           - h2: Directories can be managed
+           - code: |
+               create_my_directories:
+                 file.directory:
+                   - name: /home/thatch/mydirs/dir1
+                   - user: thatch
+                   - group: thatch
+                   - mode: '0755'
+                   - makedirs: True
+           - class_notes: |
+               1. Talk about creating directories
+               2. speak to each component
+               3. talk about the mkdirs will create the full path if any directories does not exist
 
-        - class_notes:
-            these are speaker notes that will be hidden
+         -
+           - h2: Game of Chowns!
+           - h2: Lab
+           - ul:
+             - Create a state that will create a directory in the thatch users home directory called saltstuff
+             - Create a file on your master that you want to ship to the minions
+             - create a state that will ship the file you just created to the saltstuff directory that you created
+           - class_notes: |
+               1. an example of what this looks like follows
+               2 Speak to an excellent use case for something like this would be shipping ssh public keys to all minions.
 
-      -
-        - h1: content slide
-        - p: more content
+         -
+           - h2: cliff notes
+           - code: |
+               ship_salt_stuff_file:
+                 file.managed:
+                   - name: /home/thatch/saltstuff/saltfile.txt
+                   - source: salt://files/saltfile.txt
+                   - user: thatch
+                   - group: thatch
+                   - file_mode: '0744'
+                   - dir_mode: '0755'
+                   - makedirs: True
+           - class_notes: |
+               1. this is the answer to the previous lab.
+               2. point out that this accomplishes two steps in one as the mkdirs will create the directory as well.
+               3. Show that we can set the permissions for the created directory and the created file seperately
 
-      - 
-        - h3: This is how ordered lists work
-        - ol:
-          - alpha
-          - beta
-          - gamma 
+         -
+           - h1: Where the magic happens
+           - p: Bringing it all together. Pillar, Grains, and Jinja to template files
+           - p: Rule all the things!
+           - image: 'http://cdn2-b.examiner.com/sites/default/files/styles/image_content_width/hash/5d/f7/Despicable%20Me_2.jpg?itok=Z2SdJYc9'
+           - class_notes: |
+               1. We are going to start wielding configuration amangement now
+               2. Prepare yourselves for some templating magic
 
-      - 
-        - h3: And unordered lists are also a thing
-        - ul:
-          - duck
-          - duck
-          - goose 
-          - cow
+         -
+           - h2: Use a template
+           - code: |
+               ship_salt_stuff_file:
+                 file.managed:
+                   - name: /home/thatch/saltstuff/saltfile.txt.jinja
+                   - source: salt://files/saltfile.txt.jinja
+                   - user: thatch
+                   - group: thatch
+                   - mode: '0755'
+                   - makedirs: True
+                   - template: jinja
+                   - defaults:
+                       users_list:
+                         - fred
+                         - wilma
+                         - pebbles
+                         - bambam
+           - class_notes: |
+               1. This is where we explain that you can template a file
+               2. show that you set what template style that is
+               3. show how your passing in variables via defaults
+               4. Point out that naming the files .jinja make it more readable
+               5. Point out the unique spacing requirements of defaults (4 spaces instead of 2)
 
-      -
-        - h3: Code highlighting demo
-        - code: |
-            import salt
-            salt.all_the_things() 
+         -
+           - h2: Jinja in the index.html
+           - code: |
+               {% for user in users_list %}
+               {{ user }}</br>
+               {% endfor %}
+           - class_notes: |
+               1. SHow quick example of what would be in the index file.
+               2. mention white space control in jinja
+               3. point out the difference between {{ and {%
+               4. {% is for logic (if, for, set)
+               5. {{ is for calling variables
 
+         -
+           - h2: Files With Defaults Lab
+           - ul:
+             - Create a state that will ship an index.html file to /var/www/html on the minions.
+             - Modify your state so that the index.html is templated.
+             - Pass it variables via defaults, make the variables a list of users.
+             - fred, wilma, pebbles, bambam.
+             - in the index.html file have it list out those users, exept for the user bambam.
+           - class_notes: |
+               1. Refference previous slides for how this should look
+               2. Next slide will be a cliff note
+
+         -
+           - h2: Cliff notes state
+           - code: |
+               ship_salt_stuff_file:
+                 file.managed:
+                   - name: /var/www/html/index.html.jinja
+                   - source: salt://files/index.html.jinja
+                   - user: thatch
+                   - group: thatch
+                   - mode: '0755'
+                   - makedirs: True
+                   - template: jinja
+                   - defaults:
+                       users_list:
+                         - fred
+                         - wilma
+                         - pebbles
+                         - bambam
+           - class_notes: |
+               1. mention the ability to use recurse to recusively set permissions in a directory
+
+         -
+           - h2: cliff notes index
+           - code: |
+               {% for user in users_list %}
+               {% if user == 'bambam' %}
+               {% else %}
+               {{ user }}</br>
+               {% endif %}
+               {% endfor %}
+
+         -
+           - h2: But who wants to set variables in every state?
+           - p: Variables can use many different sources
+           - ul:
+             - grains
+             - pillar
+             - jinja
+
+         -
+           - h2: Grains
+           - p: You can access grains in your template by the {{ grains }} variable substitution
+           - code: |
+               {{ grains['os'] }}
+               {{ grains.get('os', default) }}
+               {{ salt['grains.get']('os', default ) }}
+           - class_notes: |
+               1. Talk to the ability to access grains dirctly just like you would a jinja variable
+               2. First two examples work like a python dictonary.
+               3. Third example calls the grains.get salt fuction, and is a best practice!
+
+         -
+           - h2: Pillar
+           - p: You can access pillar data the same way!
+           - code: |
+               {{ pillar['users_list'] }}
+           - p: You could have done this in the index.html if you had a pillar value set
+           - code: |
+               {% for user in pillar['users_list'] %}
+               {% if user == 'bambam' %}
+               {% else %}
+               {{ user }}</br>
+               {% endif %}
+               {% endfor %}
+           - class_notes: |
+               1. Show them that accessing pillar data is just as easy
+               2. show them how they can use these variables directly in the file without the need to set defaults in the state
+               3. Pillar data is rendered on the master.
+               4. Minion specific data should go in grains!
+
+         -
+           - h2: All together now!
+           - ul:
+             - In pillar create a list of users that only Ubuntu minions will share
+             - In pillar create a different list of users that only CentOS minions will share
+             - Use that list of users in your templated index.html
+             - Also have your index.html display its OS
+           - class_notes: |
+               They should have the top file in pillar point to seperate users list based on OS grain.
+               They should also have in there templates the jinja loop based on pillar data with the os grain listed.
+
+         -
+           - h2: Cliff notes
+           - p: /srv/pillar/top.sls
+           - code: |
+               base:
+                 'os:{{ grains['os'] }}':
+                   - match: grain
+                   - {{ grains['os'] }}
+           - p: /srv/pillar/Ubuntu.sls
+           - code: |
+               users_list:
+                 - fred
+                 - wilma
+                 - pebbles
+                 - bambam
