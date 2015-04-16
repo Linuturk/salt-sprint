@@ -1,47 +1,89 @@
 ---
 header:
-  author: Author Name
-  title: Chapter Title
-  description: Description of the chapter
+  author: RU,
+  title: Chapter 6, Salt Fundamentals
+  description: Salt Fundamentals Course
 
 slides:
+   -
+     - nested:
+         -
+           - h2: Ship a file
+           - code: |
+               ship_this_file:
+                 file.managed:
+                   - name: /home/fred/shippedfile.txt
+                   - source: salt://webserver/files/shippingfile.txt
+                   - user: thatch
+                   - group: thatch
+                   - mode: '0644'
+           - image: 'http://shipitsquirrel.github.io/images/ship%20it%20squirrel.png'
+           - class_notes: |
+               1. Speak to each part of this example.
+               2. Point out setting the name of the file and that the source can be a remote lcation aswell.
+               3. mention setting permissions
+         -
+           - h2: Setting permissions
+           - code: |
+               enforce_permissions:
+                 file.directory:
+                   - name: /srv/pillar/
+                   - user: thatch
+                   - group: devs
+                   - mode: 755
+                   - makedirs: True
+           - class_notes: |
+               1. Similar to the previous example.
+         -
+           - h2: Lab
+           - p: Force your Apache Document Root to have the proper permissions.
+         -
+           - h2: cliff notes
+           - code: |
+                enforce_permissions:
+                 file.directory:
+                   - name: /var/www/html
+                   - user: www-data
+                   - group: www-data
+                   - dir_mode: 755
+                   - file_mode: 644
+                   - makedirs: True
+                   - recurse:
+                     - user
+                     - group
+                     - mode
+           - class_notes: |
+               1. Recurse enforces these permissions to all files and sub-directories.
+               2. Note the dir_mode and file_mode settings versus the plain mode.
+         -
+           - h2: Extract an archive
+           - code: |
+                extract_tar:
+                 archive.extracted:
+                   - name: /usr/local/bin
+                   - source: salt://myscripts.zip
+                   - archive_format: tar
+                   - user: root
+                   - group: root
+           - class_notes: |
+               1. Ask the students if this will be extracted everytime. (It will.)
 
-  -
-    - nested:
-
-      -
-        - h1: chapter title slide
-        - h3: subtitle/info
-
-      -
-        - h1: content slide
-        - p: content content content
-
-        - class_notes:
-            these are speaker notes that will be hidden
-
-      -
-        - h1: content slide
-        - p: more content
-
-      - 
-        - h3: This is how ordered lists work
-        - ol:
-          - alpha
-          - beta
-          - gamma 
-
-      - 
-        - h3: And unordered lists are also a thing
-        - ul:
-          - duck
-          - duck
-          - goose 
-          - cow
-
-      -
-        - h3: Code highlighting demo
-        - code: |
-            import salt
-            salt.all_the_things() 
-
+         -
+           - h2: Lab
+           - p: Extract WordPress to your Apache Document Root.
+         -
+           - h2: cliff notes
+           - code: |
+               extract_wordpress:
+                 archive.extracted:
+                   - name: /var/www/html/
+                   - source: https://wordpress.org/latest.zip
+                   - source_hash: md5=cd9c13c1021318c61a2606fea1f2779a
+                   - archive_format: zip
+                   - user: www-data
+                   - group: www-data
+                   - if_missing: /var/www/html/wordpress
+           - class_notes: |
+               1. Explain why the source_hash is important. It ensures the download was completed successfully.
+               It also ensures you are downloading the file you expect.
+               2. Explain how if_missing makes this state idempotent. It won't run again if that folder exists.
