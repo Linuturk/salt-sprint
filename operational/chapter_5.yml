@@ -78,7 +78,7 @@ slides:
 
          -
            - h2: Listen 
-           - p: 'Statement used to monitor changes in other states'
+           - p: 'Statement used to run tasks basedd on events in other states'
            - code: |
                mysql_service_restart:
                  service.restart:
@@ -93,6 +93,22 @@ slides:
                5. Watch could end up restarting a service multiple times instead of just one time at the very end with listen
 
          -
+           - h2: On Changes
+           - p: 'Statement used to monitor changes in other states'
+           - code: |
+               compile_code:
+                 cmd.run:
+                   - name: make install
+                   - cwd: /srv/something-1.4
+                   - on_changes:
+                       - archive: something-1.4.tar.gz
+           - class_notes: |
+               1. on_changes is different from listen and watch.
+               2. on_changes just runs when the on_changes start's result is True
+               3. watch and listen will use the mod_watch() function in the state instead of running as normal, so they provide extra functionality
+               4. using listen is probably correct for most usecases, but if you need stuff inserted into the state run as the next task, use on_changes instead of watch
+
+         -
            - h2: Prereq
            - p: 'Allows for actions to be taken based on the expected results of a state that has not yet been executed'
            - code: |
@@ -105,7 +121,7 @@ slides:
                apache_start:
                  cmd.run:
                    - name: service apache start
-                   - listen:
+                   - on_changes:
                      - file: site_code
 
                site_code:
@@ -113,7 +129,7 @@ slides:
                    - name: /opt/site_code
                    - source: salt://site/code
            - class_notes: |
-               1. In this example we show how repreq can work in conjunction with listen to have Apache shutdown before site_code executes.
+               1. In this example we show how repreq can work in conjunction with on_changes to have Apache shutdown before site_code executes.
                2. Then, apache_start will run based on its listening of site_code being actioned.
 
          -
