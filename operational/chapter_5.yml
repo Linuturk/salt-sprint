@@ -78,7 +78,7 @@ slides:
 
          -
            - h2: Listen 
-           - p: 'Statement used to run tasks basedd on events in other states'
+           - p: 'Statement used to run tasks based on events in other states'
            - code: |
                mysql_service_restart:
                  service.restart:
