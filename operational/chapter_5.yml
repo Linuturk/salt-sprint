@@ -12,7 +12,7 @@ slides:
            - ul: 
              - Require
              - Require_in
-             - Watch
+             - Listen
              - Prereq
              - Import
            - class_notes: |
@@ -77,18 +77,36 @@ slides:
                      - pkg: install_apache
 
          -
-           - h2: Watch
-           - p: 'Statement used to monitor changes in other states'
+           - h2: Listen 
+           - p: 'Statement used to run tasks based on events in other states'
            - code: |
                mysql_service_restart:
                  service.restart:
                    - name: mysqld
-                   - watch:
+                   - listen:
                      - file: mysql_config
            - class_notes: |
-               1. Watch only applies when a high state is run.
-               2. Does not watch for user modifications to file but only if salt itself modifies it.
-               3. In this example we have a mysql restart action that watches and triggers on the mysql_config action from the previous example.
+               1. Listen only applies when a high state is run.
+               2. Does not listen for user modifications to file but only if salt itself modifies it.
+               3. In this example we have a mysql restart action that listens and triggers on the mysql_config action from the previous example.
+               4. We recommend using listen instead of the similar 'watch' because watch injects the restart right then, and listen only adds it to the end
+               5. Watch could end up restarting a service multiple times instead of just one time at the very end with listen
+
+         -
+           - h2: On Changes
+           - p: 'Statement used to monitor changes in other states'
+           - code: |
+               compile_code:
+                 cmd.run:
+                   - name: make install
+                   - cwd: /srv/something-1.4
+                   - on_changes:
+                       - archive: something-1.4.tar.gz
+           - class_notes: |
+               1. on_changes is different from listen and watch.
+               2. on_changes just runs when the on_changes start's result is True
+               3. watch and listen will use the mod_watch() function in the state instead of running as normal, so they provide extra functionality
+               4. using listen is probably correct for most usecases, but if you need stuff inserted into the state run as the next task, use on_changes instead of watch
 
          -
            - h2: Prereq
@@ -103,7 +121,7 @@ slides:
                apache_start:
                  cmd.run:
                    - name: service apache start
-                   - watch:
+                   - on_changes:
                      - file: site_code
 
                site_code:
@@ -111,8 +129,8 @@ slides:
                    - name: /opt/site_code
                    - source: salt://site/code
            - class_notes: |
-               1. In this example we show how repreq can work in conjunction with watch to have Apache shutdown before site_code executes.
-               2. Then, apache_start will run based on its watching of site_code being actioned.
+               1. In this example we show how repreq can work in conjunction with on_changes to have Apache shutdown before site_code executes.
+               2. Then, apache_start will run based on its listening of site_code being actioned.
 
          -
            - h2: "Lab: Prereq"
@@ -120,7 +138,7 @@ slides:
              - In your states, have a state that will run the echo command before apache will be installed
              - Create another state that will run a different echo command after apache gets installed
            - class_notes: |
-               1. just have them play with prereq and watch
+               1. just have them play with prereq and listen
 
          -
            - h2: Cliff Notes
@@ -134,7 +152,7 @@ slides:
                post_echo_apache:
                  cmd.run:
                    - name: "echo 'apache has been installed'"
-                   - watch:
+                   - listen:
                      - pkg: install_apache
 
 
@@ -183,6 +201,6 @@ slides:
                    - name: mysql-server
                    - order: 1
            - class_notes: |
-               1. States are executed in the order they are defined. Require, Watch, etc should be used.
+               1. States are executed in the order they are defined. Require, Listen, etc should be used.
                2. Most usefule with the keyword 'last', for making a state run at the end of the state tree.
 
