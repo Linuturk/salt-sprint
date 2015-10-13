@@ -108,8 +108,9 @@ slides:
          -
            - h2: Lab
            - ul:
-             - 'Write a salt state <b>/srv/salt/apache.sls</b> that ensures apache is installed'
-             - 'Apply this new state to minion01'
+             - 'Write a salt state <b>/srv/salt/apache.sls</b> that enforces the following state'
+             - 'Apache, Myslq, and PHP are intalled'
+             - 'the user steve is present and a part of the dev group'
 
          -
            - h2: 'cliff notes'
@@ -212,7 +213,8 @@ slides:
          -
            - h2: Lab
            - ul:
-             - 'Write a topfile that will apply the apache state to minion01'
+             - 'Move the mysql install to its own mysql state file'
+             - 'Write a topfile that will apply the apache state to the Web Server, and the mysql state to the DB Server'
              - 'Run <b>state.highstate</b> to verify'
          -
            - h2: 'cliff notes'
@@ -221,5 +223,7 @@ slides:
               base:
                 'minion01':
                   - apache
+                'minion02':
+                  - mysql
 
 
