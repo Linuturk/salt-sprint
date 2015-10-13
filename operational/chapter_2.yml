@@ -98,6 +98,10 @@ slides:
               salt-key -a lab1
 
          -
+           - h2: 'Clearnig cached Keys'
+           - p: 'You may need to clear a cahced key for a number of reason. You can do so by manually removing the key file or by issuing a delete command with salt-key'
+
+         -
            - h2: 'Verify installation'
            - code: |
               salt-master --versions-report
