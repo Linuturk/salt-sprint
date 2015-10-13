@@ -63,34 +63,6 @@ slides:
                3. talk about the mkdirs will create the full path if any directories does not exist
 
          -
-           - h2: Game of Chowns!
-           - h2: Lab
-           - ul:
-             - Create a state that will create a directory in the thatch users home directory called saltstuff
-             - Create a file on your master that you want to ship to the minions
-             - create a state that will ship the file you just created to the saltstuff directory that you created
-           - class_notes: |
-               1. an example of what this looks like follows
-               2 Speak to an excellent use case for something like this would be shipping ssh public keys to all minions.
-
-         -
-           - h2: cliff notes
-           - code: |
-               ship_salt_stuff_file:
-                 file.managed:
-                   - name: /home/thatch/saltstuff/saltfile.txt
-                   - source: salt://files/saltfile.txt
-                   - user: thatch
-                   - group: thatch
-                   - file_mode: '0744'
-                   - dir_mode: '0755'
-                   - makedirs: True
-           - class_notes: |
-               1. this is the answer to the previous lab.
-               2. point out that this accomplishes two steps in one as the mkdirs will create the directory as well.
-               3. Show that we can set the permissions for the created directory and the created file seperately
-
-         -
            - h1: Where the magic happens
            - p: Bringing it all together. Pillar, Grains, and Jinja to template files
            - p: Rule all the things!
@@ -138,13 +110,11 @@ slides:
                5. {{ is for calling variables
 
          -
-           - h2: Files With Defaults Lab
+           - h2: 'Lab: wordpress config'
            - ul:
-             - Create a state that will ship an index.html file to /var/www/html on the minions.
-             - Modify your state so that the index.html is templated.
-             - Pass it variables via defaults, make the variables a list of users.
-             - fred, wilma, pebbles, bambam.
-             - in the index.html file have it list out those users, exept for the user bambam.
+             - Download the wordpress config file and template it with the domain and DB info
+             - Save that file as a .jinja file in the files directory
+             - Create a state that will ship that file to the correct location on the apache server
            - class_notes: |
                1. Refference previous slides for how this should look
                2. Next slide will be a cliff note
@@ -161,24 +131,10 @@ slides:
                    - mode: '0755'
                    - makedirs: True
                    - template: jinja
-                   - defaults:
-                       users_list:
-                         - fred
-                         - wilma
-                         - pebbles
-                         - bambam
+                   - context:
+                       domain: fqdn
            - class_notes: |
                1. mention the ability to use recurse to recusively set permissions in a directory
-
-         -
-           - h2: cliff notes index
-           - code: |
-               {% for user in users_list %}
-               {% if user == 'bambam' %}
-               {% else %}
-               {{ user }}</br>
-               {% endif %}
-               {% endfor %}
 
          -
            - h2: But who wants to set variables in every state?
@@ -220,28 +176,9 @@ slides:
                4. Minion specific data should go in grains!
 
          -
-           - h2: All together now!
+           - h2: 'Lab: dynamic'
            - ul:
-             - In pillar create a list of users that only Ubuntu minions will share
-             - In pillar create a different list of users that only CentOS minions will share
-             - Use that list of users in your templated index.html
-             - Also have your index.html display its OS
+             - Update your state to pull the context info from pillar
            - class_notes: |
                They should have the top file in pillar point to seperate users list based on OS grain.
                They should also have in there templates the jinja loop based on pillar data with the os grain listed.
-
-         -
-           - h2: Cliff notes
-           - p: /srv/pillar/top.sls
-           - code: |
-               base:
-                 'os:{{ grains['os'] }}':
-                   - match: grain
-                   - {{ grains['os'] }}
-           - p: /srv/pillar/Ubuntu.sls
-           - code: |
-               users_list:
-                 - fred
-                 - wilma
-                 - pebbles
-                 - bambam
