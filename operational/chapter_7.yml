@@ -67,7 +67,7 @@ slides:
            - h2: 'Lab: Using Grains in States'
            - p: 'Targeting based on OS grain information.'
            - ul:
-             - in your install apache state. set a jinja variable to the correct package name, using an if statement based on the os Grain.
+             - create a new file called map.jinja and specify the correct package name for apache by OS
              - use that variable in the install apache state to install the correct package depending on OS
            - class_notes: |
                1. In this lab you will actually want them to go into there previously created state and setup a jinja if statement where if grain['os'] == ubuntu then apache2, etc.
@@ -75,15 +75,23 @@ slides:
          -
            - h2: cliff notes
            - code: |
-               {% if grain['os'] == 'Ubuntu' %}
-               {% set apache_package == 'apache2' %}
-               {% elseif grain['os'] == 'CentOS' %}
-               {% set apache_package == 'httpd' %}
-               {% endif %}
-
+               {% set apache = salt['grains.filter_by']({
+                   'Debian': {
+                          'server': 'apache2',
+                          'service': 'apache2',
+                          'conf': '/etc/apache2/apache.conf',
+                              },
+                    'RedHat': {
+                          'server': 'httpd',
+                          'service': 'httpd',
+                          'conf': '/etc/httpd/httpd.conf',
+                               },
+               }, merge=salt['pillar.get']('apache:lookup')) %}
+           - code: |
+               {% from "apache/map.jinja" import apache with context %}
                install_apache:
                  pkg.installed:
-                   - name: {{ apache_package }}
+                   - name: {{ apache.server }}
 
          -
            - h2: Pillar
@@ -141,12 +149,13 @@ slides:
 
          -
            - h2: 'Lab: Using Pillar'
-           - p: 'Set pillar data based on OS grain and use that pillar data in the state created in the previous lab instead of the grain.'
+           - p: 'Store the following info in Pillar'
            - ul:
-             - set up your pillar top file to target based on the os grain and use differnt pillar sls files for each OS
-             - Set the correct apache package name to a variable in the respective OS's pillar file
+             - Wordpress FQDN
+             - Database User
+             - Database Password
            - class_notes: |
-               1. Lab will have them set pillar data targeted by os grain, and use that pillar data in the state instead of the previous grain if statement.
+               1. Lab will have
 
          -
            - h2: Cliff notes top.sls
@@ -166,3 +175,14 @@ slides:
            - p: /srv/pillar/Ubuntu/init.sls
            - code: |
                apache_package: apache2
+
+         - 
+           - h2: 'Lab: Create database'
+           - p: 'update your state to create the wordpress database with the proper user and password'
+
+         - 
+           - h2: Cliff Notes
+           - code: |
+               mysql.db_create
+               mysql.user_create
+               mysql.grant_add
