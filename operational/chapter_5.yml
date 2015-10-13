@@ -62,6 +62,7 @@ slides:
            - ul:
              - In your install apache state create a new state to ensure that apache is running
              - Make sure that the service.running state is ran after the install of apache
+             - Repeat this for mysql as well
 
          -
            - h2: cliff notes
@@ -135,26 +136,21 @@ slides:
          -
            - h2: "Lab: Prereq"
            - ul:
-             - In your states, have a state that will run the echo command before apache will be installed
-             - Create another state that will run a different echo command after apache gets installed
+             - Use your apache state to create a new virtual host (There are several modules you could use for this)
+             - Use Listen to insure that apache is reloaded if the virtualhost is modified
            - class_notes: |
                1. just have them play with prereq and listen
 
          -
            - h2: Cliff Notes
            - code: |
-               pre_echo_apache:
-                 cmd.run:
-                   - name: "echo 'apache will be installed'"
-                   - prereq:
-                     - pkg: install_apache
-
-               post_echo_apache:
-                 cmd.run:
-                   - name: "echo 'apache has been installed'"
-                   - listen:
-                     - pkg: install_apache
-
+               domain_config:
+                 name: /etc/httpd/conf.d/domain.conf
+                 config:
+                   DocumentRoot: /var/www/domain/
+                   ServerName: domain
+                 listen_in:
+                   - service: httpd
 
          -
            - h2: Include
